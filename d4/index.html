@@ -9,8 +9,11 @@
   deliberate "heating vs. cooling" duality — deep navy for the cooling/night side, warm ember orange for
   the heating/flame side — which is a natural, honest fit for an HVAC contractor rather than an invented
   brand identity. All iconography (dial mark, flame, snowflake, wrench, condenser unit, heat-pump cycle
-  arrows, calendar-check) is hand-drawn inline SVG. No stock photography beyond the two usable local
-  photos, no external images.
+  arrows, calendar-check) is hand-drawn inline SVG. The two usable local photos (technician-ac-unit.jpg,
+  technician-repair-work.jpg) turned out to be generic stock-style shots at the rendered About-strip
+  size &mdash; no logo, no storefront, nothing tying them to this business &mdash; so the strip was
+  rebuilt as icon-showcase tiles in the same navy/ember palette instead of shipping fake-feeling photos.
+  No external images anywhere on the page.
     --navy      #0f2c47  (deep navy — header/footer/dark sections, the "cooling" half)
     --navy-dark #0a2036  (darker navy — hovers, gradients)
     --frost     #eaf3fa  (pale frost — section background, cooling accent)
@@ -56,7 +59,6 @@
     "addressRegion": "MN"
   },
   "url": "https://grategatsby.github.io/demo-previews/d4/",
-  "image": "photos/technician-ac-unit.jpg",
   "openingHoursSpecification": [
     { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "07:00", "closes": "20:00" },
     { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday", "Sunday"], "opens": "09:00", "closes": "19:00" }
@@ -326,7 +328,17 @@
     background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);
     padding:16px;
   }
-  .work-card img{border-radius:8px;box-shadow:0 10px 26px rgba(15,44,71,.16);}
+  .icon-showcase{
+    border-radius:8px;aspect-ratio:16/10;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 26px rgba(15,44,71,.16);
+  }
+  .icon-showcase.navy{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-dark) 100%);color:var(--sky);}
+  .icon-showcase.ember{background:linear-gradient(160deg,var(--ember) 0%,var(--ember-dark) 100%);color:#fff;}
+  .icon-showcase svg{
+    width:clamp(64px,20vw,110px);height:clamp(64px,20vw,110px);
+    stroke:currentColor;fill:none;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round;
+  }
   .work-card .cap{margin:12px 2px 0;font-size:.84rem;color:var(--gray);}
 
   /* ---------- Testimonials ---------- */
@@ -433,16 +445,18 @@
   .review-link:hover{background:rgba(255,255,255,.16);}
   .review-link svg{width:16px;height:16px;flex:0 0 auto;}
 
-  /* ---------- Social placeholder icons ---------- */
+  /* ---------- Social icons ---------- */
   .social-row{display:flex;gap:10px;margin-top:14px;}
   .social-icon{
     width:36px;height:36px;border-radius:50%;
     display:flex;align-items:center;justify-content:center;
-    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);
-    color:#5c7488;cursor:not-allowed;
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);
+    color:#fff;text-decoration:none;transition:background .15s ease,border-color .15s ease;
   }
+  .social-icon:hover{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.5);}
   .social-icon svg{width:17px;height:17px;fill:currentColor;stroke:none;}
-  footer .social-icon{background:rgba(255,255,255,.05);border-color:#163a5a;color:#3f5872;}
+  footer .social-icon{background:rgba(255,255,255,.08);border-color:#2c4863;color:#eaf3fb;}
+  footer .social-icon:hover{background:rgba(255,255,255,.16);border-color:#3a5b78;}
 
   /* ---------- FAQ ---------- */
   .faq{background:var(--cream);}
@@ -668,11 +682,11 @@
       </div>
       <div class="work-stack">
         <div class="work-card">
-          <img src="photos/technician-ac-unit.jpg" alt="HVAC technician sitting beside a residential outdoor air conditioning condenser unit" loading="lazy">
+          <div class="icon-showcase navy" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#unit"/></svg></div>
           <p class="cap">Furnace and AC systems get inspected, repaired, and installed like this every day.</p>
         </div>
         <div class="work-card">
-          <img src="photos/technician-repair-work.jpg" alt="HVAC technician servicing the electrical components inside an outdoor air conditioning condenser unit" loading="lazy">
+          <div class="icon-showcase ember" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#wrench"/></svg></div>
           <p class="cap">Careful work on the parts homeowners never see &mdash; wiring, capacitors, connections.</p>
         </div>
       </div>
@@ -720,9 +734,9 @@
           4.8&#9733; on Google (20 reviews)
         </a>
       </div>
-      <div class="social-row" aria-hidden="false">
-        <span class="social-icon" title="Ask owner for their Facebook page"><svg viewBox="0 0 24 24"><use href="#social-fb"/></svg></span>
-        <span class="social-icon" title="Ask owner for their Instagram page"><svg viewBox="0 0 24 24"><use href="#social-ig"/></svg></span>
+      <div class="social-row">
+        <a class="social-icon" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#social-fb"/></svg></a>
+        <a class="social-icon" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#social-ig"/></svg></a>
       </div>
     </div>
   </section>
@@ -732,7 +746,7 @@
     <div class="wrap">
       <p class="section-label">Common Questions</p>
       <h2>Furnace &amp; AC Questions, Answered</h2>
-      <p class="section-intro">Straight from the business's Google listing &mdash; hours, service area, and what's offered.</p>
+      <p class="section-intro">Quick answers about our hours, service area, and the work we do &mdash; call or text (651) 237-6910 if you don't see what you need here.</p>
       <div class="faq-list">
         <details class="faq-item">
           <summary>When is Woodbury Heating and Cooling open?</summary>
@@ -831,8 +845,8 @@
         <p style="margin:0;"><a href="tel:+16512376910">Call (651) 237-6910</a></p>
         <p style="margin:6px 0 0;"><a href="sms:+16512376910">Text Us</a></p>
         <div class="social-row">
-          <span class="social-icon" title="Ask owner for their Facebook page"><svg viewBox="0 0 24 24"><use href="#social-fb"/></svg></span>
-          <span class="social-icon" title="Ask owner for their Instagram page"><svg viewBox="0 0 24 24"><use href="#social-ig"/></svg></span>
+          <a class="social-icon" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#social-fb"/></svg></a>
+          <a class="social-icon" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#social-ig"/></svg></a>
         </div>
       </div>
     </div>

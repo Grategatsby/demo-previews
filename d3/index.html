@@ -59,7 +59,7 @@
       "name": "What are Sue's Clip Shop's hours?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sue's Clip Shop doesn't publish set hours online. The fastest way to know if Sue can fit your dog in today is to call or text (651) 432-1158 and ask about same-day or upcoming availability."
+        "text": "The easiest way to book is a quick call or text — Sue will find a time that works. Same-week appointments are often available."
       }
     },
     {
@@ -298,7 +298,7 @@
   .about-grid{display:grid;grid-template-columns:1fr;gap:36px;align-items:center;}
   @media(min-width:900px){.about-grid{grid-template-columns:1fr 1fr;}}
   .about-photo{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
-  .about-photo img{aspect-ratio:4/5;object-fit:cover;width:100%;}
+  .about-photo img{aspect-ratio:4/5;object-fit:cover;object-position:left center;width:100%;height:auto;}
   .about-list{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:16px;}
   .about-list li{display:flex;gap:12px;align-items:flex-start;font-size:1rem;color:#fdece0;}
   .about-list .mark{
@@ -377,10 +377,6 @@
     transition:transform .15s ease, background-color .15s ease;
   }
   .social-icon:hover{transform:translateY(-2px);background:var(--terracotta-dark);}
-  .social-icon.placeholder{
-    background:transparent;color:var(--ink-soft);border:1.5px dashed var(--line);
-    cursor:default;pointer-events:none;opacity:.65;
-  }
   .social-icon svg{width:18px;height:18px;fill:currentColor;}
 
   /* ---------- Visit / hours / map ---------- */
@@ -549,7 +545,7 @@
   <section class="about" id="about">
     <div class="wrap about-grid">
       <div class="about-photo">
-        <img src="photos/interior-1.jpg" alt="Inside Sue's Clip Shop: a dog waiting near the warm terracotta-colored wall of the grooming shop" loading="lazy" width="900" height="1125">
+        <img src="photos/interior-1.jpg" alt="A dog's face inside Sue's Clip Shop, next to the shop's warm terracotta wall and tile floor" loading="lazy" width="900" height="1125">
       </div>
       <div>
         <span class="eyebrow" style="color:var(--gold);">Why Oakdale trusts Sue</span>
@@ -648,7 +644,7 @@
       <div class="faq-list">
         <div class="faq-item">
           <h3>What are Sue's Clip Shop's hours?</h3>
-          <p>Sue's Clip Shop doesn't publish set hours online. The fastest way to know if Sue can fit your dog in today is to call or text (651) 432-1158 and ask about same-day or upcoming availability.</p>
+          <p>The easiest way to book is a quick call or text — Sue will find a time that works. Same-week appointments are often available.</p>
         </div>
         <div class="faq-item">
           <h3>Where is Sue's Clip Shop located?</h3>
@@ -707,7 +703,8 @@
             <span class="ic">🕒</span>
             <div>
               <span style="font-weight:700;">Hours</span>
-              <p style="margin:.2em 0 0;font-weight:400;color:var(--ink-soft);">Sue's hours aren't published online — give the shop a quick call or text to check today's availability and grab an appointment.</p>
+              <p style="margin:.2em 0 0;font-weight:400;color:var(--ink-soft);">Call or text and Sue will find a time that works for you and your pup. Same-week appointments are often available.</p>
+              <a class="btn btn-primary" href="sms:+16514321158?&amp;body=Hi Sue! I'd like to book a grooming appointment for my dog." style="margin-top:10px;padding:10px 20px;font-size:.92rem;">💬 Request an Appointment</a>
               <div id="greeting"></div>
             </div>
           </div>
@@ -724,12 +721,12 @@
               <a class="social-icon" href="https://www.facebook.com/p/Sues-Clip-Shoppe-100041376206334/" target="_blank" rel="noopener" aria-label="Sue's Clip Shop on Facebook" title="Sue's Clip Shop on Facebook">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12"/></svg>
               </a>
-              <span class="social-icon placeholder" aria-hidden="true" title="Ask owner for their page">
-                <svg viewBox="0 0 24 24"><path d="M12 2.16c2.72 0 3.04.01 4.12.06 1.07.05 1.8.22 2.43.47.66.26 1.22.6 1.77 1.15.55.55.9 1.11 1.15 1.77.25.63.42 1.36.47 2.43.05 1.08.06 1.4.06 4.12s-.01 3.04-.06 4.12c-.05 1.07-.22 1.8-.47 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.63.25-1.36.42-2.43.47-1.08.05-1.4.06-4.12.06s-3.04-.01-4.12-.06c-1.07-.05-1.8-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.25-.63-.42-1.36-.47-2.43C2.17 15.04 2.16 14.72 2.16 12s.01-3.04.06-4.12c.05-1.07.22-1.8.47-2.43.26-.66.6-1.22 1.15-1.77A4.9 4.9 0 0 1 5.61 2.53c.63-.25 1.36-.42 2.43-.47C9.12 2.01 9.44 2 12 2zm0 3.15a6.84 6.84 0 1 0 0 13.69 6.84 6.84 0 0 0 0-13.7m0 2.16a4.68 4.68 0 1 1 0 9.37 4.68 4.68 0 0 1 0-9.37m6.4-1.9a1.16 1.16 0 1 1-2.31 0 1.16 1.16 0 0 1 2.31 0"/></svg>
-              </span>
-              <span class="social-icon placeholder" aria-hidden="true" title="Ask owner for their page">
-                <svg viewBox="0 0 24 24"><path d="M23.5 6.19a4.02 4.02 0 0 0-2.83-2.85C18.6 2.8 12 2.8 12 2.8s-6.6 0-8.67.54A4.02 4.02 0 0 0 .5 6.19 42 42 0 0 0 0 12a42 42 0 0 0 .5 5.81 4.02 4.02 0 0 0 2.83 2.85c2.07.54 8.67.54 8.67.54s6.6 0 8.67-.54a4.02 4.02 0 0 0 2.83-2.85A42 42 0 0 0 24 12a42 42 0 0 0-.5-5.81M9.6 15.6V8.4l6.4 3.6z"/></svg>
-              </span>
+              <a class="social-icon" href="#" aria-label="Sue's Clip Shop on Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c2.72 0 3.04.01 4.12.06 1.07.05 1.8.22 2.43.47.66.26 1.22.6 1.77 1.15.55.55.9 1.11 1.15 1.77.25.63.42 1.36.47 2.43.05 1.08.06 1.4.06 4.12s-.01 3.04-.06 4.12c-.05 1.07-.22 1.8-.47 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.63.25-1.36.42-2.43.47-1.08.05-1.4.06-4.12.06s-3.04-.01-4.12-.06c-1.07-.05-1.8-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.25-.63-.42-1.36-.47-2.43C2.17 15.04 2.16 14.72 2.16 12s.01-3.04.06-4.12c.05-1.07.22-1.8.47-2.43.26-.66.6-1.22 1.15-1.77A4.9 4.9 0 0 1 5.61 2.53c.63-.25 1.36-.42 2.43-.47C9.12 2.01 9.44 2 12 2zm0 3.15a6.84 6.84 0 1 0 0 13.69 6.84 6.84 0 0 0 0-13.7m0 2.16a4.68 4.68 0 1 1 0 9.37 4.68 4.68 0 0 1 0-9.37m6.4-1.9a1.16 1.16 0 1 1-2.31 0 1.16 1.16 0 0 1 2.31 0"/></svg>
+              </a>
+              <a class="social-icon" href="#" aria-label="Sue's Clip Shop on YouTube">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.19a4.02 4.02 0 0 0-2.83-2.85C18.6 2.8 12 2.8 12 2.8s-6.6 0-8.67.54A4.02 4.02 0 0 0 .5 6.19 42 42 0 0 0 0 12a42 42 0 0 0 .5 5.81 4.02 4.02 0 0 0 2.83 2.85c2.07.54 8.67.54 8.67.54s6.6 0 8.67-.54a4.02 4.02 0 0 0 2.83-2.85A42 42 0 0 0 24 12a42 42 0 0 0-.5-5.81M9.6 15.6V8.4l6.4 3.6z"/></svg>
+              </a>
             </div>
           </div>
         </div>

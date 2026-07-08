@@ -375,12 +375,13 @@
   .social-icon{
     width:36px;height:36px;border-radius:50%;
     display:flex;align-items:center;justify-content:center;
-    background:#fff;border:1px solid var(--line);
-    color:#b8a68c;cursor:not-allowed;
+    background:var(--rust);color:#fff;text-decoration:none;
   }
+  .social-icon:hover{background:var(--rust-dark);}
   .social-icon svg{width:17px;height:17px;fill:currentColor;stroke:none;}
   footer .social-row{justify-content:flex-start;}
-  footer .social-icon{background:rgba(255,255,255,.05);border-color:#3a2e24;color:#5c4c3c;}
+  footer .social-icon{background:var(--gold);color:var(--ink-dark);}
+  footer .social-icon:hover{background:var(--gold-dark);}
 
   /* ---------- FAQ ---------- */
   .faq{background:var(--cream);}
@@ -435,6 +436,8 @@
   .btn-ink:hover{background:#302518;}
   .btn-rust{background:var(--rust);color:#fff;}
   .btn-rust:hover{background:var(--rust-dark);}
+  .btn-gold{background:var(--gold);color:var(--ink-dark);}
+  .btn-gold:hover{background:var(--gold-dark);}
 
   .map-wrap{
     margin-top:24px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
@@ -733,9 +736,9 @@
           Reviews on Birdeye
         </a>
       </div>
-      <div class="social-row" aria-hidden="false">
-        <span class="social-icon" title="Ask owner for their Facebook page"><svg viewBox="0 0 24 24"><use href="#social-fb"/></svg></span>
-        <span class="social-icon" title="Ask owner for their Instagram page"><svg viewBox="0 0 24 24"><use href="#social-ig"/></svg></span>
+      <div class="social-row">
+        <a class="social-icon" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><use href="#social-fb"/></svg></a>
+        <a class="social-icon" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><use href="#social-ig"/></svg></a>
       </div>
     </div>
   </section>
@@ -784,7 +787,7 @@
           </span>
           <ul class="response-list">
             <li><span class="dot-ic"><svg class="ic" viewBox="0 0 24 24" style="width:14px;height:14px;"><use href="#tag"/></svg></span><span><strong>Quotes come back fast.</strong> You get a clear price with no surprises before work starts.</span></li>
-            <li><span class="dot-ic"><svg class="ic" viewBox="0 0 24 24" style="width:14px;height:14px;"><use href="#house"/></svg></span><span><strong>Hours aren't posted online.</strong> Call or text to check same-day or next-day availability.</span></li>
+            <li><span class="dot-ic"><svg class="ic" viewBox="0 0 24 24" style="width:14px;height:14px;"><use href="#house"/></svg></span><span><strong>Same-day and next-day slots often open.</strong> Call or text now &mdash; or tap Request a Quote and we'll get right back to you.</span></li>
             <li><span class="dot-ic"><svg class="ic" viewBox="0 0 24 24" style="width:14px;height:14px;"><use href="#repeat"/></svg></span><span><strong>Scheduling works around you.</strong> We work around your other contractors and your timeline, not the other way around.</span></li>
           </ul>
         </div>
@@ -810,6 +813,7 @@
           <div class="contact-btns">
             <a class="btn btn-ink" href="tel:+16515648635">&#9742; Call Now</a>
             <a class="btn btn-rust" href="sms:+16515648635">&#128172; Text Us</a>
+            <a class="btn btn-gold" href="sms:+16515648635?&body=Hi!%20I%27d%20like%20a%20quote%20for%20a%20project%20at%20my%20home.">&#128221; Request a Quote</a>
             <a class="btn btn-outline" style="color:var(--ink-dark);border-color:var(--ink-dark);" href="https://www.google.com/maps/search/?api=1&query=Pearson%20Handyman%20%26%20Painting&query_place_id=ChIJT_nSx2cts1IR7C80_-OMhBU" target="_blank" rel="noopener">Get Directions</a>
           </div>
           <div class="map-wrap">
@@ -840,8 +844,8 @@
         <p style="margin:0;"><a href="tel:+16515648635">Call (651) 564-8635</a></p>
         <p style="margin:6px 0 0;"><a href="sms:+16515648635">Text Us</a></p>
         <div class="social-row">
-          <span class="social-icon" title="Ask owner for their Facebook page"><svg viewBox="0 0 24 24"><use href="#social-fb"/></svg></span>
-          <span class="social-icon" title="Ask owner for their Instagram page"><svg viewBox="0 0 24 24"><use href="#social-ig"/></svg></span>
+          <a class="social-icon" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><use href="#social-fb"/></svg></a>
+          <a class="social-icon" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><use href="#social-ig"/></svg></a>
         </div>
       </div>
     </div>

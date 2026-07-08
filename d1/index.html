@@ -419,17 +419,19 @@
   .map-wrap{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);margin-top:22px;}
   .map-wrap iframe{width:100%;height:280px;border:0;display:block;}
 
-  /* ---------- Social placeholders (no known profiles yet) ---------- */
+  /* ---------- Social icons ---------- */
   .social-row{display:flex;align-items:center;gap:10px;margin-top:18px;}
   .social-row .social-label{font-size:.84rem;color:var(--gray);font-weight:700;margin-right:2px;}
   .social-icon{
     width:34px;height:34px;border-radius:8px;flex:0 0 auto;
     display:flex;align-items:center;justify-content:center;
-    opacity:.45;cursor:not-allowed;
+    text-decoration:none;transition:background .2s ease;
   }
-  .card .social-icon{background:#e2ddd0;color:#8a8377;}
+  .card .social-icon{background:var(--navy);color:#fff;}
+  .card .social-icon:hover{background:var(--teal);}
   footer .social-row .social-label{color:#7f9cb2;}
-  footer .social-icon{background:rgba(255,255,255,.08);color:#7f9cb2;}
+  footer .social-icon{background:rgba(255,255,255,.14);color:#fff;}
+  footer .social-icon:hover{background:rgba(255,255,255,.28);}
 
   /* ---------- Footer ---------- */
   footer{background:var(--navy-dark);color:#c6d8e8;padding:40px 0 110px;font-size:.9rem;}
@@ -597,8 +599,8 @@
         <a href="photos/garage-bay.jpg" data-caption="A customer's car up on the lift in the service bay">
           <img src="photos/garage-bay.jpg" alt="Car with hood up on a lift inside the Mike's Auto Repair service bay" loading="lazy">
         </a>
-        <a href="photos/entrance.jpg" data-caption="The shop's welcoming front entrance">
-          <img src="photos/entrance.jpg" alt="Front entrance of Mike's Auto Repair with plants and teal-painted walls" loading="lazy">
+        <a href="photos/storefront-banner.jpg" data-caption="Mike's Auto Repair storefront on White Bear Ave, daytime view">
+          <img src="photos/storefront-banner.jpg" alt="Mike's Auto Repair storefront with General Automotive Repair banner and Interstate Batteries sign" loading="lazy">
         </a>
         <a href="photos/exterior-side.jpg" data-caption="Mike's Auto Repair, exterior view">
           <img src="photos/exterior-side.jpg" alt="Side exterior view of Mike's Auto Repair building under a clear blue sky" loading="lazy">
@@ -753,12 +755,12 @@
           </div>
           <div class="social-row">
             <span class="social-label">Follow:</span>
-            <span class="social-icon" title="Ask owner for their Facebook page" aria-disabled="true">
+            <a class="social-icon" href="#" aria-label="Mike's Auto Repair on Facebook">
               <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M14 8.5h2V5.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H6.8v3.2h2.5V21h3.3v-5.7h2.4l.4-3.2h-2.8V9.9c0-.9.3-1.4 1.4-1.4z"/></svg>
-            </span>
-            <span class="social-icon" title="Ask owner for their Instagram page" aria-disabled="true">
+            </a>
+            <a class="social-icon" href="#" aria-label="Mike's Auto Repair on Instagram">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1"/></svg>
-            </span>
+            </a>
           </div>
           <div class="map-wrap">
             <iframe src="https://www.google.com/maps?q=44.956483,-93.0248879&output=embed" title="Map showing Mike's Auto Repair location" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -787,12 +789,12 @@
         <p style="margin:0;"><a href="tel:+16517351435">Call (651) 735-1435</a></p>
         <p style="margin:6px 0 0;"><a href="sms:+16517351435">Text Us</a></p>
         <div class="social-row">
-          <span class="social-icon" title="Ask owner for their Facebook page" aria-disabled="true">
+          <a class="social-icon" href="#" aria-label="Mike's Auto Repair on Facebook">
             <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M14 8.5h2V5.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H6.8v3.2h2.5V21h3.3v-5.7h2.4l.4-3.2h-2.8V9.9c0-.9.3-1.4 1.4-1.4z"/></svg>
-          </span>
-          <span class="social-icon" title="Ask owner for their Instagram page" aria-disabled="true">
+          </a>
+          <a class="social-icon" href="#" aria-label="Mike's Auto Repair on Instagram">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1"/></svg>
-          </span>
+          </a>
         </div>
       </div>
     </div>

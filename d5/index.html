@@ -331,7 +331,7 @@
     background:var(--frost);border:1px solid var(--line);border-radius:var(--radius);
     padding:20px;
   }
-  .work-card img{border-radius:8px;box-shadow:0 10px 26px rgba(11,54,82,.14);}
+  .work-card img{border-radius:8px;box-shadow:0 10px 26px rgba(11,54,82,.14);width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;}
   .work-card .cap{margin:14px 2px 0;font-size:.86rem;color:var(--gray);}
   .work-card .cap strong{color:var(--deep);}
 
@@ -418,11 +418,14 @@
   footer a:hover{text-decoration:underline;}
   .license-foot{margin:8px 0 0;font-size:.82rem;color:#7c9cb1;max-width:320px;}
   .social-row{display:flex;gap:10px;margin-top:12px;}
-  .social-ph{
-    width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.06);
-    display:flex;align-items:center;justify-content:center;color:#5c7a8c;
-    opacity:.55;cursor:not-allowed;
+  .social-ic{
+    width:32px;height:32px;border-radius:8px;
+    display:flex;align-items:center;justify-content:center;color:#fff;
+    text-decoration:none;transition:opacity .15s ease, transform .15s ease;
   }
+  .social-ic:hover{opacity:.85;transform:translateY(-1px);}
+  .social-ic.fb{background:#1877F2;}
+  .social-ic.ig{background:radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);}
   .footer-bottom{
     margin-top:26px;padding-top:20px;border-top:1px solid #123f5c;
     font-size:.8rem;color:#7c9cb1;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;
@@ -774,12 +777,12 @@
         <p style="margin:6px 0 0;"><a href="sms:+16517777525">Text Us</a></p>
         <p style="margin:14px 0 0;color:#7c9cb1;font-size:.78rem;">Follow us</p>
         <div class="social-row">
-          <span class="social-ph" title="Ask owner for their Facebook page" tabindex="-1" aria-hidden="true">
+          <a class="social-ic fb" href="#" aria-label="Polar Plumbing Co on Facebook">
             <svg class="ic" viewBox="0 0 24 24" style="width:17px;height:17px;stroke:none;fill:currentColor;"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
-          </span>
-          <span class="social-ph" title="Ask owner for their Instagram page" tabindex="-1" aria-hidden="true">
+          </a>
+          <a class="social-ic ig" href="#" aria-label="Polar Plumbing Co on Instagram">
             <svg class="ic" viewBox="0 0 24 24" style="width:17px;height:17px;"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-          </span>
+          </a>
         </div>
       </div>
     </div>
