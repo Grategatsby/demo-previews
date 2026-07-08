@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Sue's Clip Shop | Dog Grooming in Oakdale, MN</title>
+<meta name="description" content="Sue's Clip Shop has been grooming Oakdale's dogs since 1989. Gentle, patient grooming, baths, nail trims &amp; breed-specific cuts. 4.8 stars, 86 reviews.">
+
+<!--
+  PALETTE SOURCE: photos/interior-1.jpg (source: leads/photos/photo-03.jpg) — the actual
+  interior of Sue's Clip Shop: a warm terracotta/rust wall, a deep maroon door frame, a
+  blue-grey baseboard and a tan tile floor. Those four colors are the base palette below.
+  The warm gold accent is pulled from the golden/apricot fur tones that repeat across the
+  customer dog photos (hero.jpg, gallery-2.jpg, gallery-8.jpg), tying the "warm neighborhood
+  shop" feel of the room to the "happy dogs" feel of the gallery.
+-->
+
+<style>
+  :root{
+    --terracotta:#bd5433;
+    --terracotta-dark:#8f3d24;
+    --maroon:#54262a;
+    --slate:#7c8b96;
+    --gold:#d69a44;
+    --cream:#fbf2e6;
+    --paper:#fffaf3;
+    --ink:#3a2a22;
+    --ink-soft:#6b5648;
+    --line:#e8d7bd;
+    --focus:#1c5f8a;
+    --radius:16px;
+    --shadow:0 10px 30px rgba(58,42,34,.14);
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.brand{
+    font-family:"Fredoka",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-weight:600;
+    line-height:1.15;
+    margin:0 0 .5em;
+    color:var(--maroon);
+  }
+  p{margin:0 0 1em;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  section{padding:64px 20px;}
+  .wrap{max-width:1100px;margin:0 auto;}
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-size:.78rem;
+    font-weight:700;
+    color:var(--terracotta-dark);
+    margin-bottom:.6em;
+    display:block;
+  }
+  .center{text-align:center;}
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:.5em;
+    padding:14px 26px;
+    border-radius:999px;
+    font-weight:700;
+    text-decoration:none;
+    font-size:1rem;
+    border:2px solid transparent;
+    cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--terracotta);color:#fff;box-shadow:var(--shadow);}
+  .btn-primary:hover{background:var(--terracotta-dark);}
+  .btn-outline{background:transparent;color:var(--paper);border-color:rgba(255,255,255,.7);}
+  .btn-outline:hover{background:rgba(255,255,255,.15);}
+  .btn-outline-dark{background:transparent;color:var(--terracotta-dark);border-color:var(--terracotta-dark);}
+  .btn-outline-dark:hover{background:var(--terracotta);color:#fff;border-color:var(--terracotta);}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--focus);outline-offset:2px;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    max-width:1100px;margin:0 auto;padding:14px 20px;
+  }
+  .brand{font-size:1.35rem;color:var(--terracotta-dark);text-decoration:none;display:flex;align-items:center;gap:.5em;}
+  .brand .paw{font-size:1.2em;}
+  .nav-links{display:none;gap:28px;list-style:none;margin:0;padding:0;font-weight:600;}
+  .nav-links a{text-decoration:none;color:var(--ink);}
+  .nav-links a:hover{color:var(--terracotta);}
+  .nav-cta{display:none;}
+  .nav-toggle{
+    background:none;border:2px solid var(--line);border-radius:10px;
+    width:44px;height:44px;display:flex;align-items:center;justify-content:center;
+  }
+  .nav-toggle span, .nav-toggle span::before, .nav-toggle span::after{
+    content:"";display:block;width:20px;height:2px;background:var(--ink);position:relative;
+    transition:transform .2s ease, opacity .2s ease;
+  }
+  .nav-toggle span::before{position:absolute;top:-6px;}
+  .nav-toggle span::after{position:absolute;top:6px;}
+  .mobile-menu{
+    display:none;
+    flex-direction:column;
+    gap:2px;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+  }
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{
+    padding:14px 20px;text-decoration:none;color:var(--ink);font-weight:600;
+    border-top:1px solid var(--line);
+  }
+  .mobile-menu a.call{color:var(--terracotta-dark);}
+
+  @media(min-width:840px){
+    .nav-links{display:flex;}
+    .nav-cta{display:inline-flex;}
+    .nav-toggle{display:none;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background:linear-gradient(160deg, var(--maroon) 0%, var(--terracotta) 62%, var(--gold) 130%);
+    color:#fff;
+    padding:56px 20px 72px;
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid;grid-template-columns:1fr;gap:32px;align-items:center;
+  }
+  .hero-copy .rating{
+    display:inline-flex;align-items:center;gap:.5em;
+    background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.35);
+    padding:8px 16px;border-radius:999px;
+    font-weight:700;font-size:.95rem;margin-bottom:18px;
+  }
+  .hero-copy h1{color:#fff;font-size:2.4rem;margin-bottom:.3em;}
+  .hero-copy .tagline{font-size:1.15rem;font-weight:600;color:#fff0e2;margin-bottom:.8em;}
+  .hero-copy p.lead{font-size:1.05rem;color:#fbe9d8;max-width:52ch;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:24px;}
+  .hero-note{
+    margin-top:20px;font-size:.92rem;color:#fce4cf;
+    display:flex;gap:.5em;align-items:flex-start;
+  }
+  .hero-photo{
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:0 20px 45px rgba(0,0,0,.35);
+    border:6px solid rgba(255,255,255,.25);
+  }
+  .hero-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;}
+
+  @media(min-width:900px){
+    .hero .wrap{grid-template-columns:1.1fr .9fr;}
+    .hero-copy h1{font-size:3.1rem;}
+  }
+
+  /* ---------- Trust strip ---------- */
+  .trust-strip{
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+    padding:22px 20px;
+  }
+  .trust-strip .wrap{
+    display:flex;flex-wrap:wrap;gap:22px;justify-content:center;
+    font-size:.92rem;font-weight:600;color:var(--ink-soft);
+  }
+  .trust-strip .item{display:flex;align-items:center;gap:.5em;}
+
+  /* ---------- Services ---------- */
+  .services-grid{
+    display:grid;grid-template-columns:1fr;gap:20px;margin-top:34px;
+  }
+  @media(min-width:640px){.services-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(min-width:1000px){.services-grid{grid-template-columns:repeat(4,1fr);}}
+  .service-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:26px 22px;
+    box-shadow:var(--shadow);
+  }
+  .service-card .icon{font-size:1.8rem;margin-bottom:.4em;display:block;}
+  .service-card h3{font-size:1.15rem;margin-bottom:.35em;color:var(--terracotta-dark);}
+  .service-card p{color:var(--ink-soft);font-size:.95rem;margin:0;}
+
+  /* ---------- About ---------- */
+  .about{background:var(--maroon);color:#fdece0;}
+  .about h2{color:#fff;}
+  .about-grid{display:grid;grid-template-columns:1fr;gap:36px;align-items:center;}
+  @media(min-width:900px){.about-grid{grid-template-columns:1fr 1fr;}}
+  .about-photo{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
+  .about-photo img{aspect-ratio:4/5;object-fit:cover;width:100%;}
+  .about-list{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:16px;}
+  .about-list li{display:flex;gap:12px;align-items:flex-start;font-size:1rem;color:#fdece0;}
+  .about-list .mark{
+    flex:0 0 auto;width:28px;height:28px;border-radius:50%;
+    background:var(--gold);color:var(--maroon);font-weight:800;
+    display:flex;align-items:center;justify-content:center;font-size:.9rem;
+  }
+
+  /* ---------- Gallery ---------- */
+  .gallery{background:var(--paper);}
+  .gallery-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:32px;
+  }
+  @media(min-width:640px){.gallery-grid{grid-template-columns:repeat(3,1fr);}}
+  @media(min-width:1000px){.gallery-grid{grid-template-columns:repeat(4,1fr);}}
+  .gallery-item{
+    border-radius:12px;overflow:hidden;aspect-ratio:1/1;
+    border:1px solid var(--line);
+    cursor:pointer;background:var(--cream);
+    position:relative;
+  }
+  .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease;}
+  .gallery-item:hover img{transform:scale(1.07);}
+  .gallery-item:focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
+
+  .lightbox{
+    position:fixed;inset:0;background:rgba(30,18,14,.88);
+    display:none;align-items:center;justify-content:center;z-index:100;
+    padding:24px;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:min(90vw,720px);max-height:82vh;border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.5);}
+  .lightbox-close{
+    position:absolute;top:20px;right:20px;
+    background:#fff;border:none;border-radius:50%;
+    width:44px;height:44px;font-size:1.3rem;cursor:pointer;color:var(--ink);
+  }
+
+  /* ---------- Testimonials ---------- */
+  .testimonials{background:var(--cream);}
+  .testi-grid{display:grid;grid-template-columns:1fr;gap:20px;margin-top:34px;}
+  @media(min-width:700px){.testi-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(min-width:1050px){.testi-grid{grid-template-columns:repeat(3,1fr);}}
+  .testi-card{
+    background:var(--paper);border:1px solid var(--line);
+    border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);
+    display:flex;flex-direction:column;gap:12px;
+  }
+  .stars{color:var(--gold);font-size:1.05rem;letter-spacing:2px;}
+  .testi-card p{color:var(--ink-soft);font-size:.96rem;margin:0;flex:1;}
+  .testi-name{font-weight:700;color:var(--terracotta-dark);font-size:.95rem;}
+
+  /* ---------- Visit / hours / map ---------- */
+  .visit{background:var(--paper);}
+  .visit-grid{display:grid;grid-template-columns:1fr;gap:28px;margin-top:34px;}
+  @media(min-width:900px){.visit-grid{grid-template-columns:1fr 1fr;}}
+  .visit-card{
+    background:var(--cream);border:1px solid var(--line);
+    border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);
+  }
+  .visit-card h3{color:var(--terracotta-dark);font-size:1.2rem;margin-bottom:.5em;}
+  .visit-row{display:flex;gap:12px;align-items:flex-start;margin-bottom:16px;}
+  .visit-row .ic{font-size:1.3rem;flex:0 0 auto;}
+  .visit-row a{text-decoration:none;font-weight:700;color:var(--ink);}
+  .visit-row a:hover{color:var(--terracotta);}
+  #greeting{
+    background:#fff;border:1px dashed var(--terracotta);
+    border-radius:12px;padding:14px 16px;font-size:.92rem;color:var(--ink-soft);
+    margin-top:6px;
+  }
+  .map-frame{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);}
+  .map-frame iframe{width:100%;height:340px;border:0;display:block;}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--maroon);color:#f2ddce;
+    padding:44px 20px 100px;
+    font-size:.92rem;
+  }
+  footer .wrap{
+    display:flex;flex-direction:column;gap:8px;
+    text-align:center;
+  }
+  footer .foot-brand{font-family:"Fredoka",sans-serif;font-size:1.2rem;color:#fff;font-weight:600;}
+  footer a{text-decoration:underline;}
+  footer .fine{opacity:.75;margin-top:14px;font-size:.82rem;}
+
+  /* ---------- Sticky mobile call bar ---------- */
+  .call-bar{
+    position:fixed;left:0;right:0;bottom:0;z-index:60;
+    background:var(--terracotta-dark);
+    display:flex;
+    box-shadow:0 -6px 20px rgba(0,0,0,.25);
+  }
+  .call-bar a{
+    flex:1;text-align:center;padding:16px 10px;
+    color:#fff;text-decoration:none;font-weight:700;font-size:1rem;
+    display:flex;align-items:center;justify-content:center;gap:.5em;
+  }
+  .call-bar a.text-link{background:rgba(0,0,0,.15);}
+  @media(min-width:840px){.call-bar{display:none;}}
+  body{padding-bottom:70px;}
+  @media(min-width:840px){body{padding-bottom:0;}}
+
+  .visually-hidden{
+    position:absolute;width:1px;height:1px;overflow:hidden;
+    clip:rect(0 0 0 0);white-space:nowrap;
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="visually-hidden">Skip to content</a>
+
+<header>
+  <nav class="nav" aria-label="Primary">
+    <a href="#top" class="brand"><span class="paw">🐾</span> Sue's Clip Shop</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+    <a class="btn btn-primary nav-cta" href="tel:+16514321158">Call (651) 432-1158</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+      <span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#visit">Visit</a>
+    <a class="call" href="tel:+16514321158">Call (651) 432-1158</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="rating" aria-label="Rated 4.8 out of 5 stars from 86 reviews">
+          <span aria-hidden="true">⭐ 4.8</span> · 86 Google reviews
+        </span>
+        <h1>Sue's Clip Shop</h1>
+        <p class="tagline">Oakdale's neighborhood dog groomer, grooming local pups since 1989.</p>
+        <p class="lead">Full-service grooming, baths, nail trims and breed-specific cuts from a groomer Oakdale families have trusted for generations — the same steady, gentle hands their parents used.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="tel:+16514321158">📞 Call (651) 432-1158</a>
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=sue's%20clip%20shop&query_place_id=ChIJD2Wyr6vTslIRSccJzP98AiY" target="_blank" rel="noopener">Get Directions</a>
+        </div>
+        <p class="hero-note">🐕 Women-owned and locally run in Oakdale, MN — read what long-time clients say below.</p>
+      </div>
+      <div class="hero-photo">
+        <img src="photos/hero.jpg" alt="A happy, freshly groomed golden doodle-type dog relaxing on a couch, tongue out and smiling" width="900" height="675">
+      </div>
+    </div>
+  </section>
+
+  <div class="trust-strip">
+    <div class="wrap">
+      <span class="item">🏆 Grooming Oakdale since 1989</span>
+      <span class="item">👩‍🦰 Women-owned</span>
+      <span class="item">👨‍👩‍👧 Multi-generation clientele</span>
+      <span class="item">🏳️‍🌈 LGBTQ+ friendly</span>
+      <span class="item">♿ Accessible parking lot</span>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <span class="eyebrow center" style="display:block;text-align:center;">What we do</span>
+      <h2 class="center">Grooming services for every dog</h2>
+      <p class="center" style="max-width:60ch;margin:0 auto;color:var(--ink-soft);">
+        Sue offers hands-on, personal grooming — no assembly line, no rush. Here's what she does most.
+      </p>
+      <div class="services-grid">
+        <div class="service-card">
+          <span class="icon">✂️</span>
+          <h3>Full-Service Grooming</h3>
+          <p>Complete grooms tailored to your dog, from a shaggy trim to a full show-style cut.</p>
+        </div>
+        <div class="service-card">
+          <span class="icon">🛁</span>
+          <h3>Baths</h3>
+          <p>A thorough wash and dry to get your pup clean, fluffy and fresh between full grooms.</p>
+        </div>
+        <div class="service-card">
+          <span class="icon">🐾</span>
+          <h3>Nail Trims</h3>
+          <p>Careful, calm nail clipping for dogs of every size and temperament.</p>
+        </div>
+        <div class="service-card">
+          <span class="icon">🐕</span>
+          <h3>Breed-Specific Cuts</h3>
+          <p>Sharp, breed-appropriate styling — Sue knows the standard cuts and works with what suits your dog.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-photo">
+        <img src="photos/interior-1.jpg" alt="Inside Sue's Clip Shop: a dog waiting near the warm terracotta-colored wall of the grooming shop" loading="lazy" width="900" height="1125">
+      </div>
+      <div>
+        <span class="eyebrow" style="color:var(--gold);">Why Oakdale trusts Sue</span>
+        <h2>A small shop that remembers your dog's name</h2>
+        <p style="color:#fdece0;">Sue's Clip Shop has been part of Oakdale since 1989, and it shows — clients bring the second and third dog of their household back to the same groomer who cut the first one's hair. Here's what keeps people coming back, in their own words.</p>
+        <ul class="about-list">
+          <li><span class="mark">✓</span> "Sue never fails to give each and every one of them awesome haircuts," even with a house full of dogs at once — Marybeth, a client of 15+ years.</li>
+          <li><span class="mark">✓</span> Patient with anxious dogs — several reviewers say their nervous pups "warmed right up" or stopped shaking around Sue.</li>
+          <li><span class="mark">✓</span> Comfortable getting you in on short notice — "she gets me in last minute," per one regular.</li>
+          <li><span class="mark">✓</span> Women-owned, LGBTQ+ friendly, and set up with accessible parking.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="wrap">
+      <span class="eyebrow center" style="display:block;text-align:center;">Fresh cuts</span>
+      <h2 class="center">Some of Sue's regulars</h2>
+      <p class="center" style="max-width:60ch;margin:0 auto;color:var(--ink-soft);">Real dogs, from real Oakdale households. Tap any photo for a closer look.</p>
+      <div class="gallery-grid">
+        <div class="gallery-item" tabindex="0" role="button" aria-label="Open larger photo">
+          <img src="photos/gallery-1.jpg" alt="Small cream-colored curly-haired dog sitting on a bed" loading="lazy" width="600" height="600">
+        </div>
+        <div class="gallery-item" tabindex="0" role="button" aria-label="Open larger photo">
+          <img src="photos/gallery-2.jpg" alt="Golden-brown shaggy dog looking at the camera" loading="lazy" width="600" height="600">
+        </div>
+        <div class="gallery-item" tabindex="0" role="button" aria-label="Open larger photo">
+          <img src="photos/gallery-3.jpg" alt="Small grey and white terrier mix with its tongue out" loading="lazy" width="600" height="600">
+        </div>
+        <div class="gallery-item" tabindex="0" role="button" aria-label="Open larger photo">
+          <img src="photos/gallery-4.jpg" alt="Two shaggy grey and cream dogs resting side by side" loading="lazy" width="600" height="600">
+        </div>
+        <div class="gallery-item" tabindex="0" role="button" aria-label="Open larger photo">
+          <img src="photos/gallery-5.jpg" alt="Black and grey terrier standing alert in a grassy yard" loading="lazy" width="600" height="600">
+        </div>
+        <div class="gallery-item" tabindex="0" role="button" aria-label="Open larger photo">
+          <img src="photos/gallery-6.jpg" alt="Two dogs, one tan and one grey, cuddled together on a couch" loading="lazy" width="600" height="600">
+        </div>
+        <div class="gallery-item" tabindex="0" role="button" aria-label="Open larger photo">
+          <img src="photos/gallery-7.jpg" alt="Fluffy grey and cream small dog sitting on a red rug" loading="lazy" width="600" height="600">
+        </div>
+        <div class="gallery-item" tabindex="0" role="button" aria-label="Open larger photo">
+          <img src="photos/gallery-8.jpg" alt="Close-up of a shaggy golden-blonde dog's face" loading="lazy" width="600" height="600">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="reviews">
+    <div class="wrap">
+      <span class="eyebrow center" style="display:block;text-align:center;">4.8 stars · 86 Google reviews</span>
+      <h2 class="center">What Oakdale says about Sue</h2>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"I love, love, love Sue. I think I've been taking my pups there for over 15 years... Over the past two years, Sue takes all 6 dogs at once and lately we've added 2 more... 8 dogs on the same day...insane! But Sue NEVER fails to give each and every one of them awesome haircuts."</p>
+          <div class="testi-name">Marybeth Reed</div>
+        </div>
+        <div class="testi-card">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"Sue did a fantastic job! She was so sweet and my dog felt very comfortable with her right away... He normally has a lot of anxiety when getting groomed but he seemed way better this time and warmed right up!"</p>
+          <div class="testi-name">Lindsey Woods</div>
+        </div>
+        <div class="testi-card">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"Sue does an outstanding groom on my Scottish Terrier! She has a way about her that makes my Bonnie feel comfortable with lower anxiety than she has displayed in past grooming appointments... she has a sharp breed specific cut."</p>
+          <div class="testi-name">Dianne Smith</div>
+        </div>
+        <div class="testi-card">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"Sue has been cutting all of my dogs hair for about 20 years. She is the best! She is so good with the animals... My little Ozzie LOVES her and so do Gary and I. Thanks for everything, Sue!"</p>
+          <div class="testi-name">Tami Korum</div>
+        </div>
+        <div class="testi-card">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"Our 4-pound dog used to start shaking when we got close to the groomers. We switched to Sue and he has never shown any anxiety, and he jumps right to her arms. Sue is friendly and kind, and obviously loves animals."</p>
+          <div class="testi-name">Shirley Rodgers</div>
+        </div>
+        <div class="testi-card">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"Sue is truly a dog whisperer... Our second dog, Luna, was diabetic and Sue helped us greatly with her care for more than three and a half years. Luna loved Sue and her dogs, and the feeling was mutual."</p>
+          <div class="testi-name">Jay Humsey</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="visit" id="visit">
+    <div class="wrap">
+      <span class="eyebrow center" style="display:block;text-align:center;">Come see us</span>
+      <h2 class="center">Visit Sue's Clip Shop</h2>
+      <div class="visit-grid">
+        <div class="visit-card">
+          <h3>Get in touch</h3>
+          <div class="visit-row">
+            <span class="ic">📍</span>
+            <div>
+              <a href="https://www.google.com/maps/search/?api=1&query=sue's%20clip%20shop&query_place_id=ChIJD2Wyr6vTslIRSccJzP98AiY" target="_blank" rel="noopener">1967 Geneva Ave N, Oakdale, MN 55128</a>
+              <p style="margin:.2em 0 0;font-weight:400;color:var(--ink-soft);">Wheelchair accessible parking lot on site.</p>
+            </div>
+          </div>
+          <div class="visit-row">
+            <span class="ic">📞</span>
+            <div>
+              <a href="tel:+16514321158">(651) 432-1158</a>
+              <p style="margin:.2em 0 0;font-weight:400;color:var(--ink-soft);">Call to book or ask a question.</p>
+            </div>
+          </div>
+          <div class="visit-row">
+            <span class="ic">💬</span>
+            <div>
+              <a href="sms:+16514321158">Text (651) 432-1158</a>
+              <p style="margin:.2em 0 0;font-weight:400;color:var(--ink-soft);">Prefer texting? Send Sue a message.</p>
+            </div>
+          </div>
+          <div class="visit-row">
+            <span class="ic">🕒</span>
+            <div>
+              <span style="font-weight:700;">Hours</span>
+              <p style="margin:.2em 0 0;font-weight:400;color:var(--ink-soft);">Sue's hours aren't published online — give the shop a quick call or text to check today's availability and grab an appointment.</p>
+              <div id="greeting"></div>
+            </div>
+          </div>
+          <a class="btn btn-outline-dark" href="https://www.google.com/maps/search/?api=1&query=sue's%20clip%20shop&query_place_id=ChIJD2Wyr6vTslIRSccJzP98AiY" target="_blank" rel="noopener" style="margin-top:6px;">Get Directions →</a>
+        </div>
+        <div class="map-frame">
+          <iframe
+            src="https://www.google.com/maps?q=44.9771222,-92.9841638&output=embed"
+            title="Map showing the location of Sue's Clip Shop in Oakdale, MN"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">🐾 Sue's Clip Shop</div>
+    <div>1967 Geneva Ave N, Oakdale, MN 55128</div>
+    <div><a href="tel:+16514321158">(651) 432-1158</a></div>
+    <div class="fine">Website demo built by [OWNER PLACEHOLDER]</div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged photo">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close photo">✕</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<!-- STICKY MOBILE CALL BAR -->
+<div class="call-bar" aria-label="Quick contact">
+  <a href="tel:+16514321158">📞 Call Now</a>
+  <a class="text-link" href="sms:+16514321158">💬 Text</a>
+</div>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+
+<script>
+  // Mobile nav toggle
+  (function(){
+    var toggle = document.getElementById('navToggle');
+    var menu = document.getElementById('mobileMenu');
+    toggle.addEventListener('click', function(){
+      var isOpen = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+
+  // Lightbox gallery
+  (function(){
+    var items = document.querySelectorAll('.gallery-item');
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightboxImg');
+    var closeBtn = document.getElementById('lightboxClose');
+
+    function openLightbox(img){
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('open');
+      closeBtn.focus();
+    }
+    function closeLightbox(){
+      lightbox.classList.remove('open');
+      lightboxImg.src = '';
+    }
+    items.forEach(function(item){
+      var img = item.querySelector('img');
+      item.addEventListener('click', function(){ openLightbox(img); });
+      item.addEventListener('keydown', function(e){
+        if(e.key === 'Enter' || e.key === ' '){
+          e.preventDefault();
+          openLightbox(img);
+        }
+      });
+    });
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function(e){
+      if(e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closeLightbox();
+    });
+  })();
+
+  // Time-of-day greeting (no fabricated hours — business.json has none on file,
+  // so instead of a fake Open/Closed badge we give a friendly, honest local-time nudge)
+  (function(){
+    var el = document.getElementById('greeting');
+    var hour = new Date().getHours();
+    var greeting = 'Good evening';
+    if(hour < 12) greeting = 'Good morning';
+    else if(hour < 18) greeting = 'Good afternoon';
+    el.textContent = greeting + '! Sue\'s hours can vary day to day — the fastest way to know if she can fit your pup in is a quick call or text.';
+  })();
+</script>
+
+</body>
+</html>

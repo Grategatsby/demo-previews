@@ -1,0 +1,984 @@
+<!--
+  Lexi Nails — demo site
+  Palette source: extracted from the salon's own nail-art photos (no storefront/interior
+  photo was available in the lead's photo set — all 14 photos are close-up customer nail
+  and pedicure shots). Palette drawn from:
+    - photos/hero-burgundy-gold.jpg (photo-01): deep wine/burgundy + gold leaf accents
+    - photos/gallery-teal-glitter.jpg (photo-02): emerald/teal secondary accent
+    - photos/gallery-nude-ombre.jpg (photo-12) + soft pink tones across the set: blush/cream base
+  Deep wine (#5C1A2E), warm gold (#C9A24B), blush cream background (#FBF3EE), teal accent (#1F6B5C).
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Lexi Nails | Nail Salon in Tamarack Village, Woodbury MN</title>
+<meta name="description" content="Lexi Nails — manicures, pedicures, gel, dip powder, acrylics and nail art in Tamarack Village, Woodbury MN. Walk-ins welcome.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --wine: #5C1A2E;
+    --wine-dark: #430F20;
+    --gold: #C9A24B;
+    --gold-light: #E4CD8F;
+    --teal: #1F6B5C;
+    --cream: #FBF3EE;
+    --cream-2: #F5E8E0;
+    --ink: #2B2020;
+    --ink-soft: #5a4a48;
+    --white: #FFFFFF;
+    --shadow: 0 10px 30px rgba(92, 26, 46, 0.14);
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .display {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 600;
+    color: var(--wine-dark);
+    margin: 0 0 0.4em;
+  }
+
+  a { color: inherit; }
+
+  img { max-width: 100%; display: block; }
+
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px solid var(--teal);
+    outline-offset: 3px;
+  }
+
+  /* ---------- Nav ---------- */
+  header.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(251, 243, 238, 0.96);
+    backdrop-filter: saturate(180%) blur(6px);
+    border-bottom: 1px solid var(--cream-2);
+  }
+
+  .nav-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+  }
+
+  .brand {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--wine-dark);
+    letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+
+  .brand span { color: var(--gold); }
+
+  nav.main-nav {
+    display: none;
+    gap: 28px;
+  }
+
+  nav.main-nav a {
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+
+  nav.main-nav a:hover { color: var(--wine); }
+
+  .nav-call {
+    display: none;
+    background: var(--wine);
+    color: var(--white);
+    padding: 9px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .nav-call:hover { background: var(--wine-dark); }
+
+  @media (min-width: 800px) {
+    nav.main-nav { display: flex; }
+    .nav-call { display: inline-block; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    color: var(--white);
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(160deg, rgba(67,15,32,0.88) 10%, rgba(92,26,46,0.72) 55%, rgba(31,107,92,0.55) 100%), url('photos/hero-burgundy-gold.jpg');
+    background-size: cover;
+    background-position: center 25%;
+  }
+
+  .hero-inner {
+    position: relative;
+    padding: 90px 20px 70px;
+    max-width: 700px;
+  }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    margin-bottom: 14px;
+  }
+
+  .hero h1 {
+    color: var(--white);
+    font-size: 2.6rem;
+    line-height: 1.08;
+    margin-bottom: 14px;
+  }
+
+  .hero p.tagline {
+    font-size: 1.08rem;
+    color: #f1e3da;
+    max-width: 46ch;
+    margin-bottom: 22px;
+  }
+
+  .stars-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 26px;
+    flex-wrap: wrap;
+  }
+
+  .stars {
+    color: var(--gold-light);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+  }
+
+  .stars-text {
+    font-size: 0.95rem;
+    color: #f1e3da;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 26px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.98rem;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+
+  .btn:hover { transform: translateY(-1px); }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--wine-dark);
+  }
+
+  .btn-primary:hover { background: var(--gold-light); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    border-color: rgba(255,255,255,0.7);
+  }
+
+  .btn-outline:hover { background: rgba(255,255,255,0.12); }
+
+  .open-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #7bd88f;
+    flex-shrink: 0;
+  }
+
+  .dot.closed { background: #e5847a; }
+
+  /* ---------- Section shells ---------- */
+  section { padding: 64px 0; }
+
+  .section-head {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 42px;
+  }
+
+  .section-head .eyebrow { color: var(--wine); text-align: center; }
+  .section-head h2 { font-size: 2.1rem; }
+  .section-head p { color: var(--ink-soft); font-size: 1.02rem; }
+
+  .band-cream { background: var(--cream); }
+  .band-white { background: var(--white); }
+  .band-wine {
+    background: linear-gradient(135deg, var(--wine-dark), var(--wine));
+    color: var(--white);
+  }
+
+  /* ---------- Services ---------- */
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  @media (min-width: 640px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (min-width: 960px) {
+    .services-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--cream-2);
+    border-radius: 16px;
+    padding: 28px 24px;
+    box-shadow: var(--shadow);
+  }
+
+  .service-card .icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--cream-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--wine);
+    font-size: 1.3rem;
+    margin-bottom: 14px;
+  }
+
+  .service-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+
+  .service-card p {
+    color: var(--ink-soft);
+    font-size: 0.96rem;
+    margin: 0;
+  }
+
+  .services-note {
+    text-align: center;
+    margin-top: 30px;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+  }
+
+  /* ---------- About ---------- */
+  .about-wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 34px;
+    align-items: center;
+  }
+
+  @media (min-width: 860px) {
+    .about-wrap { grid-template-columns: 1fr 1fr; }
+  }
+
+  .about-photo img {
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+  }
+
+  .about-points {
+    list-style: none;
+    margin: 22px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 16px;
+  }
+
+  .about-points li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .about-points .mark {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--teal);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+
+  /* ---------- Gallery ---------- */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  @media (min-width: 640px) {
+    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (min-width: 960px) {
+    .gallery-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .gallery-item {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    box-shadow: var(--shadow);
+    background: var(--cream-2);
+    cursor: pointer;
+    border: none;
+    padding: 0;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+  }
+
+  .gallery-item:hover img { transform: scale(1.06); }
+
+  .gallery-item .cap {
+    position: absolute;
+    inset: auto 0 0 0;
+    background: linear-gradient(0deg, rgba(67,15,32,0.85), rgba(67,15,32,0));
+    color: var(--white);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 20px 10px 10px;
+    text-align: left;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .gallery-item:hover .cap, .gallery-item:focus-visible .cap { opacity: 1; }
+
+  /* Lightbox */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(30, 10, 18, 0.92);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    padding: 24px;
+  }
+
+  .lightbox.open { display: flex; }
+
+  .lightbox img {
+    max-width: min(90vw, 900px);
+    max-height: 82vh;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 22px;
+    right: 26px;
+    background: rgba(255,255,255,0.12);
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.4);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.12);
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.4);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+
+  .lightbox-nav.prev { left: 18px; }
+  .lightbox-nav.next { right: 18px; }
+
+  /* ---------- Testimonials ---------- */
+  .testi-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  @media (min-width: 720px) {
+    .testi-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (min-width: 1080px) {
+    .testi-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .testi-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 16px;
+    padding: 26px 24px;
+  }
+
+  .testi-card .stars { color: var(--gold-light); font-size: 1rem; margin-bottom: 10px; display: block; }
+
+  .testi-card p.quote {
+    font-size: 0.98rem;
+    color: #f4e9e2;
+    margin: 0 0 16px;
+  }
+
+  .testi-card .who {
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: var(--gold-light);
+  }
+
+  /* ---------- Hours & Contact ---------- */
+  .info-wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  @media (min-width: 900px) {
+    .info-wrap { grid-template-columns: 1fr 1fr; }
+  }
+
+  .info-card {
+    background: var(--white);
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--cream-2);
+  }
+
+  table.hours {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+  }
+
+  table.hours td {
+    padding: 9px 0;
+    border-bottom: 1px solid var(--cream-2);
+    font-size: 0.96rem;
+  }
+
+  table.hours td:last-child { text-align: right; color: var(--ink-soft); }
+
+  table.hours tr.today td { font-weight: 700; color: var(--wine); }
+
+  .contact-list {
+    list-style: none;
+    margin: 18px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 14px;
+  }
+
+  .contact-list a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .contact-list a:hover { color: var(--wine); }
+
+  .contact-list .ic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--cream-2);
+    color: var(--wine);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .map-embed {
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--cream-2);
+    height: 320px;
+  }
+
+  .map-embed iframe { width: 100%; height: 100%; border: 0; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--wine-dark);
+    color: #efd9d0;
+    padding: 40px 0 100px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  footer .brand { color: var(--white); }
+  footer p { margin: 6px 0; }
+  footer .fine { opacity: 0.7; font-size: 0.8rem; margin-top: 18px; }
+
+  /* ---------- Sticky mobile call bar ---------- */
+  .sticky-call {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--wine-dark);
+    display: flex;
+    box-shadow: 0 -6px 20px rgba(0,0,0,0.25);
+  }
+
+  .sticky-call a {
+    flex: 1;
+    text-align: center;
+    padding: 14px 10px;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .sticky-call a.call { background: var(--gold); color: var(--wine-dark); }
+  .sticky-call a.text { background: var(--teal); }
+  .sticky-call a.dir { background: var(--wine); }
+
+  @media (min-width: 800px) {
+    .sticky-call { display: none; }
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    background: var(--wine);
+    color: var(--white);
+    padding: 10px 16px;
+    border-radius: 8px;
+    z-index: 300;
+  }
+
+  .skip-link:focus {
+    left: 20px;
+    top: 12px;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+</style>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <div class="nav-row container">
+    <a href="#" class="brand">Lexi <span>Nails</span></a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit Us</a>
+    </nav>
+    <a class="nav-call" href="tel:+16517389116">Call (651) 738-9116</a>
+  </div>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg" role="img" aria-label="Elegant burgundy and gold nail art by Lexi Nails"></div>
+    <div class="hero-inner">
+      <p class="eyebrow">Tamarack Village &middot; Woodbury, MN</p>
+      <h1>Lexi Nails</h1>
+      <p class="tagline">A neighborhood nail salon doing gel and acrylic manicures, pedicures, and nail art for Woodbury for years. Walk-ins welcome.</p>
+      <div class="stars-row">
+        <span class="stars" aria-hidden="true">★★★★☆</span>
+        <span class="stars-text">4.1 out of 5 &middot; 139 Google reviews</span>
+      </div>
+      <div class="stars-row">
+        <span class="open-badge" id="openBadge"><span class="dot" id="openDot"></span><span id="openText">Checking hours…</span></span>
+      </div>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="tel:+16517389116">Call to Book</a>
+        <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Lexi%20Nails&query_place_id=ChIJ7w_kLSDY94cRKgCmir7eboI" target="_blank" rel="noopener">Get Directions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="band-cream">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">What We Do</p>
+        <h2>Nail Services</h2>
+        <p>From a quick polish change to a full set with hand-painted art, our techs take their time and get the shape right.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="icon" aria-hidden="true">💅</div>
+          <h3>Manicures</h3>
+          <p>Classic and spa manicures with shaping, cuticle care, and your choice of polish.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon" aria-hidden="true">🦶</div>
+          <h3>Pedicures</h3>
+          <p>Relaxing soak-and-massage pedicures, including luxury options — a reviewer favorite.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon" aria-hidden="true">✨</div>
+          <h3>Gel Polish</h3>
+          <p>Long-lasting, chip-resistant gel color and gel polish removal.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon" aria-hidden="true">🌸</div>
+          <h3>Dip Powder</h3>
+          <p>Durable dip powder manicures for strength and lasting color.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon" aria-hidden="true">💎</div>
+          <h3>Acrylics &amp; Full Sets</h3>
+          <p>Acrylic full sets and fills in the length and shape you want — almond, coffin, stiletto, and more.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon" aria-hidden="true">🎨</div>
+          <h3>Nail Art</h3>
+          <p>Hand-painted designs, foil, glitter, and custom nail art — see real examples in our gallery below.</p>
+        </div>
+      </div>
+      <p class="services-note">Walk-ins accepted. Call ahead for the shortest wait, especially on weekends.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="band-white">
+    <div class="container about-wrap">
+      <div class="about-photo">
+        <img src="photos/gallery-nude-ombre.jpg" alt="Soft nude ombre manicure by Lexi Nails" loading="lazy">
+      </div>
+      <div>
+        <p class="eyebrow">Why Woodbury Comes Back</p>
+        <h2>Careful work, friendly faces</h2>
+        <p style="color:var(--ink-soft); font-size:1.02rem;">We're a Tamarack Village staple, and our regulars keep coming back for the same reasons they tell everyone else about:</p>
+        <ul class="about-points">
+          <li><span class="mark">✓</span><span>"I've been going here for almost 5 years and have never been disappointed. Usually busy which reflects their work." — a longtime regular</span></li>
+          <li><span class="mark">✓</span><span>Walk-ins accepted, and the team multitasks a full house without rushing your service.</span></li>
+          <li><span class="mark">✓</span><span>A wheelchair-accessible entrance, parking, and restroom, so everyone can get in comfortably.</span></li>
+          <li><span class="mark">✓</span><span>Reviewers single out specific techs by name — Holly, Trish, and Helen — for pedicures and detailed nail art.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="band-cream">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Our Work</p>
+        <h2>Nail Art Gallery</h2>
+        <p>Real sets from real Lexi Nails clients. Tap any photo for a closer look.</p>
+      </div>
+      <div class="gallery-grid" id="galleryGrid">
+        <button class="gallery-item" data-idx="0"><img src="photos/hero-burgundy-gold.jpg" alt="Deep burgundy almond nails with gold foil accents" loading="lazy"><span class="cap">Burgundy &amp; gold foil</span></button>
+        <button class="gallery-item" data-idx="1"><img src="photos/gallery-teal-glitter.jpg" alt="Emerald teal glitter nails with hand-painted white feather design" loading="lazy"><span class="cap">Teal glitter feather art</span></button>
+        <button class="gallery-item" data-idx="2"><img src="photos/gallery-pink-floral.jpg" alt="Hot pink nails with black and white floral nail art" loading="lazy"><span class="cap">Hot pink floral art</span></button>
+        <button class="gallery-item" data-idx="3"><img src="photos/gallery-purple-teal-abstract.jpg" alt="Pastel purple and teal abstract French tip nail art" loading="lazy"><span class="cap">Pastel abstract tips</span></button>
+        <button class="gallery-item" data-idx="4"><img src="photos/gallery-pink-french-tip.jpg" alt="Hot pink French tip nails with black and white striped detail" loading="lazy"><span class="cap">Pink French tip detail</span></button>
+        <button class="gallery-item" data-idx="5"><img src="photos/gallery-shimmer-abstract.jpg" alt="Shimmering pink nails with blue and gold abstract line art" loading="lazy"><span class="cap">Shimmer line art</span></button>
+        <button class="gallery-item" data-idx="6"><img src="photos/gallery-nude-ombre.jpg" alt="Soft nude ombre manicure" loading="lazy"><span class="cap">Nude ombre manicure</span></button>
+        <button class="gallery-item" data-idx="7"><img src="photos/gallery-pedicure-floral.jpg" alt="Magenta pedicure with hand-painted white floral accent toes" loading="lazy"><span class="cap">Magenta floral pedicure</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Nail art image viewer">
+    <button class="lightbox-close" id="lbClose" aria-label="Close image viewer">✕</button>
+    <button class="lightbox-nav prev" id="lbPrev" aria-label="Previous image">‹</button>
+    <img id="lbImg" src="" alt="">
+    <button class="lightbox-nav next" id="lbNext" aria-label="Next image">›</button>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <section id="reviews" class="band-wine">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" style="color:var(--gold-light);">Google Reviews</p>
+        <h2 style="color:var(--white);">4.1 ★ from 139 reviews</h2>
+        <p style="color:#f1e3da;">A few of the kind words our clients have left us.</p>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p class="quote">"I've been going here for almost 5 years and have never been disappointed. Usually busy which reflects their work. Worth the wait. Love my full sets when I choose to be girly and the pedicures are so relaxing."</p>
+          <p class="who">— Carissa B.</p>
+        </div>
+        <div class="testi-card">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p class="quote">"I called to get in last minute and Helen was able to accommodate me for the best gel pedicure I have ever had. I manage a salon in Woodbury and visit other businesses to relax... The salon was clean, quiet, didn't have a strong acrylic odor. Great experience."</p>
+          <p class="who">— Molly A.</p>
+        </div>
+        <div class="testi-card">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p class="quote">"Trish just did a manicure and pedicure for me and did an excellent job! I rarely get my nails done, so it was a nice treat. I'll definitely come back here next time. The entire staff is super friendly and makes you feel like a long time friend."</p>
+          <p class="who">— Sarah W.H.</p>
+        </div>
+        <div class="testi-card">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p class="quote">"I LOVE this place! These ladies are so welcoming and friendly. Best experience and pedicure I've ever had! Thanks JennyG for taking me with you!"</p>
+          <p class="who">— Sara J.</p>
+        </div>
+        <div class="testi-card">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p class="quote">"Holly did an amazing job on my nails! Seriously the best I have had done! She was both meticulous and fast which is rare. I will be back for sure!"</p>
+          <p class="who">— Melissa D.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURS + CONTACT -->
+  <section id="visit" class="band-cream">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Visit Us</p>
+        <h2>Hours &amp; Contact</h2>
+      </div>
+      <div class="info-wrap">
+        <div class="info-card">
+          <h3>Hours</h3>
+          <table class="hours" id="hoursTable">
+            <tr data-day="Monday"><td>Monday</td><td>10 AM – 8 PM</td></tr>
+            <tr data-day="Tuesday"><td>Tuesday</td><td>10 AM – 8 PM</td></tr>
+            <tr data-day="Wednesday"><td>Wednesday</td><td>10 AM – 8 PM</td></tr>
+            <tr data-day="Thursday"><td>Thursday</td><td>10 AM – 8 PM</td></tr>
+            <tr data-day="Friday"><td>Friday</td><td>10 AM – 8 PM</td></tr>
+            <tr data-day="Saturday"><td>Saturday</td><td>9 AM – 6 PM</td></tr>
+            <tr data-day="Sunday"><td>Sunday</td><td>11 AM – 5 PM</td></tr>
+          </table>
+          <ul class="contact-list">
+            <li><a href="tel:+16517389116"><span class="ic" aria-hidden="true">📞</span>(651) 738-9116</a></li>
+            <li><a href="sms:+16517389116"><span class="ic" aria-hidden="true">💬</span>Text us</a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Lexi%20Nails&query_place_id=ChIJ7w_kLSDY94cRKgCmir7eboI" target="_blank" rel="noopener"><span class="ic" aria-hidden="true">📍</span>8362 Tamarack Village #115, Woodbury, MN 55125</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="visually-hidden">Map</h3>
+          <div class="map-embed">
+            <iframe src="https://www.google.com/maps?q=44.9429352,-92.9353757&output=embed" loading="lazy" title="Map showing Lexi Nails location in Tamarack Village, Woodbury MN" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p class="brand" style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:700;">Lexi Nails</p>
+    <p>8362 Tamarack Village #115, Woodbury, MN 55125</p>
+    <p><a href="tel:+16517389116" style="color:var(--gold-light); text-decoration:none;">(651) 738-9116</a></p>
+    <p class="fine">Website demo built by [OWNER PLACEHOLDER]</p>
+  </div>
+</footer>
+
+<!-- Sticky mobile call bar -->
+<div class="sticky-call">
+  <a class="call" href="tel:+16517389116">📞 Call</a>
+  <a class="text" href="sms:+16517389116">💬 Text</a>
+  <a class="dir" href="https://www.google.com/maps/search/?api=1&query=Lexi%20Nails&query_place_id=ChIJ7w_kLSDY94cRKgCmir7eboI" target="_blank" rel="noopener">📍 Directions</a>
+</div>
+
+<script>
+  (function () {
+    // ---- Open/Closed badge ----
+    var hours = {
+      0: [11 * 60, 17 * 60],       // Sunday
+      1: [10 * 60, 20 * 60],       // Monday
+      2: [10 * 60, 20 * 60],       // Tuesday
+      3: [10 * 60, 20 * 60],       // Wednesday
+      4: [10 * 60, 20 * 60],       // Thursday
+      5: [10 * 60, 20 * 60],       // Friday
+      6: [9 * 60, 18 * 60]         // Saturday
+    };
+    var dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+    function updateOpenBadge() {
+      var now = new Date();
+      var day = now.getDay();
+      var mins = now.getHours() * 60 + now.getMinutes();
+      var range = hours[day];
+      var isOpen = mins >= range[0] && mins < range[1];
+
+      var dot = document.getElementById('openDot');
+      var text = document.getElementById('openText');
+
+      if (isOpen) {
+        dot.classList.remove('closed');
+        var closeH = Math.floor(range[1] / 60);
+        var closeM = range[1] % 60;
+        var closeLabel = ((closeH % 12) || 12) + (closeM ? ':' + (closeM < 10 ? '0' : '') + closeM : '') + (closeH >= 12 ? ' PM' : ' AM');
+        text.textContent = 'Open now · closes ' + closeLabel;
+      } else {
+        dot.classList.add('closed');
+        var nextDay = day, tries = 0, nextRange = null;
+        while (tries < 8) {
+          if (tries > 0 || mins >= range[1]) { nextDay = (nextDay + 1) % 7; }
+          nextRange = hours[nextDay];
+          if (tries === 0 && mins < range[0]) { nextDay = day; nextRange = range; break; }
+          tries++;
+          if (nextRange) break;
+        }
+        var openH = Math.floor(nextRange[0] / 60);
+        var openM = nextRange[0] % 60;
+        var openLabel = ((openH % 12) || 12) + (openM ? ':' + (openM < 10 ? '0' : '') + openM : '') + (openH >= 12 ? ' PM' : ' AM');
+        var dayLabel = nextDay === day ? 'today' : (nextDay === (day + 1) % 7 ? 'tomorrow' : dayNames[nextDay]);
+        text.textContent = 'Closed · opens ' + openLabel + ' ' + dayLabel;
+      }
+
+      // Highlight today's row in the hours table
+      var rows = document.querySelectorAll('#hoursTable tr');
+      rows.forEach(function (row) {
+        row.classList.toggle('today', row.getAttribute('data-day') === dayNames[day]);
+      });
+    }
+    updateOpenBadge();
+    setInterval(updateOpenBadge, 60000);
+
+    // ---- Lightbox gallery ----
+    var images = Array.prototype.map.call(document.querySelectorAll('#galleryGrid img'), function (img) {
+      return { src: img.getAttribute('src'), alt: img.getAttribute('alt') };
+    });
+    var lightbox = document.getElementById('lightbox');
+    var lbImg = document.getElementById('lbImg');
+    var currentIdx = 0;
+
+    function openLightbox(idx) {
+      currentIdx = idx;
+      lbImg.src = images[idx].src;
+      lbImg.alt = images[idx].alt;
+      lightbox.classList.add('open');
+      document.getElementById('lbClose').focus();
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+    }
+    function showRelative(delta) {
+      currentIdx = (currentIdx + delta + images.length) % images.length;
+      lbImg.src = images[currentIdx].src;
+      lbImg.alt = images[currentIdx].alt;
+    }
+
+    document.querySelectorAll('.gallery-item').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        openLightbox(parseInt(btn.getAttribute('data-idx'), 10));
+      });
+    });
+    document.getElementById('lbClose').addEventListener('click', closeLightbox);
+    document.getElementById('lbPrev').addEventListener('click', function () { showRelative(-1); });
+    document.getElementById('lbNext').addEventListener('click', function () { showRelative(1); });
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showRelative(-1);
+      if (e.key === 'ArrowRight') showRelative(1);
+    });
+  })();
+</script>
