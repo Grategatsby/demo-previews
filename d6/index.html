@@ -1,0 +1,880 @@
+<!--
+  Pearson Handyman & Painting — demo site
+
+  PALETTE SOURCE: no usable branding photos exist for this lead. The Apify Google Maps pull
+  returned exactly one image for this listing, and it is a Street View panorama of the strip
+  mall at the address showing "Roscher Dental Group" and "Winners Corner" signage — NOT Pearson
+  Handyman & Painting's own storefront, truck, or work. It was not used anywhere on this page
+  (see leads/pearson-handyman-painting/photos/photo-01.jpg). Per the build brief, with no real
+  branding to extract from, this site is built typography-and-color-forward: an earthy,
+  "tradesman toolbox" palette — warm charcoal-brown (weathered wood / work boots), paint-can
+  rust orange (the primary accent — literally the color of primer and rust-preventative paint),
+  and mustard gold (varnish / trim) on a warm cream background. All iconography (paint roller,
+  hammer, trowel, wrench, house) is hand-drawn inline SVG — no stock photography, no external
+  images.
+    --ink       #2B2420  (warm charcoal-brown — body text, dark sections)
+    --ink-dark  #1C1712  (near-black brown — header/footer, deepest sections)
+    --rust      #C1541F  (paint-can rust orange — primary CTAs, accent)
+    --rust-dark #A2431A  (rust hover)
+    --gold      #D9A441  (mustard/varnish gold — secondary accent, review stars)
+    --cream     #FBF3E7  (warm cream — page background)
+    --parchment #F3E9D8  (card/section background)
+    --line      #E4D5BE  (borders)
+    --gray      #6B5F52  (warm gray-brown — secondary text)
+
+  DATA NOTES:
+  1. Google lists no hours for this business (business.json "hours": null). No hours table,
+     "Open now / Closed" badge, or openingHoursSpecification is shown anywhere on this page —
+     showing one would mean inventing data. The Contact section instead highlights how fast the
+     business responds to calls/quotes, which IS backed by multiple reviews.
+  2. No history/founding-year facts were verified in research, so none are claimed (no
+     foundingDate in JSON-LD, no "since [year]" copy).
+  3. One review (Michael Fox) mentions "Apex" showing up rather than Pearson's crew — likely a
+     mismatched/misattributed review on the Google listing. It is excluded from testimonials and
+     from any on-page claim to keep every fact traceable to this specific business.
+  4. Services are the four generic trade categories supported by the listing's category
+     (Handyman/Handywoman/Handyperson) and review content: painting, drywall/plaster, carpentry/
+     small renovations, and general home repairs. No prices, licensing, or insurance claims are
+     made anywhere — none were verified.
+  5. No gallery photos exist, so the usual photo gallery section is replaced with a "kind of jobs
+     we handle" tile grid, each tile naming a real project type pulled straight from customer
+     reviews (shed painting, attic fan repair, window trim, doorway repair, kitchen plaster,
+     bathroom remodel) — real information, presented visually without fabricated imagery.
+-->
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pearson Handyman & Painting | Handyman &amp; Painting Contractor in Newport, MN</title>
+<meta name="description" content="Pearson Handyman & Painting — 4.7 stars, 18 reviews. Interior & exterior painting, drywall repair, carpentry, and home repairs in Newport, MN.">
+<!-- Monogram favicon: charcoal-brown rounded square + rust "P" mark, same shape used as the header logo mark (see #monogram symbol below) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231C1712'/%3E%3Cpath d='M10 24V8h6a4 4 0 0 1 0 8h-6' stroke='%23C1541F' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- LocalBusiness JSON-LD. Every field copied verbatim from business.json. "image" and
+     "openingHoursSpecification" are deliberately omitted — no usable photo and no published
+     hours exist for this listing (see data notes above). -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Pearson Handyman & Painting",
+  "description": "Pearson Handyman & Painting is a handyman and painting contractor in Newport, Minnesota, providing interior and exterior painting, drywall and plaster repair, carpentry, and general home repairs.",
+  "telephone": "+16515648635",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1590 Hastings Ave",
+    "addressLocality": "Newport",
+    "addressRegion": "MN",
+    "postalCode": "55055"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 44.873027,
+    "longitude": -92.99914
+  },
+  "url": "https://grategatsby.github.io/demo-previews/d6/",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.7",
+    "reviewCount": "18"
+  }
+}
+</script>
+
+<!-- FAQPage JSON-LD — mirrors the visible FAQ section below. Every answer is data-backed from
+     business.json (category, reviews); no invented prices, hours, or claims. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What services does Pearson Handyman & Painting offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pearson Handyman & Painting handles interior and exterior painting, drywall and plaster repair, carpentry and small renovations, and general home repairs. Customer reviews describe work ranging from painting a shed and window frames to plastering a kitchen and remodeling a bathroom."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Pearson Handyman & Painting take on small jobs, or only big projects?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both. Reviewers mention quick fixes like repairing a doorway or an attic fan alongside larger jobs like a full bathroom remodel or painting an entire house interior, so no job is described as too small or too big to call about."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I get a quote from Pearson Handyman & Painting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Call or text (651) 564-8635 to describe the job. Reviewers consistently mention a fast, clear response with the price laid out up front, followed by scheduling that works around the homeowner's timeline."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What area does Pearson Handyman & Painting serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pearson Handyman & Painting is based in Newport, Minnesota and takes on jobs in Newport and the surrounding area. Call or text (651) 564-8635 to confirm availability at a specific address before scheduling."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Pearson Handyman & Painting help pick paint colors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. At least one reviewer had the crew help pick paint colors and pick up materials for a kitchen plaster-and-paint job, in addition to doing the painting and plastering work itself."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --ink:#2B2420;
+    --ink-dark:#1C1712;
+    --rust:#C1541F;
+    --rust-dark:#A2431A;
+    --gold:#D9A441;
+    --gold-dark:#B9862E;
+    --cream:#FBF3E7;
+    --parchment:#F3E9D8;
+    --line:#E4D5BE;
+    --gray:#6B5F52;
+    --star:#D9A441;
+    --radius:12px;
+    --maxw:1180px;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.brand,.stat-num{
+    font-family:"Outfit",system-ui,sans-serif;
+    letter-spacing:.01em;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  svg{display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+  section{padding:68px 0;}
+  .section-label{
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    font-size:.78rem;
+    font-weight:700;
+    color:var(--rust-dark);
+    margin:0 0 10px;
+    display:flex;align-items:center;gap:8px;
+  }
+  h2{font-size:clamp(1.6rem,4vw,2.3rem);margin:0 0 8px;color:var(--ink-dark);}
+  .section-intro{color:var(--gray);max-width:620px;margin:0 0 34px;font-size:1.02rem;}
+
+  a:focus-visible,button:focus-visible{
+    outline:3px solid var(--rust);
+    outline-offset:2px;
+  }
+
+  /* ---------- Icons ---------- */
+  .ic{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--ink-dark);
+    border-bottom:3px solid var(--rust);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px 20px;max-width:var(--maxw);margin:0 auto;gap:16px;
+  }
+  .brand{color:#fff;font-size:1.12rem;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:10px;line-height:1.1;}
+  .brand .logo-mark{width:28px;height:28px;flex:0 0 auto;}
+  .brand-text{display:flex;flex-direction:column;}
+  .brand-text span{font-size:.6rem;color:var(--gold);font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-family:system-ui,sans-serif;}
+  nav.links{display:flex;gap:26px;}
+  nav.links a{
+    color:#f3e9dc;text-decoration:none;font-size:.94rem;font-weight:600;
+    padding:6px 2px;border-bottom:2px solid transparent;
+  }
+  nav.links a:hover{border-bottom-color:var(--rust);}
+  .nav-call{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--rust);color:#fff;text-decoration:none;
+    padding:9px 16px;border-radius:999px;font-weight:700;font-size:.9rem;
+    white-space:nowrap;
+  }
+  .nav-call:hover{background:var(--rust-dark);}
+  .menu-btn{display:none;background:none;border:1px solid var(--gold);color:#fff;border-radius:8px;padding:8px 10px;font-size:1.1rem;cursor:pointer;}
+
+  @media (max-width:860px){
+    nav.links{
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--ink-dark);flex-direction:column;gap:0;
+      max-height:0;overflow:hidden;transition:max-height .25s ease;
+    }
+    nav.links.open{max-height:400px;padding:6px 0;}
+    nav.links a{padding:12px 20px;border-bottom:1px solid #3a2e24;}
+    .menu-btn{display:inline-block;}
+    .nav-call{display:none;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(circle at 88% 10%, rgba(193,84,31,.22), transparent 50%),
+      radial-gradient(circle at 6% 90%, rgba(217,164,65,.16), transparent 55%),
+      linear-gradient(160deg,var(--ink-dark) 0%,#241d17 65%,#150f0a 100%);
+    color:#fff;
+    padding:80px 0 64px;
+    overflow:hidden;
+  }
+  .hero-bg-icons{position:absolute;inset:0;pointer-events:none;opacity:.14;}
+  .hero-bg-icons svg{position:absolute;stroke:var(--gold);}
+  .hbi-1{width:130px;height:130px;top:-24px;right:5%;}
+  .hbi-2{width:80px;height:80px;bottom:8%;right:24%;stroke:var(--rust);}
+  .hbi-3{width:56px;height:56px;top:40%;right:1%;}
+  .hero-inner{position:relative;max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+  .badge-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-bottom:20px;}
+  .rating-pill{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.32);
+    padding:8px 16px;border-radius:999px;font-size:.94rem;font-weight:600;
+  }
+  .stars{color:var(--star);letter-spacing:1px;font-size:1rem;}
+  .hero h1{
+    font-size:clamp(2.2rem,5.6vw,3.6rem);
+    margin:0 0 16px;color:#fff;
+    text-shadow:0 2px 10px rgba(0,0,0,.2);
+    max-width:800px;
+  }
+  .hero h1 .accent{color:var(--rust);}
+  .hero .tag{
+    font-size:clamp(1.05rem,2.3vw,1.28rem);
+    color:#ecdfcd;
+    max-width:640px;margin:0 0 32px;font-weight:500;
+  }
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:14px 26px;border-radius:9px;font-weight:700;
+    text-decoration:none;font-size:1.02rem;border:2px solid transparent;
+    cursor:pointer;
+  }
+  .btn-primary{background:var(--rust);color:#fff;}
+  .btn-primary:hover{background:var(--rust-dark);}
+  .btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.5);}
+  .btn-outline:hover{background:rgba(255,255,255,.12);}
+  .hero-note{
+    margin-top:28px;display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,.1);padding:9px 16px;border-radius:8px;
+    font-size:.92rem;border:1px solid rgba(255,255,255,.22);color:#f3e9dc;
+  }
+
+  /* ---------- Trust strip ---------- */
+  .trust-strip{
+    background:#150f0a;color:#f3e9dc;
+    padding:16px 0;font-size:.9rem;
+  }
+  .trust-strip .wrap{
+    display:flex;flex-wrap:wrap;gap:10px 30px;align-items:center;justify-content:center;
+    text-align:center;font-weight:600;
+  }
+  .trust-strip span.sep{opacity:.5;}
+
+  /* ---------- Services ---------- */
+  .services{background:var(--parchment);}
+  .services-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;
+  }
+  .service-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px 22px;
+  }
+  .service-card .icwrap{
+    width:46px;height:46px;border-radius:10px;background:var(--ink-dark);
+    display:flex;align-items:center;justify-content:center;color:var(--gold);margin-bottom:16px;
+  }
+  .service-card.accent .icwrap{background:var(--rust);color:#fff;}
+  .service-card h3{margin:0 0 6px;font-size:1.08rem;color:var(--ink-dark);}
+  .service-card p{margin:0;color:var(--gray);font-size:.93rem;}
+
+  /* ---------- About / Why us ---------- */
+  .about{background:var(--cream);}
+  .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start;}
+  @media (max-width:900px){.about-grid{grid-template-columns:1fr;}}
+  .why-list{list-style:none;margin:24px 0 0;padding:0;display:flex;flex-direction:column;gap:16px;}
+  .why-list li{display:flex;gap:14px;align-items:flex-start;}
+  .why-list .check{
+    flex:0 0 auto;width:40px;height:40px;border-radius:10px;background:var(--parchment);
+    color:var(--rust-dark);display:flex;align-items:center;justify-content:center;
+    margin-top:2px;
+  }
+  .why-list strong{color:var(--ink-dark);display:block;margin-bottom:2px;}
+  .why-list p{margin:0;color:var(--gray);font-size:.94rem;}
+
+  /* ---------- Kind of jobs (gallery replacement) ---------- */
+  .jobs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;}
+  .job-tile{
+    background:var(--ink-dark);border-radius:var(--radius);padding:20px 16px;
+    text-align:center;color:#f3e9dc;
+  }
+  .job-tile .icwrap{
+    width:44px;height:44px;border-radius:50%;background:rgba(217,164,65,.16);
+    display:flex;align-items:center;justify-content:center;color:var(--gold);
+    margin:0 auto 12px;
+  }
+  .job-tile strong{display:block;font-size:.92rem;font-weight:700;color:#fff;margin-bottom:4px;}
+  .job-tile span{font-size:.78rem;color:#c9b79e;}
+
+  /* ---------- Testimonials ---------- */
+  .testimonials{background:var(--parchment);}
+  .testimonials .section-label{color:var(--rust-dark);}
+  .testimonials h2{color:var(--ink-dark);}
+  .t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+  .t-card{
+    background:#fff;border:1px solid var(--line);
+    border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:14px;
+  }
+  .t-card .stars{color:var(--star);}
+  .t-card p{margin:0;color:var(--ink);font-size:.95rem;flex:1;}
+  .t-card .who{display:flex;align-items:center;gap:10px;font-weight:700;font-size:.9rem;color:var(--ink-dark);}
+  .t-card .avatar{
+    width:34px;height:34px;border-radius:50%;background:var(--rust);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;flex:0 0 auto;
+  }
+  .t-more{text-align:center;margin-top:30px;color:var(--gray);font-size:.95rem;}
+
+  .review-links{
+    display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:22px;justify-content:center;
+  }
+  .review-links .label{color:var(--gray);font-size:.85rem;font-weight:600;}
+  .review-link{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#fff;border:1px solid var(--line);
+    color:var(--ink-dark);text-decoration:none;padding:8px 14px;border-radius:999px;
+    font-size:.88rem;font-weight:700;
+  }
+  .review-link:hover{background:var(--cream);}
+  .review-link svg{width:16px;height:16px;flex:0 0 auto;}
+
+  .social-row{display:flex;gap:10px;margin-top:14px;justify-content:center;}
+  .social-icon{
+    width:36px;height:36px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:#fff;border:1px solid var(--line);
+    color:#b8a68c;cursor:not-allowed;
+  }
+  .social-icon svg{width:17px;height:17px;fill:currentColor;stroke:none;}
+  footer .social-row{justify-content:flex-start;}
+  footer .social-icon{background:rgba(255,255,255,.05);border-color:#3a2e24;color:#5c4c3c;}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:var(--cream);}
+  .faq-list{max-width:780px;margin:0;display:flex;flex-direction:column;gap:12px;}
+  .faq-item{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:2px 22px;
+  }
+  .faq-item summary{
+    padding:18px 0;cursor:pointer;font-weight:700;color:var(--ink-dark);
+    font-size:1.02rem;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:14px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{
+    content:"+";flex:0 0 auto;font-size:1.4rem;font-weight:400;color:var(--rust);line-height:1;
+  }
+  .faq-item[open] summary::after{content:"\2212";}
+  .faq-item p{margin:0 0 20px;color:var(--gray);font-size:.95rem;}
+
+  /* ---------- Contact ---------- */
+  .visit{background:var(--parchment);}
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;}
+  @media (max-width:900px){.visit-grid{grid-template-columns:1fr;}}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px;
+  }
+  .response-badge{
+    display:inline-flex;align-items:center;gap:8px;font-weight:700;padding:8px 14px;
+    border-radius:8px;margin-bottom:18px;font-size:.92rem;background:#f2e6d3;color:var(--rust-dark);
+  }
+  .response-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;}
+  .response-list li{display:flex;gap:12px;align-items:flex-start;font-size:.92rem;color:var(--gray);}
+  .response-list .dot-ic{
+    flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:var(--parchment);
+    color:var(--rust-dark);display:flex;align-items:center;justify-content:center;margin-top:2px;
+  }
+  .response-list strong{color:var(--ink-dark);}
+
+  .contact-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px;}
+  .contact-list li{display:flex;gap:14px;align-items:flex-start;}
+  .contact-list .ic-wrap{
+    flex:0 0 auto;width:40px;height:40px;border-radius:9px;background:var(--ink-dark);
+    color:var(--gold);display:flex;align-items:center;justify-content:center;
+  }
+  .contact-list strong{display:block;color:var(--ink-dark);font-size:.98rem;}
+  .contact-list span,.contact-list a.plain{color:var(--gray);font-size:.94rem;text-decoration:none;}
+  .contact-list a.plain:hover{color:var(--rust-dark);}
+  .contact-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
+  .contact-btns .btn{padding:12px 20px;font-size:.94rem;}
+  .btn-ink{background:var(--ink-dark);color:#fff;}
+  .btn-ink:hover{background:#302518;}
+  .btn-rust{background:var(--rust);color:#fff;}
+  .btn-rust:hover{background:var(--rust-dark);}
+
+  .map-wrap{
+    margin-top:24px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
+    aspect-ratio:16/9;background:var(--cream);
+  }
+  .map-wrap iframe{width:100%;height:100%;border:0;}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--ink-dark);color:#c9b79e;padding:40px 0 110px;font-size:.9rem;}
+  @media (min-width:721px){footer{padding-bottom:40px;}}
+  .footer-grid{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-start;}
+  .footer-brand{color:#fff;font-weight:700;font-size:1.1rem;font-family:"Outfit",sans-serif;display:flex;align-items:center;gap:8px;}
+  .footer-brand .logo-mark{width:20px;height:20px;}
+  footer a{color:#e0c9a0;text-decoration:none;}
+  footer a:hover{text-decoration:underline;}
+  .footer-bottom{
+    margin-top:26px;padding-top:20px;border-top:1px solid #3a2e24;
+    font-size:.8rem;color:#8a7c5c;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;
+  }
+
+  /* ---------- Sticky mobile call/text bar ---------- */
+  .sticky-call{
+    display:none;position:fixed;bottom:0;left:0;right:0;z-index:80;
+    background:var(--rust);
+    box-shadow:0 -4px 14px rgba(0,0,0,.18);
+  }
+  .sticky-call .wrap{display:flex;padding:0;max-width:none;}
+  .sticky-call a{
+    flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
+    color:#fff;text-decoration:none;font-weight:700;font-size:.96rem;
+    padding:14px 10px;
+  }
+  .sticky-call a.text-link{background:var(--ink-dark);}
+  @media (max-width:720px){.sticky-call{display:block;}}
+</style>
+
+<!-- reusable icons -->
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="roller" viewBox="0 0 24 24">
+    <rect x="2" y="4" width="16" height="6" rx="2"/>
+    <line x1="10" y1="10" x2="10" y2="14"/>
+    <line x1="10" y1="14" x2="18" y2="14"/>
+    <line x1="18" y1="14" x2="18" y2="21"/>
+  </symbol>
+  <symbol id="hammer" viewBox="0 0 24 24">
+    <rect x="12.3" y="2.3" width="5" height="9" rx="1.2" transform="rotate(45 14.8 6.8)"/>
+    <line x1="12.6" y1="9" x2="4" y2="17.6"/>
+    <path d="M4 17.6l2.4 2.4a1.6 1.6 0 0 1-2.3 2.3L1.7 19.9a1.6 1.6 0 0 1 2.3-2.3z"/>
+  </symbol>
+  <symbol id="trowel" viewBox="0 0 24 24">
+    <path d="M9 15L3.5 20.5"/>
+    <path d="M9.2 15.2L18 4l2 2-11.2 9.2z"/>
+  </symbol>
+  <symbol id="wrench" viewBox="0 0 24 24">
+    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9l-3.8 3.8z"/>
+  </symbol>
+  <symbol id="house" viewBox="0 0 24 24">
+    <path d="M4 11L12 4l8 7"/>
+    <path d="M6 10v10h12V10"/>
+    <line x1="10" y1="20" x2="10" y2="14"/>
+    <line x1="10" y1="14" x2="14" y2="14"/>
+    <line x1="14" y1="14" x2="14" y2="20"/>
+  </symbol>
+  <symbol id="phone" viewBox="0 0 24 24">
+    <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.9.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/>
+  </symbol>
+  <symbol id="text" viewBox="0 0 24 24">
+    <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+  </symbol>
+  <symbol id="pin" viewBox="0 0 24 24">
+    <path d="M12 2.2a7 7 0 0 0-7 7c0 5.3 7 12.6 7 12.6s7-7.3 7-12.6a7 7 0 0 0-7-7z"/>
+    <circle cx="12" cy="9.2" r="2.4"/>
+  </symbol>
+  <symbol id="area" viewBox="0 0 24 24">
+    <path d="M3 12l9-9 9 9M5 10.5V21h5v-6h4v6h5V10.5"/>
+  </symbol>
+  <symbol id="clock-fast" viewBox="0 0 24 24">
+    <circle cx="12" cy="13" r="8"/>
+    <path d="M12 8v5l3.5 2"/>
+    <path d="M9 2h6"/>
+  </symbol>
+  <symbol id="tag" viewBox="0 0 24 24">
+    <path d="M20.6 12.9L12.9 20.6a2 2 0 0 1-2.8 0l-7.4-7.4a2 2 0 0 1 0-2.8L10.4 2.7a2 2 0 0 1 1.4-.6H18a2 2 0 0 1 2 2v6.4a2 2 0 0 1-.6 1.4z"/>
+    <circle cx="14.5" cy="9.5" r="1.5" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="repeat" viewBox="0 0 24 24">
+    <path d="M20 11a8 8 0 0 0-14.9-4"/>
+    <polyline points="5.5 3 5.1 7 9.1 7.4"/>
+    <path d="M4 13a8 8 0 0 0 14.9 4"/>
+    <polyline points="18.5 21 18.9 17 14.9 16.6"/>
+  </symbol>
+  <!-- Monogram logo mark placeholder (BUILD-SPEC #13) — charcoal-brown rounded square, rust "P"
+       stroke. Same shape encoded standalone as the favicon data URI above. Replace with the
+       owner's real logo at launch. -->
+  <symbol id="monogram" viewBox="0 0 32 32">
+    <rect x="0" y="0" width="32" height="32" rx="8" fill="#1C1712"/>
+    <path d="M10 24V8h6a4 4 0 0 1 0 8h-6" stroke="#C1541F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="social-fb" viewBox="0 0 24 24">
+    <path d="M15 8.5h2.5V5h-2.5c-2.2 0-4 1.8-4 4v2H9v3.5h2v7h3.5v-7H17l.5-3.5h-3v-2c0-.55.45-1 1-1z"/>
+  </symbol>
+  <symbol id="social-ig" viewBox="0 0 24 24">
+    <rect x="3" y="3" width="18" height="18" rx="5"/>
+    <circle cx="12" cy="12" r="4.2"/>
+    <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#top">
+      <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><use href="#monogram"/></svg>
+      <span class="brand-text">PEARSON HANDYMAN &amp; PAINTING<span>Newport, MN</span></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">&#9776;</button>
+    <nav class="links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#about">Why Us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#visit">Contact</a>
+    </nav>
+    <a class="nav-call" href="tel:+16515648635">&#9742; (651) 564-8635</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero" style="padding-top:0;">
+    <div class="hero-bg-icons" aria-hidden="true">
+      <svg class="hbi-1" viewBox="0 0 24 24"><use href="#house"/></svg>
+      <svg class="hbi-2" viewBox="0 0 24 24"><use href="#roller"/></svg>
+      <svg class="hbi-3" viewBox="0 0 24 24"><use href="#hammer"/></svg>
+    </div>
+    <div class="hero-inner">
+      <div class="badge-row">
+        <span class="rating-pill"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.7 out of 5 &middot; 18 Google reviews</span>
+      </div>
+      <h1>Painting &amp; Repairs Done <span class="accent">Right the First Time</span></h1>
+      <p class="tag">Pearson Handyman &amp; Painting is a handyman and painting contractor in Newport, Minnesota, handling interior and exterior painting, drywall repair, carpentry, and general home repairs for Newport and the surrounding area.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="tel:+16515648635">&#9742; Call (651) 564-8635</a>
+        <a class="btn btn-outline" href="sms:+16515648635">&#128172; Text Us</a>
+      </div>
+      <div class="hero-note">
+        <svg class="ic" viewBox="0 0 24 24" style="width:18px;height:18px;color:var(--gold);"><use href="#clock-fast"/></svg>
+        <span>Reviewers say quotes come back fast &mdash; call or text for one today</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="wrap">
+      <span>Serving Newport, MN &amp; the surrounding area</span>
+      <span class="sep" aria-hidden="true">&bull;</span>
+      <span>4.7 stars, 18 reviews</span>
+      <span class="sep" aria-hidden="true">&bull;</span>
+      <span>Painting, drywall, carpentry &amp; repairs</span>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services" class="services">
+    <div class="wrap">
+      <p class="section-label">What We Do</p>
+      <h2>Painting &amp; Handyman Services in Newport, MN</h2>
+      <p class="section-intro">From a single room to a full remodel, here's what customers call Pearson Handyman &amp; Painting for.</p>
+      <div class="services-grid">
+        <div class="service-card accent">
+          <div class="icwrap"><svg class="ic" viewBox="0 0 24 24"><use href="#roller"/></svg></div>
+          <h3>Interior &amp; Exterior Painting</h3>
+          <p>Rooms, kitchens, whole-house interiors, sheds, and window trim &mdash; reviewers mention help picking colors too.</p>
+        </div>
+        <div class="service-card">
+          <div class="icwrap"><svg class="ic" viewBox="0 0 24 24"><use href="#trowel"/></svg></div>
+          <h3>Drywall &amp; Plaster Repair</h3>
+          <p>Patching, plastering, and prepping walls before paint goes on &mdash; done clean and ready to live with.</p>
+        </div>
+        <div class="service-card">
+          <div class="icwrap"><svg class="ic" viewBox="0 0 24 24"><use href="#hammer"/></svg></div>
+          <h3>Carpentry &amp; Small Renovations</h3>
+          <p>Doorway repairs, bathroom remodel work, and other small carpentry jobs around the house.</p>
+        </div>
+        <div class="service-card">
+          <div class="icwrap"><svg class="ic" viewBox="0 0 24 24"><use href="#wrench"/></svg></div>
+          <h3>General Home Repairs</h3>
+          <p>The odd-job list &mdash; an attic fan, a stubborn toilet, whatever's on your list &mdash; handled by one crew.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / WHY US -->
+  <section id="about" class="about">
+    <div class="wrap about-grid">
+      <div>
+        <p class="section-label">Why Newport Calls Us</p>
+        <h2>The Reviews Say It Better Than We Can</h2>
+        <p style="color:var(--gray);margin:0;">Pearson Handyman &amp; Painting is a local painting and handyman contractor working in Newport, Minnesota &mdash; and the reviews below are what customers actually wrote after the work was done. The same things keep showing up: fast quotes, fair prices, and jobs finished clean.</p>
+        <ul class="why-list">
+          <li>
+            <span class="check"><svg class="ic" viewBox="0 0 24 24" style="width:20px;height:20px;"><use href="#tag"/></svg></span>
+            <div><strong>Fast, clear quotes</strong><p>Reviewers describe a quick quote turnaround with the price and scope laid out up front &mdash; "clear about their services and what they would cost."</p></div>
+          </li>
+          <li>
+            <span class="check"><svg class="ic" viewBox="0 0 24 24" style="width:20px;height:20px;"><path d="M12 8v8M8 12h8"/><circle cx="12" cy="12" r="9"/></svg></span>
+            <div><strong>Shows up on time</strong><p>More than one review calls out the crew showing up on time and going right to work, from a full paint job to a quick repair.</p></div>
+          </li>
+          <li>
+            <span class="check"><svg class="ic" viewBox="0 0 24 24" style="width:20px;height:20px;"><use href="#repeat"/></svg></span>
+            <div><strong>Customers keep calling back</strong><p>Several reviewers say they've hired Pearson Handyman &amp; Painting more than once, for everything from a shed to an attic fan to window trim.</p></div>
+          </li>
+          <li>
+            <span class="check"><svg class="ic" viewBox="0 0 24 24" style="width:20px;height:20px;"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></span>
+            <div><strong>Handles jobs big and small</strong><p>From a single doorway repair to a full bathroom remodel and whole-house paint job, reviewers describe the same steady, professional work.</p></div>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p class="section-label" style="margin-top:0;">Recent Work</p>
+        <h3 style="margin:0 0 6px;color:var(--ink-dark);font-size:1.2rem;">The Kind of Calls We Get</h3>
+        <p style="color:var(--gray);font-size:.93rem;margin:0 0 20px;">Real project types pulled straight from Newport customer reviews.</p>
+        <div class="jobs-grid">
+          <div class="job-tile">
+            <span class="icwrap"><svg class="ic" viewBox="0 0 24 24" style="width:20px;height:20px;"><use href="#roller"/></svg></span>
+            <strong>Interior Paint</strong><span>Whole-house &amp; single room</span>
+          </div>
+          <div class="job-tile">
+            <span class="icwrap"><svg class="ic" viewBox="0 0 24 24" style="width:20px;height:20px;"><use href="#house"/></svg></span>
+            <strong>Shed Painting</strong><span>Outbuildings &amp; trim</span>
+          </div>
+          <div class="job-tile">
+            <span class="icwrap"><svg class="ic" viewBox="0 0 24 24" style="width:20px;height:20px;"><use href="#wrench"/></svg></span>
+            <strong>Attic Fan Repair</strong><span>General repairs</span>
+          </div>
+          <div class="job-tile">
+            <span class="icwrap"><svg class="ic" viewBox="0 0 24 24" style="width:20px;height:20px;"><use href="#hammer"/></svg></span>
+            <strong>Doorway Repair</strong><span>Carpentry</span>
+          </div>
+          <div class="job-tile">
+            <span class="icwrap"><svg class="ic" viewBox="0 0 24 24" style="width:20px;height:20px;"><use href="#trowel"/></svg></span>
+            <strong>Kitchen Plaster</strong><span>Plaster &amp; paint</span>
+          </div>
+          <div class="job-tile">
+            <span class="icwrap"><svg class="ic" viewBox="0 0 24 24" style="width:20px;height:20px;"><use href="#house"/></svg></span>
+            <strong>Bathroom Remodel</strong><span>Small renovation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="reviews" class="testimonials">
+    <div class="wrap">
+      <p class="section-label">From Our Customers</p>
+      <h2>18 Reviews, 4.7 Stars &mdash; Real Words from Real Jobs</h2>
+      <p class="section-intro">Straight from Google, lightly trimmed for length where noted.</p>
+      <div class="t-grid">
+        <div class="t-card">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p>"Chris and his crew did an amazing job painting the interior of our house! The price was reasonable, the communication was fast and easy, and the final result was beautiful. Will definitely recommend Pearson Handyman & Painting to friends and family."</p>
+          <div class="who"><span class="avatar">B</span> Bruce H.</div>
+        </div>
+        <div class="t-card">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p>"I have hired Pearson Handyman & Painting several times... Chris came with his colleague and painted my shed. He has fixed my attic fan. He has also painted my window frames. I am thrilled with his work. I'll be calling them back when I need their professional service!!"</p>
+          <div class="who"><span class="avatar">T</span> Tyler W.</div>
+        </div>
+        <div class="t-card">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p>"We called Pearson Handyman & Painting to plaster and paint our kitchen. Two pleasant guys showed up on time and helped us to pick the colors and buy materials. They were done earlier than I expected and the kitchen looks beautiful. Will highly recommend."</p>
+          <div class="who"><span class="avatar">D</span> Deborah W.</div>
+        </div>
+        <div class="t-card">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p>"Pearson Handyman & Painting responded quickly with a quote, and after some back and forth emails to clarify the job, everything was clear and straightforward. They came in a timely fashion to actualize the entire job. The results for the doorway repair are incredible!"</p>
+          <div class="who"><span class="avatar">C</span> Crystal F.</div>
+        </div>
+        <div class="t-card">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p>"These guys have helped me on several occasions with various tasks. They are very reliable and are always polite and hardworking. I'm very impressed with how my bathroom turned after they remodeled it. They have also painted my house and it turned out great."</p>
+          <div class="who"><span class="avatar">A</span> Austin J.</div>
+        </div>
+      </div>
+      <p class="t-more">18 reviews, 4.7 stars average &mdash; verified Google reviews.</p>
+      <div class="review-links">
+        <span class="label">Find us on:</span>
+        <a class="review-link" href="https://www.google.com/maps/search/?api=1&query=Pearson%20Handyman%20%26%20Painting&query_place_id=ChIJT_nSx2cts1IR7C80_-OMhBU" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M21.6 12.23c0-.76-.07-1.5-.2-2.2H12v4.2h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.75 3-4.3 3-7.5z"/><path d="M12 22c2.7 0 4.97-.9 6.62-2.44l-3.2-2.5c-.9.6-2.05.95-3.42.95-2.62 0-4.85-1.77-5.65-4.15H3.05v2.6A10 10 0 0 0 12 22z"/><path d="M6.35 13.86A6 6 0 0 1 6.05 12c0-.65.11-1.28.3-1.86v-2.6H3.05a10 10 0 0 0 0 8.92l3.3-2.6z"/><path d="M12 6.58c1.47 0 2.8.5 3.83 1.5l2.86-2.86A9.96 9.96 0 0 0 12 2a10 10 0 0 0-8.95 5.54l3.3 2.6C7.15 8.35 9.38 6.58 12 6.58z"/></svg>
+          4.7&#9733; on Google (18 reviews)
+        </a>
+        <a class="review-link" href="https://reviews.birdeye.com/pearson-handyman-painting-156203812476341" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l2.6 6.2L21 9l-5 4.4L17.5 20 12 16.6 6.5 20 8 13.4 3 9l6.4-.8z"/></svg>
+          Reviews on Birdeye
+        </a>
+      </div>
+      <div class="social-row" aria-hidden="false">
+        <span class="social-icon" title="Ask owner for their Facebook page"><svg viewBox="0 0 24 24"><use href="#social-fb"/></svg></span>
+        <span class="social-icon" title="Ask owner for their Instagram page"><svg viewBox="0 0 24 24"><use href="#social-ig"/></svg></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq">
+    <div class="wrap">
+      <p class="section-label">Common Questions</p>
+      <h2>Painting &amp; Handyman Questions, Answered</h2>
+      <p class="section-intro">Straight from the business's Google listing and customer reviews.</p>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>What services does Pearson Handyman & Painting offer?</summary>
+          <p>Pearson Handyman & Painting handles interior and exterior painting, drywall and plaster repair, carpentry and small renovations, and general home repairs. Customer reviews describe work ranging from painting a shed and window frames to plastering a kitchen and remodeling a bathroom.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does Pearson Handyman & Painting take on small jobs, or only big projects?</summary>
+          <p>Both. Reviewers mention quick fixes like repairing a doorway or an attic fan alongside larger jobs like a full bathroom remodel or painting an entire house interior, so no job is described as too small or too big to call about.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do I get a quote from Pearson Handyman & Painting?</summary>
+          <p>Call or text (651) 564-8635 to describe the job. Reviewers consistently mention a fast, clear response with the price laid out up front, followed by scheduling that works around the homeowner's timeline.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What area does Pearson Handyman & Painting serve?</summary>
+          <p>Pearson Handyman & Painting is based in Newport, Minnesota and takes on jobs in Newport and the surrounding area. Call or text (651) 564-8635 to confirm availability at a specific address before scheduling.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can Pearson Handyman & Painting help pick paint colors?</summary>
+          <p>Yes. At least one reviewer had the crew help pick paint colors and pick up materials for a kitchen plaster-and-paint job, in addition to doing the painting and plastering work itself.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="visit" class="visit">
+    <div class="wrap">
+      <p class="section-label">Contact</p>
+      <h2>Call, Text, or Stop By</h2>
+      <div class="visit-grid">
+        <div class="card">
+          <span class="response-badge">
+            <svg class="ic" viewBox="0 0 24 24" style="width:18px;height:18px;"><use href="#clock-fast"/></svg>
+            What to Expect
+          </span>
+          <ul class="response-list">
+            <li><span class="dot-ic"><svg class="ic" viewBox="0 0 24 24" style="width:14px;height:14px;"><use href="#tag"/></svg></span><span><strong>Quotes come back fast.</strong> Reviewers describe a quick, clear price with no surprises before work starts.</span></li>
+            <li><span class="dot-ic"><svg class="ic" viewBox="0 0 24 24" style="width:14px;height:14px;"><use href="#house"/></svg></span><span><strong>Hours aren't posted online.</strong> Call or text to check same-day or next-day availability.</span></li>
+            <li><span class="dot-ic"><svg class="ic" viewBox="0 0 24 24" style="width:14px;height:14px;"><use href="#repeat"/></svg></span><span><strong>Scheduling works around you.</strong> One reviewer said the crew "worked their schedule around my other contractors' timing."</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <ul class="contact-list">
+            <li>
+              <span class="ic-wrap"><svg class="ic" viewBox="0 0 24 24" style="width:20px;height:20px;"><use href="#phone"/></svg></span>
+              <div><strong>Phone</strong><a class="plain" href="tel:+16515648635">(651) 564-8635</a></div>
+            </li>
+            <li>
+              <span class="ic-wrap"><svg class="ic" viewBox="0 0 24 24" style="width:20px;height:20px;"><use href="#text"/></svg></span>
+              <div><strong>Text</strong><a class="plain" href="sms:+16515648635">(651) 564-8635</a></div>
+            </li>
+            <li>
+              <span class="ic-wrap"><svg class="ic" viewBox="0 0 24 24" style="width:20px;height:20px;"><use href="#pin"/></svg></span>
+              <div><strong>Address</strong><a class="plain" href="https://www.google.com/maps/search/?api=1&query=Pearson%20Handyman%20%26%20Painting&query_place_id=ChIJT_nSx2cts1IR7C80_-OMhBU" target="_blank" rel="noopener">1590 Hastings Ave, Newport, MN 55055</a></div>
+            </li>
+            <li>
+              <span class="ic-wrap"><svg class="ic" viewBox="0 0 24 24" style="width:20px;height:20px;"><use href="#area"/></svg></span>
+              <div><strong>Service Area</strong><span>Newport, MN &amp; surrounding area</span></div>
+            </li>
+          </ul>
+          <div class="contact-btns">
+            <a class="btn btn-ink" href="tel:+16515648635">&#9742; Call Now</a>
+            <a class="btn btn-rust" href="sms:+16515648635">&#128172; Text Us</a>
+            <a class="btn btn-outline" style="color:var(--ink-dark);border-color:var(--ink-dark);" href="https://www.google.com/maps/search/?api=1&query=Pearson%20Handyman%20%26%20Painting&query_place_id=ChIJT_nSx2cts1IR7C80_-OMhBU" target="_blank" rel="noopener">Get Directions</a>
+          </div>
+          <div class="map-wrap">
+            <iframe src="https://www.google.com/maps?q=44.873027,-92.99914&output=embed" title="Map showing Pearson Handyman & Painting location" loading="lazy" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><use href="#monogram"/></svg>Pearson Handyman &amp; Painting</div>
+        <p style="margin:8px 0 0;max-width:320px;">1590 Hastings Ave, Newport, MN 55055<br>(651) 564-8635</p>
+      </div>
+      <div>
+        <p style="margin:0 0 8px;color:#fff;font-weight:700;">Quick Links</p>
+        <p style="margin:0;"><a href="#services">Services</a></p>
+        <p style="margin:6px 0 0;"><a href="#reviews">Reviews</a></p>
+        <p style="margin:6px 0 0;"><a href="#faq">FAQ</a></p>
+        <p style="margin:6px 0 0;"><a href="#visit">Contact</a></p>
+      </div>
+      <div>
+        <p style="margin:0 0 8px;color:#fff;font-weight:700;">Get In Touch</p>
+        <p style="margin:0;"><a href="tel:+16515648635">Call (651) 564-8635</a></p>
+        <p style="margin:6px 0 0;"><a href="sms:+16515648635">Text Us</a></p>
+        <div class="social-row">
+          <span class="social-icon" title="Ask owner for their Facebook page"><svg viewBox="0 0 24 24"><use href="#social-fb"/></svg></span>
+          <span class="social-icon" title="Ask owner for their Instagram page"><svg viewBox="0 0 24 24"><use href="#social-ig"/></svg></span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Pearson Handyman &amp; Painting, Newport, MN.</span>
+      <span>Website demo built by [OWNER PLACEHOLDER]</span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-call">
+  <div class="wrap">
+    <a href="tel:+16515648635">&#9742; Call</a>
+    <a class="text-link" href="sms:+16515648635">&#128172; Text</a>
+  </div>
+</div>
+
+<script>
+  // Mobile nav toggle
+  (function(){
+    var btn = document.getElementById('menuBtn');
+    var links = document.getElementById('navLinks');
+    btn.addEventListener('click', function(){
+      var isOpen = links.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        links.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>

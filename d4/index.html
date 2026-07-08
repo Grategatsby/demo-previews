@@ -33,9 +33,97 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Woodbury Heating and Cooling | HVAC Contractor in Woodbury, MN</title>
 <meta name="description" content="Woodbury Heating and Cooling — 4.8 stars, 20 reviews. Furnace repair, AC repair, installs, and tune-ups for Woodbury and the East Metro, MN.">
+<!-- Monogram favicon: navy rounded square + ember "W" mark, same shape used as the header logo mark (see #monogram symbol below) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f2c47'/%3E%3Cpath d='M6 9 L11 23 L16 13 L21 23 L26 9' stroke='%23e2661f' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- LocalBusiness JSON-LD. Street address deliberately OMITTED (only city/state included) and geo
+     left out entirely: this listing's address resolves to a Sam's Club building on Street View and
+     the business identity is unconfirmed (see leads/woodbury-heating-and-cooling/README.md). Every
+     other field below is copied verbatim from business.json. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HVACBusiness",
+  "name": "Woodbury Heating and Cooling",
+  "description": "Woodbury Heating and Cooling is an HVAC contractor providing furnace repair, air conditioning repair and installation, heat pump installation, and maintenance tune-ups in Woodbury, Minnesota and the east metro.",
+  "telephone": "+16512376910",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Woodbury",
+    "addressRegion": "MN"
+  },
+  "url": "https://grategatsby.github.io/demo-previews/d4/",
+  "image": "photos/technician-ac-unit.jpg",
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "07:00", "closes": "20:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday", "Sunday"], "opens": "09:00", "closes": "19:00" }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "20"
+  },
+  "amenityFeature": {
+    "@type": "LocationFeatureSpecification",
+    "name": "Wheelchair accessible parking lot",
+    "value": true
+  }
+}
+</script>
+
+<!-- FAQPage JSON-LD — mirrors the visible FAQ section below. Every answer is data-backed from
+     business.json (hours, categories, additionalInfo); no invented prices or claims. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "When is Woodbury Heating and Cooling open?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Woodbury Heating and Cooling is open 7 AM to 8 PM Monday through Friday, and 9 AM to 7 PM on Saturday and Sunday. That's every day of the week, including weekends, so you can reach a technician whether furnace or AC trouble happens on a weekday or a weekend."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What areas does Woodbury Heating and Cooling serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Woodbury Heating and Cooling serves Woodbury, Minnesota and the surrounding east metro area. Call or text (651) 237-6910 to confirm service at a specific address before scheduling a repair, installation, or tune-up."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What HVAC services does Woodbury Heating and Cooling offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Woodbury Heating and Cooling handles furnace repair and installation, air conditioning repair and installation, heat pump installation, and seasonal furnace and AC maintenance tune-ups for homes in Woodbury and the east metro. Technicians handle everything from urgent no-heat and no-cool calls to planned system replacements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Woodbury Heating and Cooling do repairs, not just new installations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Repair service is one of Woodbury Heating and Cooling's listed offerings alongside installation, so a broken furnace or an air conditioner that's stopped cooling can be diagnosed and repaired without necessarily needing a full system replacement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there accessible parking at Woodbury Heating and Cooling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Woodbury Heating and Cooling's location includes a wheelchair accessible parking lot, a feature listed on the company's Google Business profile, making it easier for customers with mobility needs to visit in person if a phone or text consultation isn't enough."
+      }
+    }
+  ]
+}
+</script>
 
 <style>
   :root{
@@ -330,6 +418,49 @@
   }
   .sticky-call a.text-link{background:var(--navy);}
   @media (max-width:720px){.sticky-call{display:block;}}
+
+  /* ---------- Review links row ---------- */
+  .review-links{
+    display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:22px;
+  }
+  .review-links .label{color:#c6dcec;font-size:.85rem;font-weight:600;}
+  .review-link{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);
+    color:#fff;text-decoration:none;padding:8px 14px;border-radius:999px;
+    font-size:.88rem;font-weight:700;
+  }
+  .review-link:hover{background:rgba(255,255,255,.16);}
+  .review-link svg{width:16px;height:16px;flex:0 0 auto;}
+
+  /* ---------- Social placeholder icons ---------- */
+  .social-row{display:flex;gap:10px;margin-top:14px;}
+  .social-icon{
+    width:36px;height:36px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);
+    color:#5c7488;cursor:not-allowed;
+  }
+  .social-icon svg{width:17px;height:17px;fill:currentColor;stroke:none;}
+  footer .social-icon{background:rgba(255,255,255,.05);border-color:#163a5a;color:#3f5872;}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:var(--cream);}
+  .faq-list{max-width:780px;margin:0;display:flex;flex-direction:column;gap:12px;}
+  .faq-item{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:2px 22px;
+  }
+  .faq-item summary{
+    padding:18px 0;cursor:pointer;font-weight:700;color:var(--navy);
+    font-size:1.02rem;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:14px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{
+    content:"+";flex:0 0 auto;font-size:1.4rem;font-weight:400;color:var(--ember);line-height:1;
+  }
+  .faq-item[open] summary::after{content:"\2212";}
+  .faq-item p{margin:0 0 20px;color:var(--gray);font-size:.95rem;}
 </style>
 
 <!-- reusable icons -->
@@ -395,12 +526,27 @@
   <symbol id="area" viewBox="0 0 24 24">
     <path d="M3 12l9-9 9 9M5 10.5V21h5v-6h4v6h5V10.5"/>
   </symbol>
+  <!-- Monogram logo mark placeholder (BUILD-SPEC #13) — navy rounded square, ember "W" stroke.
+       Same shape encoded standalone as the favicon data URI above. Replace with the owner's
+       real logo at launch. -->
+  <symbol id="monogram" viewBox="0 0 32 32">
+    <rect x="0" y="0" width="32" height="32" rx="8" fill="#0f2c47"/>
+    <path d="M6 9 L11 23 L16 13 L21 23 L26 9" stroke="#e2661f" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="social-fb" viewBox="0 0 24 24">
+    <path d="M15 8.5h2.5V5h-2.5c-2.2 0-4 1.8-4 4v2H9v3.5h2v7h3.5v-7H17l.5-3.5h-3v-2c0-.55.45-1 1-1z"/>
+  </symbol>
+  <symbol id="social-ig" viewBox="0 0 24 24">
+    <rect x="3" y="3" width="18" height="18" rx="5"/>
+    <circle cx="12" cy="12" r="4.2"/>
+    <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/>
+  </symbol>
 </svg>
 
 <header>
   <div class="nav">
     <a class="brand" href="#top">
-      <svg class="dial" viewBox="0 0 24 24"><use href="#dial"/></svg>
+      <svg class="dial logo-mark" viewBox="0 0 32 32" aria-hidden="true"><use href="#monogram"/></svg>
       <span class="brand-text">WOODBURY HEATING &amp; COOLING<span>Woodbury &amp; the East Metro</span></span>
     </a>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">&#9776;</button>
@@ -408,6 +554,7 @@
       <a href="#services">Services</a>
       <a href="#about">Why Us</a>
       <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
       <a href="#visit">Hours &amp; Contact</a>
     </nav>
     <a class="nav-call" href="tel:+16512376910">&#9742; (651) 237-6910</a>
@@ -427,7 +574,7 @@
         <span class="rating-pill"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.8 out of 5 &middot; 20 Google reviews</span>
       </div>
       <h1>Warm Winters, Cool Summers &mdash; <span class="accent">That's the Job</span></h1>
-      <p class="tag">Furnace repair, AC repair, and honest HVAC service for Woodbury and the East Metro. Technicians who show up fast and explain what they're doing before they touch a thing.</p>
+      <p class="tag">Woodbury Heating and Cooling is an HVAC contractor serving Woodbury, Minnesota and the east metro with furnace repair, AC repair, installs, and tune-ups. Technicians who show up fast and explain what they're doing before they touch a thing.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="tel:+16512376910">&#9742; Call (651) 237-6910</a>
         <a class="btn btn-outline" href="sms:+16512376910">&#128172; Text Us</a>
@@ -566,6 +713,48 @@
         </div>
       </div>
       <p class="t-more">20 reviews, 4.8 stars average &mdash; all verified Google reviews.</p>
+      <div class="review-links">
+        <span class="label">Find us on:</span>
+        <a class="review-link" href="https://www.google.com/maps/search/?api=1&query=Woodbury%20Heating%20and%20Cooling&query_place_id=ChIJCcQ02EEk9ocRBsqN1hUVYXU" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M21.6 12.23c0-.76-.07-1.5-.2-2.2H12v4.2h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.75 3-4.3 3-7.5z"/><path d="M12 22c2.7 0 4.97-.9 6.62-2.44l-3.2-2.5c-.9.6-2.05.95-3.42.95-2.62 0-4.85-1.77-5.65-4.15H3.05v2.6A10 10 0 0 0 12 22z"/><path d="M6.35 13.86A6 6 0 0 1 6.05 12c0-.65.11-1.28.3-1.86v-2.6H3.05a10 10 0 0 0 0 8.92l3.3-2.6z"/><path d="M12 6.58c1.47 0 2.8.5 3.83 1.5l2.86-2.86A9.96 9.96 0 0 0 12 2a10 10 0 0 0-8.95 5.54l3.3 2.6C7.15 8.35 9.38 6.58 12 6.58z"/></svg>
+          4.8&#9733; on Google (20 reviews)
+        </a>
+      </div>
+      <div class="social-row" aria-hidden="false">
+        <span class="social-icon" title="Ask owner for their Facebook page"><svg viewBox="0 0 24 24"><use href="#social-fb"/></svg></span>
+        <span class="social-icon" title="Ask owner for their Instagram page"><svg viewBox="0 0 24 24"><use href="#social-ig"/></svg></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq">
+    <div class="wrap">
+      <p class="section-label">Common Questions</p>
+      <h2>Furnace &amp; AC Questions, Answered</h2>
+      <p class="section-intro">Straight from the business's Google listing &mdash; hours, service area, and what's offered.</p>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>When is Woodbury Heating and Cooling open?</summary>
+          <p>Woodbury Heating and Cooling is open 7 AM to 8 PM Monday through Friday, and 9 AM to 7 PM on Saturday and Sunday &mdash; every day of the week, including weekends, so you can reach a technician whether furnace or AC trouble happens on a weekday or a weekend.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What areas does Woodbury Heating and Cooling serve?</summary>
+          <p>Woodbury Heating and Cooling serves Woodbury, Minnesota and the surrounding east metro area. Call or text (651) 237-6910 to confirm service at a specific address before scheduling a repair, installation, or tune-up.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What HVAC services does Woodbury Heating and Cooling offer?</summary>
+          <p>Woodbury Heating and Cooling handles furnace repair and installation, air conditioning repair and installation, heat pump installation, and seasonal furnace and AC maintenance tune-ups for homes in Woodbury and the east metro &mdash; from urgent no-heat and no-cool calls to planned system replacements.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does Woodbury Heating and Cooling do repairs, not just new installations?</summary>
+          <p>Yes. Repair service is one of Woodbury Heating and Cooling's listed offerings alongside installation, so a broken furnace or an air conditioner that's stopped cooling can be diagnosed and repaired without necessarily needing a full system replacement.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is there accessible parking at Woodbury Heating and Cooling?</summary>
+          <p>Yes. Woodbury Heating and Cooling's location includes a wheelchair accessible parking lot, a feature listed on the company's Google Business profile, making it easier for customers with mobility needs to visit in person if a phone or text consultation isn't enough.</p>
+        </details>
+      </div>
     </div>
   </section>
 
@@ -627,19 +816,24 @@
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <div class="footer-brand"><svg class="dial" viewBox="0 0 24 24"><use href="#dial"/></svg>Woodbury Heating and Cooling</div>
+        <div class="footer-brand"><svg class="dial" viewBox="0 0 32 32" aria-hidden="true"><use href="#monogram"/></svg>Woodbury Heating and Cooling</div>
         <p style="margin:8px 0 0;max-width:320px;">9925 Hudson Pl, Woodbury, MN 55125<br>(651) 237-6910</p>
       </div>
       <div>
         <p style="margin:0 0 8px;color:#fff;font-weight:700;">Quick Links</p>
         <p style="margin:0;"><a href="#services">Services</a></p>
         <p style="margin:6px 0 0;"><a href="#reviews">Reviews</a></p>
+        <p style="margin:6px 0 0;"><a href="#faq">FAQ</a></p>
         <p style="margin:6px 0 0;"><a href="#visit">Hours &amp; Contact</a></p>
       </div>
       <div>
         <p style="margin:0 0 8px;color:#fff;font-weight:700;">Get In Touch</p>
         <p style="margin:0;"><a href="tel:+16512376910">Call (651) 237-6910</a></p>
         <p style="margin:6px 0 0;"><a href="sms:+16512376910">Text Us</a></p>
+        <div class="social-row">
+          <span class="social-icon" title="Ask owner for their Facebook page"><svg viewBox="0 0 24 24"><use href="#social-fb"/></svg></span>
+          <span class="social-icon" title="Ask owner for their Instagram page"><svg viewBox="0 0 24 24"><use href="#social-ig"/></svg></span>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">

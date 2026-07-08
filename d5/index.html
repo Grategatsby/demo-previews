@@ -32,6 +32,99 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='19' fill='%230b3652' stroke='%232f8fd1' stroke-width='2'/%3E%3Cpath d='M14 12 L14 28 M14 12 C20 12 23 14 23 17 C23 20 20 22 14 22' fill='none' stroke='%23bfe3f7' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cg stroke='%232f8fd1' stroke-width='1.5' stroke-linecap='round'%3E%3Cline x1='27' y1='10' x2='33' y2='10'/%3E%3Cline x1='28.5' y1='7' x2='31.5' y2='13'/%3E%3Cline x1='31.5' y1='7' x2='28.5' y2='13'/%3E%3C/g%3E%3C/svg%3E">
+
+<!-- LocalBusiness structured data (AI-SEO-SPEC.md #1) — populated only from leads/polar-plumbing-co/business.json and verified research -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Plumber",
+  "name": "Polar Plumbing Co",
+  "description": "Polar Plumbing Co is a licensed plumbing company serving Woodbury, Minnesota and the east metro, offering water heater installation, drain cleaning, fixture installation, leak repair, gas line installation, and kitchen and bath remodel plumbing.",
+  "telephone": "+16517777525",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Woodbury",
+    "addressRegion": "MN",
+    "addressCountry": "US"
+  },
+  "url": "https://grategatsby.github.io/demo-previews/d5/",
+  "image": "photos/water-heater-install.jpg",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "13"
+  },
+  "paymentAccepted": "Credit Card",
+  "foundingDate": "2001"
+}
+</script>
+
+<!-- FAQPage structured data (AI-SEO-SPEC.md #3) — mirrors the visible FAQ section below, data-backed only -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are Polar Plumbing Co's hours?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Polar Plumbing Co is open Monday through Friday, 9 AM to 5 PM, and closed Saturday and Sunday. Call (651) 777-7525 during business hours to reach the shop directly, or send a text any time — Lance typically works same-day and next-day emergency calls into the schedule when he can."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What areas does Polar Plumbing Co serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Polar Plumbing Co serves Woodbury, Minnesota and the surrounding east metro. The company is home-based rather than storefront, so most work happens at the customer's home rather than a shop location — call or text to confirm coverage for your address before scheduling."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Polar Plumbing Co licensed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Polar Plumbing, Inc. is a licensed Minnesota plumbing contractor, license PC643942, registered with the Minnesota Secretary of State since September 2001. The company has been owner-led by Lance Swanson for its entire history, and carries the mechanical contractor bond required for licensed plumbing work in Minnesota."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What payment methods does Polar Plumbing Co accept?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Polar Plumbing Co accepts credit cards in addition to other standard payment methods. Reviewers consistently mention getting a clear, upfront quote before work begins, so ask for pricing on your job when you call — there are no surprise charges added after the work is finished."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What plumbing services does Polar Plumbing Co offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Polar Plumbing Co handles water heater installation and repair, drain cleaning, fixture installation, leak and valve repairs, gas line installation, and full plumbing for kitchen and bath remodels. Water heater work is the job customers mention most often in reviews, from same-day emergency swaps to full replacements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long has Polar Plumbing Co been in business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Polar Plumbing, Inc. was registered with the Minnesota Secretary of State in September 2001 and has been owner-led by Lance Swanson ever since. Several customers say they've used the company for close to two decades, for everything from leak repairs to complete kitchen and bathroom remodels."
+      }
+    }
+  ]
+}
+</script>
 
 <style>
   :root{
@@ -103,6 +196,7 @@
   }
   .brand{color:#fff;font-size:1.2rem;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:10px;line-height:1.1;}
   .brand .snowflake{width:26px;height:26px;color:var(--ice-lt);flex:0 0 auto;}
+  .logo-mark{width:34px;height:34px;flex:0 0 auto;border-radius:50%;}
   .brand-text{display:flex;flex-direction:column;}
   .brand-text span{font-size:.6rem;color:var(--ice-lt);font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-family:system-ui,sans-serif;}
   nav.links{display:flex;gap:26px;}
@@ -226,6 +320,12 @@
   }
   .why-list strong{color:var(--deep);display:block;margin-bottom:2px;}
   .why-list p{margin:0;color:var(--gray);font-size:.94rem;}
+  .license-line{
+    display:flex;align-items:center;gap:10px;margin:20px 0 0;padding:12px 16px;
+    background:var(--frost);border:1px solid var(--line);border-radius:9px;
+    color:var(--deep);font-size:.9rem;
+  }
+  .license-line svg{flex:0 0 auto;width:20px;height:20px;color:var(--ice-dark);}
 
   .work-card{
     background:var(--frost);border:1px solid var(--line);border-radius:var(--radius);
@@ -253,6 +353,22 @@
     display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;flex:0 0 auto;
   }
   .t-more{text-align:center;margin-top:30px;color:#c6dcec;font-size:.95rem;}
+  .review-links{
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
+    gap:10px 14px;margin-top:22px;
+  }
+  .review-links-label{color:#c6dcec;font-size:.92rem;font-weight:600;}
+  .btn-sm{padding:9px 18px;font-size:.86rem;}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:#fff;}
+  .faq-list{display:flex;flex-direction:column;gap:14px;max-width:840px;}
+  .faq-item{
+    background:var(--frost);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px 24px;
+  }
+  .faq-item h3{margin:0 0 8px;color:var(--deep);font-size:1.05rem;}
+  .faq-item p{margin:0;color:var(--gray);font-size:.94rem;}
 
   /* ---------- Hours & contact ---------- */
   .visit{background:var(--frost);}
@@ -297,8 +413,16 @@
   .footer-grid{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-start;}
   .footer-brand{color:#fff;font-weight:700;font-size:1.1rem;font-family:"Outfit",sans-serif;display:flex;align-items:center;gap:8px;}
   .footer-brand .snowflake{width:20px;height:20px;color:var(--ice-lt);}
+  .footer-brand .logo-mark{width:26px;height:26px;}
   footer a{color:#a9cbe0;text-decoration:none;}
   footer a:hover{text-decoration:underline;}
+  .license-foot{margin:8px 0 0;font-size:.82rem;color:#7c9cb1;max-width:320px;}
+  .social-row{display:flex;gap:10px;margin-top:12px;}
+  .social-ph{
+    width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.06);
+    display:flex;align-items:center;justify-content:center;color:#5c7a8c;
+    opacity:.55;cursor:not-allowed;
+  }
   .footer-bottom{
     margin-top:26px;padding-top:20px;border-top:1px solid #123f5c;
     font-size:.8rem;color:#7c9cb1;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;
@@ -337,10 +461,23 @@
   </symbol>
 </svg>
 
+<!-- monogram logo mark: snowflake-accented "P", header + footer brand -->
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="mono" viewBox="0 0 40 40">
+    <circle cx="20" cy="20" r="19" fill="#0b3652" stroke="#2f8fd1" stroke-width="2"/>
+    <path d="M14 12 L14 28 M14 12 C20 12 23 14 23 17 C23 20 20 22 14 22" fill="none" stroke="#bfe3f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <g stroke="#2f8fd1" stroke-width="1.5" stroke-linecap="round">
+      <line x1="27" y1="10" x2="33" y2="10"/>
+      <line x1="28.5" y1="7" x2="31.5" y2="13"/>
+      <line x1="31.5" y1="7" x2="28.5" y2="13"/>
+    </g>
+  </symbol>
+</svg>
+
 <header>
   <div class="nav">
     <a class="brand" href="#top">
-      <svg class="snowflake" viewBox="0 0 24 24"><use href="#flake"/></svg>
+      <svg class="logo-mark" viewBox="0 0 40 40"><use href="#mono"/></svg>
       <span class="brand-text">POLAR PLUMBING CO<span>Woodbury &amp; the East Metro</span></span>
     </a>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">&#9776;</button>
@@ -348,6 +485,7 @@
       <a href="#services">Services</a>
       <a href="#about">Why Us</a>
       <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
       <a href="#visit">Hours &amp; Contact</a>
     </nav>
     <a class="nav-call" href="tel:+16517777525">&#9742; (651) 777-7525</a>
@@ -367,7 +505,7 @@
         <span class="rating-pill"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.9 out of 5 &middot; 13 Google reviews</span>
       </div>
       <h1>Cool-Headed, Honest Plumbing for Woodbury</h1>
-      <p class="tag">Fair quotes, careful work, and a plumber who shows up when he says he will &mdash; that's what Woodbury and East Metro homeowners keep coming back for.</p>
+      <p class="tag">Polar Plumbing Co is a licensed plumbing company serving Woodbury, Minnesota and the east metro. Fair quotes, careful work, and a plumber who shows up when he says he will &mdash; that's what Woodbury and East Metro homeowners keep coming back for.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="tel:+16517777525">&#9742; Call (651) 777-7525</a>
         <a class="btn btn-outline" href="sms:+16517777525">&#128172; Text Us</a>
@@ -452,6 +590,10 @@
         <p class="section-label">Why Woodbury Trusts Polar Plumbing</p>
         <h2>The Reviews Say It Better Than We Can</h2>
         <p style="color:var(--gray);margin:0;">Polar Plumbing Co is a small, local operation &mdash; and the reviews below are what customers actually wrote after the work was done. The same words keep showing up: fair, fast, honest, clean.</p>
+        <p class="license-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l7.5 3.3v5.4c0 5-3.2 8.9-7.5 10.3-4.3-1.4-7.5-5.3-7.5-10.3V5.8L12 2.5z"/><path d="M9 12l2 2 4-4.2"/></svg>
+          <span><strong>Licensed Minnesota plumbing contractor</strong> &middot; serving the east metro since 2001, owner-led by Lance Swanson the whole way.</span>
+        </p>
         <ul class="why-list">
           <li>
             <span class="check"><svg class="ic" viewBox="0 0 24 24" style="width:20px;height:20px;"><path d="M4 4h16v16H4z" opacity="0"/><path d="M12 8v8M8 12h8"/></svg></span>
@@ -517,6 +659,47 @@
         </div>
       </div>
       <p class="t-more">13 reviews, 4.9 stars average &mdash; all verified Google reviews.</p>
+      <div class="review-links">
+        <span class="review-links-label">Find us on:</span>
+        <a class="btn btn-outline btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Polar%20Plumbing%20Co&amp;query_place_id=ChIJVVVVVWXX94cRXVGdFkajsE8" target="_blank" rel="noopener noreferrer">Google Reviews</a>
+        <a class="btn btn-outline btn-sm" href="https://reviews.birdeye.com/polar-plumbing-co-168708046112310" target="_blank" rel="noopener noreferrer">Birdeye</a>
+        <a class="btn btn-outline btn-sm" href="https://www.bbb.org/us/mn/oakdale/profile/plumber/polar-plumbing-inc-0704-96083175" target="_blank" rel="noopener noreferrer">BBB</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq">
+    <div class="wrap">
+      <p class="section-label">Common Questions</p>
+      <h2>Plumbing FAQs for Woodbury &amp; the East Metro</h2>
+      <p class="section-intro">Quick answers before you call.</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>What are Polar Plumbing Co's hours?</h3>
+          <p>Polar Plumbing Co is open Monday through Friday, 9 AM to 5 PM, and closed Saturday and Sunday. Call (651) 777-7525 during business hours to reach the shop directly, or send a text any time &mdash; Lance typically works same-day and next-day emergency calls into the schedule when he can.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What areas does Polar Plumbing Co serve?</h3>
+          <p>Polar Plumbing Co serves Woodbury, Minnesota and the surrounding east metro. The company is home-based rather than storefront, so most work happens at the customer's home rather than a shop location &mdash; call or text to confirm coverage for your address before scheduling.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is Polar Plumbing Co licensed?</h3>
+          <p>Yes. Polar Plumbing, Inc. is a licensed Minnesota plumbing contractor, license PC643942, registered with the Minnesota Secretary of State since September 2001. The company has been owner-led by Lance Swanson for its entire history, and carries the mechanical contractor bond required for licensed plumbing work in Minnesota.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What payment methods does Polar Plumbing Co accept?</h3>
+          <p>Polar Plumbing Co accepts credit cards in addition to other standard payment methods. Reviewers consistently mention getting a clear, upfront quote before work begins, so ask for pricing on your job when you call &mdash; there are no surprise charges added after the work is finished.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What plumbing services does Polar Plumbing Co offer?</h3>
+          <p>Polar Plumbing Co handles water heater installation and repair, drain cleaning, fixture installation, leak and valve repairs, gas line installation, and full plumbing for kitchen and bath remodels. Water heater work is the job customers mention most often in reviews, from same-day emergency swaps to full replacements.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How long has Polar Plumbing Co been in business?</h3>
+          <p>Polar Plumbing, Inc. was registered with the Minnesota Secretary of State in September 2001 and has been owner-led by Lance Swanson ever since. Several customers say they've used the company for close to two decades, for everything from leak repairs to complete kitchen and bathroom remodels.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -574,19 +757,30 @@
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <div class="footer-brand"><svg class="snowflake" viewBox="0 0 24 24"><use href="#flake"/></svg>Polar Plumbing Co</div>
+        <div class="footer-brand"><svg class="logo-mark" viewBox="0 0 40 40"><use href="#mono"/></svg>Polar Plumbing Co</div>
         <p style="margin:8px 0 0;max-width:320px;">2309 Windsor Ln, Woodbury, MN 55125<br>(651) 777-7525</p>
+        <p class="license-foot">Polar Plumbing, Inc. &middot; MN Plumbing License PC643942</p>
       </div>
       <div>
         <p style="margin:0 0 8px;color:#fff;font-weight:700;">Quick Links</p>
         <p style="margin:0;"><a href="#services">Services</a></p>
         <p style="margin:6px 0 0;"><a href="#reviews">Reviews</a></p>
+        <p style="margin:6px 0 0;"><a href="#faq">FAQ</a></p>
         <p style="margin:6px 0 0;"><a href="#visit">Hours &amp; Contact</a></p>
       </div>
       <div>
         <p style="margin:0 0 8px;color:#fff;font-weight:700;">Get In Touch</p>
         <p style="margin:0;"><a href="tel:+16517777525">Call (651) 777-7525</a></p>
         <p style="margin:6px 0 0;"><a href="sms:+16517777525">Text Us</a></p>
+        <p style="margin:14px 0 0;color:#7c9cb1;font-size:.78rem;">Follow us</p>
+        <div class="social-row">
+          <span class="social-ph" title="Ask owner for their Facebook page" tabindex="-1" aria-hidden="true">
+            <svg class="ic" viewBox="0 0 24 24" style="width:17px;height:17px;stroke:none;fill:currentColor;"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+          </span>
+          <span class="social-ph" title="Ask owner for their Instagram page" tabindex="-1" aria-hidden="true">
+            <svg class="ic" viewBox="0 0 24 24" style="width:17px;height:17px;"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </span>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">

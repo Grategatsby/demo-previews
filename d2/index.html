@@ -16,6 +16,123 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%235C1A2E'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='Georgia, serif' font-weight='700' font-size='54' fill='%23C9A24B'%3EL%3C/text%3E%3C/svg%3E">
+
+<!-- LocalBusiness structured data (AI-SEO-SPEC.md #1) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NailSalon",
+  "name": "Lexi Nails",
+  "description": "Lexi Nails is a nail salon in the Tamarack Village shopping center in Woodbury, Minnesota, offering gel and acrylic manicures, pedicures, dip powder, acrylics, and hand-painted nail art.",
+  "telephone": "+16517389116",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "8362 Tamarack Village #115",
+    "addressLocality": "Woodbury",
+    "addressRegion": "MN",
+    "postalCode": "55125",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 44.9429352,
+    "longitude": -92.9353757
+  },
+  "url": "https://grategatsby.github.io/demo-previews/d2/",
+  "image": "photos/hero-burgundy-gold.jpg",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "10:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "11:00",
+      "closes": "17:00"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 4.1,
+    "reviewCount": 139
+  },
+  "paymentAccepted": "Credit Card, Debit Card, NFC Mobile Payment",
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Wheelchair accessible entrance", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Wheelchair accessible parking lot", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Wheelchair accessible restroom", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Restroom", "value": true }
+  ]
+}
+</script>
+
+<!-- FAQPage structured data (AI-SEO-SPEC.md #3) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are Lexi Nails' hours?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lexi Nails is open Monday through Friday from 10 AM to 8 PM, Saturday from 9 AM to 6 PM, and Sunday from 11 AM to 5 PM. Walk-ins are welcome during all open hours, though calling ahead can shorten your wait, especially on weekends."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is Lexi Nails located, and is there parking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lexi Nails is located at 8362 Tamarack Village #115 in Woodbury, Minnesota, inside the Tamarack Village shopping center. The salon has a wheelchair accessible entrance and a wheelchair accessible parking lot, with free shopping-center parking right outside the door."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Lexi Nails take walk-ins?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Lexi Nails accepts walk-ins for manicures, pedicures, and gel services. You don't need an appointment, though calling ahead at (651) 738-9116 can help you avoid a wait, especially during busy Friday and Saturday afternoons."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What payment methods does Lexi Nails accept?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lexi Nails accepts credit cards, debit cards, and NFC mobile payments like tap-to-pay. You can pay for your manicure, pedicure, or nail art service at the front desk however is most convenient for you, without needing cash on hand."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What nail services does Lexi Nails offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lexi Nails offers gel and acrylic manicures, spa and luxury pedicures, dip powder, acrylic full sets and fills, gel polish and polish removal, and hand-painted nail art. Popular options include almond, coffin, and stiletto shapes, plus custom foil and glitter designs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Lexi Nails wheelchair accessible?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Lexi Nails has a wheelchair accessible entrance, a wheelchair accessible parking lot, and a wheelchair accessible restroom, so guests using mobility devices can visit comfortably. The salon is on the ground floor of the Tamarack Village shopping center in Woodbury."
+      }
+    }
+  ]
+}
+</script>
 
 <style>
   :root {
@@ -661,17 +778,124 @@
     clip: rect(0 0 0 0);
     white-space: nowrap;
   }
+
+  /* ---------- Brand mark ---------- */
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand-mark {
+    flex-shrink: 0;
+    border-radius: 8px;
+  }
+
+  /* ---------- Review links row ---------- */
+  .review-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 34px;
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq-list {
+    max-width: 760px;
+    margin: 0 auto;
+    display: grid;
+    gap: 14px;
+  }
+
+  .faq-item {
+    background: var(--white);
+    border: 1px solid var(--cream-2);
+    border-radius: 14px;
+    padding: 18px 24px;
+    box-shadow: var(--shadow);
+  }
+
+  .faq-item summary {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--wine-dark);
+  }
+
+  .faq-item summary::marker { color: var(--gold); }
+
+  .faq-item[open] summary { color: var(--wine); margin-bottom: 10px; }
+
+  .faq-item p {
+    color: var(--ink-soft);
+    margin: 12px 0 0;
+    font-size: 0.98rem;
+  }
+
+  /* ---------- Social icons ---------- */
+  .social-row {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin: 20px 0 4px;
+  }
+
+  .social-ic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(239,217,208,0.4);
+    color: var(--gold-light);
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+
+  a.social-ic:hover { background: rgba(255,255,255,0.18); }
+
+  .social-ic.social-ic-disabled {
+    color: rgba(239,217,208,0.35);
+    border-color: rgba(239,217,208,0.18);
+    cursor: not-allowed;
+  }
+
+  .contact-list .disabled-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--ink-soft);
+    font-weight: 600;
+    font-size: 1rem;
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+
+  .contact-list .ic.ic-muted {
+    background: #e7e2df;
+    color: #9c8f8d;
+  }
 </style>
 
 <a href="#main" class="skip-link">Skip to content</a>
 
 <header class="site-header">
   <div class="nav-row container">
-    <a href="#" class="brand">Lexi <span>Nails</span></a>
+    <a href="#" class="brand">
+      <svg class="brand-mark" viewBox="0 0 100 100" width="34" height="34" aria-hidden="true" focusable="false">
+        <rect width="100" height="100" rx="22" fill="#5C1A2E"></rect>
+        <text x="50" y="68" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="54" fill="#C9A24B">L</text>
+      </svg>
+      Lexi <span>Nails</span>
+    </a>
     <nav class="main-nav" aria-label="Primary">
       <a href="#services">Services</a>
       <a href="#gallery">Gallery</a>
       <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
       <a href="#visit">Visit Us</a>
     </nav>
     <a class="nav-call" href="tel:+16517389116">Call (651) 738-9116</a>
@@ -685,7 +909,7 @@
     <div class="hero-inner">
       <p class="eyebrow">Tamarack Village &middot; Woodbury, MN</p>
       <h1>Lexi Nails</h1>
-      <p class="tagline">A neighborhood nail salon doing gel and acrylic manicures, pedicures, and nail art for Woodbury for years. Walk-ins welcome.</p>
+      <p class="tagline">Lexi Nails is a nail salon in the Tamarack Village shopping center in Woodbury, Minnesota, offering gel and acrylic manicures, pedicures, dip powder, and nail art. Walk-ins welcome.</p>
       <div class="stars-row">
         <span class="stars" aria-hidden="true">★★★★☆</span>
         <span class="stars-text">4.1 out of 5 &middot; 139 Google reviews</span>
@@ -828,6 +1052,48 @@
           <p class="who">— Melissa D.</p>
         </div>
       </div>
+      <div class="review-links">
+        <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Lexi%20Nails&query_place_id=ChIJ7w_kLSDY94cRKgCmir7eboI" target="_blank" rel="noopener">★ Review us on Google</a>
+        <a class="btn btn-outline" href="https://www.yelp.com/biz/lexi-nails-saint-paul" target="_blank" rel="noopener">Find us on Yelp</a>
+        <a class="btn btn-outline" href="https://www.fresha.com/lvp/lexi-nails-tamarack-village-woodbury-3oJWBL" target="_blank" rel="noopener">Book on Fresha</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="band-white">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Good to Know</p>
+        <h2>Nail Salon FAQs in Woodbury, MN</h2>
+        <p>Answers to what people ask us most before their first visit.</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>What are Lexi Nails' hours?</summary>
+          <p>Lexi Nails is open Monday through Friday from 10 AM to 8 PM, Saturday from 9 AM to 6 PM, and Sunday from 11 AM to 5 PM. Walk-ins are welcome during all open hours, though calling ahead can shorten your wait, especially on weekends.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Where is Lexi Nails located, and is there parking?</summary>
+          <p>Lexi Nails is located at 8362 Tamarack Village #115 in Woodbury, Minnesota, inside the Tamarack Village shopping center. The salon has a wheelchair accessible entrance and a wheelchair accessible parking lot, with free shopping-center parking right outside the door.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does Lexi Nails take walk-ins?</summary>
+          <p>Yes, Lexi Nails accepts walk-ins for manicures, pedicures, and gel services. You don't need an appointment, though calling ahead at (651) 738-9116 can help you avoid a wait, especially during busy Friday and Saturday afternoons.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What payment methods does Lexi Nails accept?</summary>
+          <p>Lexi Nails accepts credit cards, debit cards, and NFC mobile payments like tap-to-pay. You can pay for your manicure, pedicure, or nail art service at the front desk however is most convenient for you, without needing cash on hand.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What nail services does Lexi Nails offer?</summary>
+          <p>Lexi Nails offers gel and acrylic manicures, spa and luxury pedicures, dip powder, acrylic full sets and fills, gel polish and polish removal, and hand-painted nail art. Popular options include almond, coffin, and stiletto shapes, plus custom foil and glitter designs.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is Lexi Nails wheelchair accessible?</summary>
+          <p>Yes. Lexi Nails has a wheelchair accessible entrance, a wheelchair accessible parking lot, and a wheelchair accessible restroom, so guests using mobility devices can visit comfortably. The salon is on the ground floor of the Tamarack Village shopping center in Woodbury.</p>
+        </details>
+      </div>
     </div>
   </section>
 
@@ -854,6 +1120,8 @@
             <li><a href="tel:+16517389116"><span class="ic" aria-hidden="true">📞</span>(651) 738-9116</a></li>
             <li><a href="sms:+16517389116"><span class="ic" aria-hidden="true">💬</span>Text us</a></li>
             <li><a href="https://www.google.com/maps/search/?api=1&query=Lexi%20Nails&query_place_id=ChIJ7w_kLSDY94cRKgCmir7eboI" target="_blank" rel="noopener"><span class="ic" aria-hidden="true">📍</span>8362 Tamarack Village #115, Woodbury, MN 55125</a></li>
+            <li><a href="https://www.facebook.com/p/Lexi-Nails-100069551580469/" target="_blank" rel="noopener"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.505 17.523 2 12 2S2 6.505 2 12.06c0 5.02 3.657 9.184 8.438 9.94v-7.03H7.898v-2.91h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.878h2.773l-.443 2.91h-2.33V22c4.78-.756 8.437-4.92 8.437-9.94z"/></svg></span>Facebook</a></li>
+            <li class="disabled-row" title="Ask owner for their Instagram page"><span class="ic ic-muted" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.256 1.216.6 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.05 1.066.06 1.405.06 4.122s-.01 3.056-.06 4.122c-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.05-1.405.06-4.122.06s-3.056-.01-4.122-.06c-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.01 15.056 2 14.717 2 12s.01-3.056.06-4.122c.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.01 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.25a3.25 3.25 0 1 1 0-6.5 3.25 3.25 0 0 1 0 6.5zm5.2-8.45a1.17 1.17 0 1 0 0-2.34 1.17 1.17 0 0 0 0 2.34z"/></svg></span>Instagram — ask owner for their page</li>
           </ul>
         </div>
         <div>
@@ -872,6 +1140,14 @@
     <p class="brand" style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:700;">Lexi Nails</p>
     <p>8362 Tamarack Village #115, Woodbury, MN 55125</p>
     <p><a href="tel:+16517389116" style="color:var(--gold-light); text-decoration:none;">(651) 738-9116</a></p>
+    <div class="social-row">
+      <a class="social-ic" href="https://www.facebook.com/p/Lexi-Nails-100069551580469/" target="_blank" rel="noopener" aria-label="Lexi Nails on Facebook">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.505 17.523 2 12 2S2 6.505 2 12.06c0 5.02 3.657 9.184 8.438 9.94v-7.03H7.898v-2.91h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.878h2.773l-.443 2.91h-2.33V22c4.78-.756 8.437-4.92 8.437-9.94z"/></svg>
+      </a>
+      <span class="social-ic social-ic-disabled" title="Ask owner for their Instagram page" role="img" aria-label="Instagram — ask owner for their page">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.256 1.216.6 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.05 1.066.06 1.405.06 4.122s-.01 3.056-.06 4.122c-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.05-1.405.06-4.122.06s-3.056-.01-4.122-.06c-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.01 15.056 2 14.717 2 12s.01-3.056.06-4.122c.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.01 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.25a3.25 3.25 0 1 1 0-6.5 3.25 3.25 0 0 1 0 6.5zm5.2-8.45a1.17 1.17 0 1 0 0-2.34 1.17 1.17 0 0 0 0 2.34z"/></svg>
+      </span>
+    </div>
     <p class="fine">Website demo built by [OWNER PLACEHOLDER]</p>
   </div>
 </footer>

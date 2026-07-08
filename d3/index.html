@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>Sue's Clip Shop | Dog Grooming in Oakdale, MN</title>
-<meta name="description" content="Sue's Clip Shop has been grooming Oakdale's dogs since 1989. Gentle, patient grooming, baths, nail trims &amp; breed-specific cuts. 4.8 stars, 86 reviews.">
+<meta name="description" content="Sue's Clip Shop has been grooming Oakdale's dogs since 1984. Gentle, patient grooming, baths, nail trims &amp; breed-specific cuts. 4.8 stars, 86 reviews.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23bd5433'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23fbf2e6' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 
 <!--
   PALETTE SOURCE: photos/interior-1.jpg (source: leads/photos/photo-03.jpg) — the actual
@@ -15,6 +16,95 @@
   customer dog photos (hero.jpg, gallery-2.jpg, gallery-8.jpg), tying the "warm neighborhood
   shop" feel of the room to the "happy dogs" feel of the gallery.
 -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Sue's Clip Shop",
+  "description": "Sue's Clip Shop is a dog grooming shop in Oakdale, Minnesota, offering dog bathing, toenail clipping, and full-service grooming.",
+  "telephone": "+16514321158",
+  "foundingDate": "1984",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1967 Geneva Ave N",
+    "addressLocality": "Oakdale",
+    "addressRegion": "MN",
+    "postalCode": "55128",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 44.9771222,
+    "longitude": -92.9841638
+  },
+  "url": "https://grategatsby.github.io/demo-previews/d3/",
+  "image": "photos/hero.jpg",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "86"
+  },
+  "paymentAccepted": "Credit Card, Debit Card"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are Sue's Clip Shop's hours?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sue's Clip Shop doesn't publish set hours online. The fastest way to know if Sue can fit your dog in today is to call or text (651) 432-1158 and ask about same-day or upcoming availability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is Sue's Clip Shop located?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sue's Clip Shop is at 1967 Geneva Ave N, Oakdale, MN 55128. The shop has a wheelchair accessible parking lot on site, and you can get turn-by-turn directions from the Visit section on this page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What payment methods does Sue's Clip Shop accept?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sue's Clip Shop accepts both credit cards and debit cards, along with the usual in-shop payment options. Call ahead if you have a question about a specific payment method."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What services does Sue's Clip Shop offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sue's Clip Shop offers full-service dog grooming, baths, nail trims, and breed-specific cuts. Sue works one dog (or one household's dogs) at a time rather than running an assembly line, so grooms are hands-on and personal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Sue's Clip Shop serve the Oakdale area?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Sue's Clip Shop is based in Oakdale, Minnesota and has groomed local dogs since 1984, with many multi-generation households returning for over four decades."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Sue's Clip Shop wheelchair accessible?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sue's Clip Shop has a wheelchair accessible parking lot on site. Call ahead if you have specific accessibility needs and Sue's team can help you plan your visit."
+      }
+    }
+  ]
+}
+</script>
 
 <style>
   :root{
@@ -261,6 +351,38 @@
   .testi-card p{color:var(--ink-soft);font-size:.96rem;margin:0;flex:1;}
   .testi-name{font-weight:700;color:var(--terracotta-dark);font-size:.95rem;}
 
+  /* ---------- FAQ ---------- */
+  .faq{background:var(--cream);}
+  .faq-list{display:grid;gap:16px;margin-top:34px;max-width:800px;margin-left:auto;margin-right:auto;}
+  .faq-item{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;box-shadow:var(--shadow);}
+  .faq-item h3{font-size:1.05rem;color:var(--terracotta-dark);margin:0 0 .4em;}
+  .faq-item p{color:var(--ink-soft);font-size:.95rem;margin:0;}
+
+  /* ---------- Find us online (review links + social) ---------- */
+  .find-us{margin-top:22px;padding-top:18px;border-top:1px dashed var(--line);}
+  .find-us h3{font-size:1rem;color:var(--terracotta-dark);margin-bottom:.7em;}
+  .link-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px;}
+  .link-chip{
+    display:inline-flex;align-items:center;gap:.5em;
+    padding:9px 16px;border-radius:999px;
+    background:var(--paper);border:1px solid var(--line);
+    font-weight:700;font-size:.88rem;color:var(--ink);text-decoration:none;
+  }
+  .link-chip:hover{border-color:var(--terracotta);color:var(--terracotta-dark);}
+  .social-row{display:flex;gap:10px;}
+  .social-icon{
+    width:40px;height:40px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--terracotta);color:#fff;text-decoration:none;
+    transition:transform .15s ease, background-color .15s ease;
+  }
+  .social-icon:hover{transform:translateY(-2px);background:var(--terracotta-dark);}
+  .social-icon.placeholder{
+    background:transparent;color:var(--ink-soft);border:1.5px dashed var(--line);
+    cursor:default;pointer-events:none;opacity:.65;
+  }
+  .social-icon svg{width:18px;height:18px;fill:currentColor;}
+
   /* ---------- Visit / hours / map ---------- */
   .visit{background:var(--paper);}
   .visit-grid{display:grid;grid-template-columns:1fr;gap:28px;margin-top:34px;}
@@ -325,12 +447,19 @@
 
 <header>
   <nav class="nav" aria-label="Primary">
-    <a href="#top" class="brand"><span class="paw">🐾</span> Sue's Clip Shop</a>
+    <a href="#top" class="brand">
+      <svg class="logo-mark" width="34" height="34" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <circle cx="32" cy="32" r="32" fill="var(--terracotta)"/>
+        <text x="32" y="44" font-family="Georgia,serif" font-size="34" font-weight="700" fill="var(--cream)" text-anchor="middle">S</text>
+      </svg>
+      Sue's Clip Shop
+    </a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#visit">Visit</a></li>
     </ul>
     <a class="btn btn-primary nav-cta" href="tel:+16514321158">Call (651) 432-1158</a>
@@ -343,6 +472,7 @@
     <a href="#about">About</a>
     <a href="#gallery">Gallery</a>
     <a href="#reviews">Reviews</a>
+    <a href="#faq">FAQ</a>
     <a href="#visit">Visit</a>
     <a class="call" href="tel:+16514321158">Call (651) 432-1158</a>
   </div>
@@ -358,8 +488,8 @@
           <span aria-hidden="true">⭐ 4.8</span> · 86 Google reviews
         </span>
         <h1>Sue's Clip Shop</h1>
-        <p class="tagline">Oakdale's neighborhood dog groomer, grooming local pups since 1989.</p>
-        <p class="lead">Full-service grooming, baths, nail trims and breed-specific cuts from a groomer Oakdale families have trusted for generations — the same steady, gentle hands their parents used.</p>
+        <p class="tagline">Oakdale's neighborhood dog groomer, grooming local pups since 1984.</p>
+        <p class="lead">Sue's Clip Shop is a dog grooming shop in Oakdale, Minnesota, offering baths, nail trims and full-service cuts for local dogs and their families. Full-service grooming, baths, nail trims and breed-specific cuts from a groomer Oakdale families have trusted for generations — the same steady, gentle hands their parents used.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="tel:+16514321158">📞 Call (651) 432-1158</a>
           <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=sue's%20clip%20shop&query_place_id=ChIJD2Wyr6vTslIRSccJzP98AiY" target="_blank" rel="noopener">Get Directions</a>
@@ -374,7 +504,7 @@
 
   <div class="trust-strip">
     <div class="wrap">
-      <span class="item">🏆 Grooming Oakdale since 1989</span>
+      <span class="item">🏆 Grooming Oakdale since 1984</span>
       <span class="item">👩‍🦰 Women-owned</span>
       <span class="item">👨‍👩‍👧 Multi-generation clientele</span>
       <span class="item">🏳️‍🌈 LGBTQ+ friendly</span>
@@ -424,7 +554,7 @@
       <div>
         <span class="eyebrow" style="color:var(--gold);">Why Oakdale trusts Sue</span>
         <h2>A small shop that remembers your dog's name</h2>
-        <p style="color:#fdece0;">Sue's Clip Shop has been part of Oakdale since 1989, and it shows — clients bring the second and third dog of their household back to the same groomer who cut the first one's hair. Here's what keeps people coming back, in their own words.</p>
+        <p style="color:#fdece0;">Owner Sue Helling has been grooming Oakdale's dogs since 1984 — over four decades now — and it shows: clients bring the second and third dog of their household back to the same groomer who cut the first one's hair. Here's what keeps people coming back, in their own words.</p>
         <ul class="about-list">
           <li><span class="mark">✓</span> "Sue never fails to give each and every one of them awesome haircuts," even with a house full of dogs at once — Marybeth, a client of 15+ years.</li>
           <li><span class="mark">✓</span> Patient with anxious dogs — several reviewers say their nervous pups "warmed right up" or stopped shaking around Sue.</li>
@@ -510,6 +640,40 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <span class="eyebrow center" style="display:block;text-align:center;">Good to know</span>
+      <h2 class="center">Dog Grooming FAQs in Oakdale</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>What are Sue's Clip Shop's hours?</h3>
+          <p>Sue's Clip Shop doesn't publish set hours online. The fastest way to know if Sue can fit your dog in today is to call or text (651) 432-1158 and ask about same-day or upcoming availability.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Where is Sue's Clip Shop located?</h3>
+          <p>Sue's Clip Shop is at 1967 Geneva Ave N, Oakdale, MN 55128. The shop has a wheelchair accessible parking lot on site, and you can get turn-by-turn directions from the Visit section below.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What payment methods does Sue's Clip Shop accept?</h3>
+          <p>Sue's Clip Shop accepts both credit cards and debit cards, along with the usual in-shop payment options. Call ahead if you have a question about a specific payment method.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What services does Sue's Clip Shop offer?</h3>
+          <p>Sue's Clip Shop offers full-service dog grooming, baths, nail trims, and breed-specific cuts. Sue works one dog (or one household's dogs) at a time rather than running an assembly line, so grooms are hands-on and personal.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Does Sue's Clip Shop serve the Oakdale area?</h3>
+          <p>Yes. Sue's Clip Shop is based in Oakdale, Minnesota and has groomed local dogs since 1984, with many multi-generation households returning for over four decades.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is Sue's Clip Shop wheelchair accessible?</h3>
+          <p>Sue's Clip Shop has a wheelchair accessible parking lot on site. Call ahead if you have specific accessibility needs and Sue's team can help you plan your visit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- VISIT -->
   <section class="visit" id="visit">
     <div class="wrap">
@@ -548,6 +712,26 @@
             </div>
           </div>
           <a class="btn btn-outline-dark" href="https://www.google.com/maps/search/?api=1&query=sue's%20clip%20shop&query_place_id=ChIJD2Wyr6vTslIRSccJzP98AiY" target="_blank" rel="noopener" style="margin-top:6px;">Get Directions →</a>
+
+          <div class="find-us">
+            <h3>Find us online</h3>
+            <div class="link-row">
+              <a class="link-chip" href="https://www.google.com/maps/search/?api=1&query=sue's%20clip%20shop&query_place_id=ChIJD2Wyr6vTslIRSccJzP98AiY" target="_blank" rel="noopener">⭐ Google Reviews</a>
+              <a class="link-chip" href="https://www.yelp.com/biz/sues-clip-shoppe-oakdale" target="_blank" rel="noopener">Yelp</a>
+              <a class="link-chip" href="https://www.bbb.org/us/mn/saint-paul/profile/pet-boarding/sues-clip-shoppe-0704-96191690" target="_blank" rel="noopener">BBB</a>
+            </div>
+            <div class="social-row">
+              <a class="social-icon" href="https://www.facebook.com/p/Sues-Clip-Shoppe-100041376206334/" target="_blank" rel="noopener" aria-label="Sue's Clip Shop on Facebook" title="Sue's Clip Shop on Facebook">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12"/></svg>
+              </a>
+              <span class="social-icon placeholder" aria-hidden="true" title="Ask owner for their page">
+                <svg viewBox="0 0 24 24"><path d="M12 2.16c2.72 0 3.04.01 4.12.06 1.07.05 1.8.22 2.43.47.66.26 1.22.6 1.77 1.15.55.55.9 1.11 1.15 1.77.25.63.42 1.36.47 2.43.05 1.08.06 1.4.06 4.12s-.01 3.04-.06 4.12c-.05 1.07-.22 1.8-.47 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.63.25-1.36.42-2.43.47-1.08.05-1.4.06-4.12.06s-3.04-.01-4.12-.06c-1.07-.05-1.8-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.25-.63-.42-1.36-.47-2.43C2.17 15.04 2.16 14.72 2.16 12s.01-3.04.06-4.12c.05-1.07.22-1.8.47-2.43.26-.66.6-1.22 1.15-1.77A4.9 4.9 0 0 1 5.61 2.53c.63-.25 1.36-.42 2.43-.47C9.12 2.01 9.44 2 12 2zm0 3.15a6.84 6.84 0 1 0 0 13.69 6.84 6.84 0 0 0 0-13.7m0 2.16a4.68 4.68 0 1 1 0 9.37 4.68 4.68 0 0 1 0-9.37m6.4-1.9a1.16 1.16 0 1 1-2.31 0 1.16 1.16 0 0 1 2.31 0"/></svg>
+              </span>
+              <span class="social-icon placeholder" aria-hidden="true" title="Ask owner for their page">
+                <svg viewBox="0 0 24 24"><path d="M23.5 6.19a4.02 4.02 0 0 0-2.83-2.85C18.6 2.8 12 2.8 12 2.8s-6.6 0-8.67.54A4.02 4.02 0 0 0 .5 6.19 42 42 0 0 0 0 12a42 42 0 0 0 .5 5.81 4.02 4.02 0 0 0 2.83 2.85c2.07.54 8.67.54 8.67.54s6.6 0 8.67-.54a4.02 4.02 0 0 0 2.83-2.85A42 42 0 0 0 24 12a42 42 0 0 0-.5-5.81M9.6 15.6V8.4l6.4 3.6z"/></svg>
+              </span>
+            </div>
+          </div>
         </div>
         <div class="map-frame">
           <iframe
