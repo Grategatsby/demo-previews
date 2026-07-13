@@ -376,6 +376,9 @@ h3.section-h3{font-size:1.3rem;color:var(--navy);margin-top:1.6em;}
 }
 .areas-served h3{color:var(--navy);font-size:1.05rem;margin-bottom:.5em;}
 .areas-served p{margin:0;color:var(--gray);}
+.service-photo{margin:1.8em 0;}
+.service-photo img{width:100%;height:auto;max-height:360px;object-fit:cover;object-position:center 32%;border-radius:var(--radius);border:1px solid var(--border);}
+.service-photo figcaption{margin-top:8px;font-size:.85rem;color:var(--gray);font-style:italic;}
 .sibling-services{background:var(--cream-dim);}
 .sibling-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
 .sibling-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 18px;text-decoration:none;color:var(--navy);font-weight:700;font-size:.98rem;display:flex;align-items:center;justify-content:space-between;gap:10px;transition:transform .12s ease,box-shadow .12s ease;}
