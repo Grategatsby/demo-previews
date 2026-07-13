@@ -5,295 +5,41 @@
   Palette source: leads/marie-avenue-service/photos/photo-02.jpg (the shop's own pole
   sign) — deep navy/charcoal sign body with white lettering, and the Valvoline partner
   logo's warm red used as the accent color. photo-01.jpg was discarded (see report).
+  Design system lives in styles.css and is shared by every page on this site.
 -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>Marie Avenue Service | Auto Repair, Glass, Body &amp; Towing in South St Paul, MN</title>
 <meta name="description" content="Marie Avenue Service is a full-service auto repair shop in South St Paul, Minnesota, handling repair, brakes, oil changes, auto glass, body work, and towing. 5.0 stars from 39 Google reviews.">
+<link rel="canonical" href="https://grategatsby.github.io/demo-previews/d11/">
+
+<!-- Open Graph / social share -->
+<meta property="og:type" content="business.business">
+<meta property="og:title" content="Marie Avenue Service | Auto Repair, Glass, Body &amp; Towing in South St Paul, MN">
+<meta property="og:description" content="Full-service South St Paul auto shop: repair, brakes, oil changes, auto glass, body work, and towing. 5.0 stars from 39 Google reviews.">
+<meta property="og:image" content="https://grategatsby.github.io/demo-previews/d11/photos/shop-sign-roadside-service.jpg">
+<meta property="og:url" content="https://grategatsby.github.io/demo-previews/d11/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Marie Avenue Service | South St Paul, MN">
+<meta name="twitter:description" content="Full-service auto repair, brakes, glass, body work &amp; towing in South St Paul, MN. 5.0 stars, 39 Google reviews.">
+<meta name="twitter:image" content="https://grategatsby.github.io/demo-previews/d11/photos/shop-sign-roadside-service.jpg">
+
+<!-- Analytics / Search Console slots — DORMANT, activated at launch tier (see AI-SEO-SPEC + premium-ranking-template §4b) -->
+<!-- <meta name="google-site-verification" content="REPLACE_AT_LAUNCH"> -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-REPLACE_AT_LAUNCH"></script> -->
+<!-- <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);} gtag('js',new Date()); gtag('config','G-REPLACE_AT_LAUNCH');</script> -->
 
 <!-- Favicon: monogram "M" mark, palette colors -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%2316283f'/%3E%3Cpath d='M16 46V20h6l10 16 10-16h6v26h-5.5V29l-8.5 13.5h-4L21.5 29v17z' fill='%23fbfaf7'/%3E%3Ccircle cx='32' cy='32' r='30' fill='none' stroke='%23d3492a' stroke-width='2.5'/%3E%3C/svg%3E">
 
-<style>
-  :root{
-    --navy:#16283f;
-    --navy-dark:#0d1826;
-    --navy-mid:#203a5c;
-    --accent:#d3492a;
-    --accent-dark:#a83a20;
-    --cream:#fbfaf7;
-    --cream-dim:#f1ece2;
-    --text:#1c1f24;
-    --gray:#5b6470;
-    --border:#e4ddd0;
-    --radius:14px;
-    --maxw:1120px;
-    font-size:16px;
-  }
-  *,*::before,*::after{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    color:var(--text);
-    background:var(--cream);
-    line-height:1.55;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  img{max-width:100%;display:block;}
-  a{color:inherit;}
-  h1,h2,h3{font-family:'Oswald',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;letter-spacing:.01em;margin:0 0 .5em;line-height:1.15;}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
-  section{padding:64px 0;}
-  a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
-
-  /* ---------- Header ---------- */
-  header{
-    position:sticky;top:0;z-index:50;
-    background:var(--navy);
-    border-bottom:3px solid var(--accent);
-  }
-  .header-inner{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:12px 20px;max-width:var(--maxw);margin:0 auto;
-  }
-  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--cream);}
-  .logo-mark{width:42px;height:42px;flex:0 0 auto;}
-  .brand-name{font-family:'Oswald',sans-serif;font-weight:600;font-size:1.15rem;color:var(--cream);letter-spacing:.02em;}
-  .brand-sub{display:block;font-size:.65rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:#b9c4d4;}
-  .header-cta{
-    display:flex;align-items:center;gap:14px;
-  }
-  .call-pill{
-    display:inline-flex;align-items:center;gap:8px;
-    background:var(--accent);color:#fff;
-    padding:10px 16px;border-radius:999px;
-    font-weight:700;text-decoration:none;font-size:.92rem;
-    white-space:nowrap;
-    transition:background .15s ease;
-  }
-  .call-pill:hover{background:var(--accent-dark);}
-  .call-pill svg{width:16px;height:16px;flex:0 0 auto;}
-  @media (max-width:560px){
-    .brand-sub{display:none;}
-    .brand-name{font-size:1rem;}
-  }
-
-  /* ---------- Hero ---------- */
-  .hero{
-    background:radial-gradient(circle at 85% 0%, var(--navy-mid) 0%, var(--navy) 45%, var(--navy-dark) 100%);
-    color:var(--cream);
-    position:relative;
-    overflow:hidden;
-    padding:40px 0 44px;
-  }
-  .hero-deco{position:absolute;right:-40px;top:-30px;width:300px;height:300px;opacity:.14;pointer-events:none;}
-  .hero-inner{position:relative;z-index:1;max-width:960px;}
-  .rating-badge{
-    display:inline-flex;align-items:center;gap:8px;
-    background:rgba(251,250,247,.1);
-    border:1px solid rgba(251,250,247,.25);
-    padding:7px 14px;border-radius:999px;
-    font-size:.85rem;font-weight:600;margin-bottom:20px;
-  }
-  .stars{color:#ffb648;letter-spacing:1px;font-size:.95rem;}
-  .hero h1{font-size:clamp(2rem,4.6vw,2.9rem);color:#fff;max-width:24ch;line-height:1.12;margin:0 0 .5em;}
-  .hero .accent-word{color:var(--accent);}
-  .hero-lede{font-size:1.13rem;color:#dbe3ee;max-width:60ch;margin:0 0 1.6em;}
-  .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;}
-  .btn{
-    display:inline-flex;align-items:center;gap:9px;
-    padding:14px 24px;border-radius:10px;
-    font-weight:700;font-size:1rem;text-decoration:none;
-    border:2px solid transparent;
-    transition:transform .12s ease, background .15s ease;
-  }
-  .btn:hover{transform:translateY(-1px);}
-  .btn svg{width:19px;height:19px;flex:0 0 auto;}
-  .btn-primary{background:var(--accent);color:#fff;}
-  .btn-primary:hover{background:var(--accent-dark);}
-  .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4);}
-  .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff;}
-
-  /* ---------- Section headings ---------- */
-  .eyebrow{
-    display:block;text-transform:uppercase;letter-spacing:.14em;
-    font-size:.78rem;font-weight:700;color:var(--accent);margin-bottom:.6em;
-  }
-  h2{font-size:clamp(1.6rem,3.6vw,2.2rem);color:var(--navy);}
-  .section-intro{color:var(--gray);max-width:62ch;font-size:1.05rem;margin-bottom:2.2em;}
-
-  /* ---------- Services ---------- */
-  .services{background:var(--cream);}
-  .service-grid{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
-  }
-  @media (max-width:820px){.service-grid{grid-template-columns:repeat(2,1fr);}}
-  @media (max-width:540px){.service-grid{grid-template-columns:1fr;}}
-  .service-card{
-    background:#fff;border:1px solid var(--border);border-radius:var(--radius);
-    padding:26px 22px;
-    box-shadow:0 1px 3px rgba(22,40,63,.05);
-  }
-  .service-icon{
-    width:56px;height:56px;border-radius:50%;
-    background:var(--cream-dim);
-    display:flex;align-items:center;justify-content:center;
-    margin-bottom:16px;color:var(--navy);
-  }
-  .service-icon svg{width:30px;height:30px;stroke:var(--navy);}
-  .service-card h3{font-size:1.12rem;color:var(--navy);margin-bottom:.4em;}
-  .service-card p{color:var(--gray);font-size:.95rem;margin:0;}
-
-  /* ---------- About ---------- */
-  .about{background:var(--navy);color:var(--cream);}
-  .about .eyebrow{color:#ffb648;}
-  .about h2{color:#fff;}
-  .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;}
-  @media (max-width:820px){.about-grid{grid-template-columns:1fr;}}
-  .about-copy p{color:#d7dfea;font-size:1.03rem;}
-  .why-list{list-style:none;margin:1.6em 0 0;padding:0;display:grid;gap:14px;}
-  .why-list li{display:flex;gap:12px;align-items:flex-start;color:#e8edf4;font-size:.98rem;}
-  .why-list svg{width:22px;height:22px;flex:0 0 auto;color:var(--accent);margin-top:2px;}
-  .about-photo{position:relative;}
-  .about-photo img{
-    border-radius:var(--radius);
-    border:4px solid rgba(255,255,255,.12);
-    width:100%;height:auto;
-    aspect-ratio:4/5;object-fit:cover;object-position:center 30%;
-  }
-  .about-photo figcaption{
-    margin-top:10px;font-size:.85rem;color:#9fadc2;font-style:italic;
-  }
-
-  /* ---------- Testimonials ---------- */
-  .testimonials{background:var(--cream-dim);}
-  .t-intro{font-weight:600;color:var(--navy);margin-bottom:1.6em;font-size:1.05rem;}
-  .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-  @media (max-width:820px){.t-grid{grid-template-columns:repeat(2,1fr);}}
-  @media (max-width:560px){.t-grid{grid-template-columns:1fr;}}
-  .t-card{
-    background:#fff;border-radius:var(--radius);padding:22px 20px;
-    border:1px solid var(--border);
-    display:flex;flex-direction:column;gap:10px;
-  }
-  .t-stars{color:#ffb648;font-size:.95rem;letter-spacing:1px;}
-  .t-text{font-size:.95rem;color:var(--text);margin:0;flex:1;}
-  .t-name{font-weight:700;color:var(--navy);font-size:.9rem;}
-
-  /* ---------- Hours & Contact ---------- */
-  .visit{background:var(--cream);}
-  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;}
-  @media (max-width:820px){.visit-grid{grid-template-columns:1fr;}}
-  .info-card{
-    background:#fff;border:1px solid var(--border);border-radius:var(--radius);
-    padding:26px;
-  }
-  .info-card h3{color:var(--navy);font-size:1.15rem;margin-bottom:.8em;display:flex;align-items:center;gap:10px;}
-  .info-card h3 svg{width:22px;height:22px;color:var(--accent);}
-  .status-badge{
-    display:inline-flex;align-items:center;gap:8px;
-    padding:6px 12px;border-radius:999px;font-weight:700;font-size:.85rem;margin-bottom:14px;
-  }
-  .status-open{background:#e2f5e6;color:#1c7a34;}
-  .status-closed{background:#fbe6e2;color:#a83a20;}
-  .status-badge .dot{width:8px;height:8px;border-radius:50%;background:currentColor;}
-  .hours-table{width:100%;border-collapse:collapse;font-size:.95rem;}
-  .hours-table td{padding:6px 0;border-bottom:1px solid var(--border);}
-  .hours-table tr:last-child td{border-bottom:none;}
-  .hours-table td:first-child{color:var(--gray);}
-  .hours-table td:last-child{text-align:right;font-weight:600;color:var(--navy);}
-  .hours-table tr.today td{color:var(--accent-dark);font-weight:700;}
-  .hours-table tr.today td:first-child{color:var(--accent-dark);}
-  .contact-list{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:12px;}
-  .contact-list li{display:flex;align-items:flex-start;gap:12px;font-size:.98rem;}
-  .contact-list svg{width:20px;height:20px;flex:0 0 auto;color:var(--accent);margin-top:2px;}
-  .contact-list a{text-decoration:none;font-weight:600;color:var(--navy);}
-  .contact-list a:hover{text-decoration:underline;}
-  .btn-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;}
-  .btn-sm{
-    display:inline-flex;align-items:center;gap:7px;
-    padding:10px 16px;border-radius:8px;font-weight:700;font-size:.88rem;text-decoration:none;
-  }
-  .btn-sm svg{width:16px;height:16px;}
-  .btn-sm.call{background:var(--accent);color:#fff;}
-  .btn-sm.call:hover{background:var(--accent-dark);}
-  .btn-sm.text{background:var(--navy);color:#fff;}
-  .btn-sm.text:hover{background:var(--navy-dark);}
-  .btn-sm.dir{background:transparent;color:var(--navy);border:2px solid var(--navy);}
-  .btn-sm.dir:hover{background:var(--navy);color:#fff;}
-  .map-wrap{margin-top:22px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);}
-  .map-wrap iframe{width:100%;height:280px;border:0;display:block;}
-
-  /* ---------- Review links / social ---------- */
-  .connect{background:var(--cream-dim);}
-  .connect-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px;align-items:flex-start;}
-  .connect-block h3{color:var(--navy);font-size:1rem;margin-bottom:.9em;text-transform:uppercase;letter-spacing:.08em;}
-  .icon-row{display:flex;gap:12px;}
-  .icon-btn{
-    width:46px;height:46px;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    text-decoration:none;box-shadow:0 1px 3px rgba(22,40,63,.12);
-    transition:transform .12s ease;
-  }
-  .icon-btn:hover{transform:translateY(-2px);}
-  .icon-btn svg{width:24px;height:24px;}
-
-  /* ---------- FAQ ---------- */
-  .faq{background:var(--cream);}
-  .faq-list{display:grid;gap:12px;max-width:780px;}
-  .faq-item{
-    background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;
-  }
-  .faq-q{
-    width:100%;text-align:left;background:none;border:0;cursor:pointer;
-    padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);
-    display:flex;justify-content:space-between;align-items:center;gap:16px;
-    font-family:inherit;
-  }
-  .faq-q .plus{flex:0 0 auto;width:22px;height:22px;position:relative;}
-  .faq-q .plus::before,.faq-q .plus::after{
-    content:"";position:absolute;background:var(--accent);border-radius:2px;
-    transition:transform .2s ease;
-  }
-  .faq-q .plus::before{left:0;top:50%;width:100%;height:3px;margin-top:-1.5px;}
-  .faq-q .plus::after{top:0;left:50%;height:100%;width:3px;margin-left:-1.5px;}
-  .faq-item.open .faq-q .plus::after{transform:rotate(90deg);opacity:0;}
-  .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;}
-  .faq-a p{margin:0;padding:0 20px 20px;color:var(--gray);font-size:.96rem;}
-  .faq-item.open .faq-a{max-height:260px;}
-
-  /* ---------- Footer ---------- */
-  footer{background:var(--navy-dark);color:#c3ccd9;padding:44px 0 96px;}
-  .footer-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;}
-  .footer-brand{display:flex;align-items:center;gap:12px;}
-  .footer-brand .logo-mark{width:36px;height:36px;}
-  .footer-brand span{font-family:'Oswald',sans-serif;font-weight:600;color:#fff;font-size:1.05rem;}
-  .footer-meta{font-size:.88rem;line-height:1.8;}
-  .footer-credit{width:100%;text-align:center;font-size:.78rem;color:#7a869b;margin-top:28px;border-top:1px solid rgba(255,255,255,.08);padding-top:18px;}
-
-  /* ---------- Sticky mobile call bar ---------- */
-  .sticky-call{
-    display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;
-    background:var(--accent);color:#fff;text-align:center;
-    padding:14px;font-weight:700;text-decoration:none;font-size:1rem;
-    box-shadow:0 -4px 14px rgba(0,0,0,.18);
-    align-items:center;justify-content:center;gap:8px;
-  }
-  .sticky-call svg{width:18px;height:18px;}
-  @media (max-width:720px){
-    .sticky-call{display:flex;}
-    body{padding-bottom:58px;}
-  }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header>
   <div class="header-inner">
-    <a href="#top" class="brand" id="top">
+    <a href="index.html" class="brand" id="top">
       <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true">
         <circle cx="32" cy="32" r="31" fill="none" stroke="#d3492a" stroke-width="2.5"/>
         <path d="M16 46V20h6l10 16 10-16h6v26h-5.5V29l-8.5 13.5h-4L21.5 29v17z" fill="#fbfaf7"/>
@@ -303,11 +49,32 @@
         <span class="brand-sub">South St Paul, MN</span>
       </span>
     </a>
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <ul class="nav-list">
+        <li class="has-dropdown">
+          <a class="nav-link" href="services/index.html" aria-haspopup="true" aria-expanded="false">Services<span class="caret" aria-hidden="true"></span></a>
+          <div class="dropdown">
+            <a href="services/auto-repair/index.html">Auto Repair<small>Diagnostics &amp; general repair</small></a>
+            <a href="services/brakes/index.html">Brakes<small>Inspection &amp; repair</small></a>
+            <a href="services/oil-maintenance/index.html">Oil &amp; Maintenance<small>Oil changes &amp; tune-ups</small></a>
+            <a href="services/auto-glass/index.html">Auto Glass<small>Chip &amp; windshield repair</small></a>
+            <a href="services/body-work/index.html">Body Work<small>Dents, scrapes &amp; collision</small></a>
+            <a href="services/towing/index.html">Towing<small>Get to our shop safely</small></a>
+          </div>
+        </li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#reviews">Reviews</a></li>
+        <li><a class="nav-link" href="#visit">Contact</a></li>
+      </ul>
+    </nav>
     <div class="header-cta">
-      <a class="call-pill" href="tel:+16514510911">
+      <a class="call-pill" data-phone-tel href="tel:+16514510911" data-cta="call" data-cta-location="header">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        (651) 451-0911
+        <span data-phone-display>(651) 451-0911</span>
       </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
     </div>
   </div>
 </header>
@@ -326,15 +93,15 @@
         5.0 stars &middot; 39 Google reviews
       </div>
       <h1>One Shop for Everything Your Car Needs in <span class="accent-word">South St Paul</span></h1>
-      <p class="hero-lede">Repair, brakes, oil changes, auto glass, body work, and towing &mdash; a full-service South St Paul auto shop, all under one roof. Honest, fast, straightforward.</p>
+      <p class="hero-lede">Marie Avenue Service is a full-service auto repair shop in South St Paul, Minnesota, handling repair, brakes, oil changes, auto glass, body work, and towing for drivers across the south metro &mdash; all under one roof, honest and fast.</p>
       <div class="hero-ctas">
-        <a class="btn btn-primary" href="tel:+16514510911">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Call (651) 451-0911
+        <a class="btn btn-primary" data-phone-sms data-sms-body="Hi, I'd like to book an appointment at Marie Avenue Service — what times are open?" href="sms:+16514510911?&body=Hi%2C%20I'd%20like%20to%20book%20an%20appointment%20at%20Marie%20Avenue%20Service%20%E2%80%94%20what%20times%20are%20open%3F" data-cta="book-request" data-cta-location="hero">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 15h3"/></svg>
+          Request a Time
         </a>
-        <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Marie%20Avenue%20service&query_place_id=ChIJz-Wbi_DV94cRIsYGAGA4478" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Get Directions
+        <a class="btn btn-ghost" data-phone-tel href="tel:+16514510911" data-cta="call" data-cta-location="hero">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call <span data-phone-display>(651) 451-0911</span>
         </a>
       </div>
     </div>
@@ -345,56 +112,62 @@
     <div class="wrap">
       <span class="eyebrow">What We Do</span>
       <h2>Auto Repair Services in South St Paul, MN</h2>
-      <p class="section-intro">General repair, brakes, glass, body work, and towing &mdash; drivers bring us everything from a warning light to a wrecked bumper, and we handle it in one place.</p>
+      <p class="section-intro">General repair, brakes, glass, body work, and towing &mdash; drivers bring us everything from a warning light to a wrecked bumper, and we handle it in one place. Tap any service below for the full details.</p>
       <div class="service-grid">
 
-        <div class="service-card">
+        <a class="service-card linked" href="services/auto-repair/index.html">
           <div class="service-icon">
             <svg viewBox="0 0 48 48" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M31 10a7 7 0 0 0-9.5 8.2L10 29.7a3.2 3.2 0 0 0 4.5 4.5L26 22.7A7 7 0 0 0 34.2 15l-5 5-3.5-.7-.7-3.5z"/></svg>
           </div>
           <h3>General Auto Repair</h3>
           <p>From dashboard warning lights to a noise you can't quite place, we diagnose the problem and fix it right the first time.</p>
-        </div>
+          <span class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
 
-        <div class="service-card">
+        <a class="service-card linked" href="services/brakes/index.html">
           <div class="service-icon">
             <svg viewBox="0 0 48 48" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="14"/><circle cx="24" cy="24" r="4.5"/><path d="M24 10v6M24 32v6M10 24h6M32 24h6M15 15l4 4M29 29l4 4M15 33l4-4M29 19l4-4"/></svg>
           </div>
           <h3>Brakes</h3>
-          <p>Grinding, squealing, or a soft pedal &mdash; we inspect and repair your brakes so you can stop with confidence.</p>
-        </div>
+          <p>Grinding, squealing, or a soft pedal &mdash; we inspect and repair your brakes so you can stop with confidence, especially in Minnesota winters.</p>
+          <span class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
 
-        <div class="service-card">
+        <a class="service-card linked" href="services/oil-maintenance/index.html">
           <div class="service-icon">
             <svg viewBox="0 0 48 48" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8h12l3 8v22a2 2 0 0 1-2 2H17a2 2 0 0 1-2-2V16z"/><path d="M15 16h18M24 22v12M20 26h8"/></svg>
           </div>
           <h3>Oil Changes &amp; Maintenance</h3>
-          <p>Regular oil changes and multi-point checkups keep small problems from turning into expensive ones.</p>
-        </div>
+          <p>Regular oil changes and multi-point checkups keep small problems from turning into expensive ones, season after season.</p>
+          <span class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
 
-        <div class="service-card">
+        <a class="service-card linked" href="services/auto-glass/index.html">
           <div class="service-icon">
             <svg viewBox="0 0 48 48" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 14h32l-3 18H11z"/><path d="M8 14l6-6h20l6 6M24 14v18M18 27l-4 5M30 27l4 5"/></svg>
           </div>
           <h3>Auto Glass</h3>
           <p>Chipped or cracked windshield? We repair and replace auto glass so you can see the road clearly again.</p>
-        </div>
+          <span class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
 
-        <div class="service-card">
+        <a class="service-card linked" href="services/body-work/index.html">
           <div class="service-icon">
             <svg viewBox="0 0 48 48" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 28l4-9a4 4 0 0 1 3.7-2.4h20.6A4 4 0 0 1 38 19l4 9v6a2 2 0 0 1-2 2h-2a3 3 0 1 1-6 0H16a3 3 0 1 1-6 0H8a2 2 0 0 1-2-2z"/><path d="M6 28h36M14 16.6l-3 8.4M34 16.6l3 8.4"/></svg>
           </div>
           <h3>Body Work</h3>
           <p>Dents, scrapes, and collision damage &mdash; we get your vehicle looking and driving right again.</p>
-        </div>
+          <span class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
 
-        <div class="service-card">
+        <a class="service-card linked" href="services/towing/index.html">
           <div class="service-icon">
             <svg viewBox="0 0 48 48" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 32V16h16l8 8h8a4 4 0 0 1 4 4v4"/><circle cx="14" cy="36" r="4"/><circle cx="34" cy="36" r="4"/><path d="M18 20l6 6" /></svg>
           </div>
           <h3>Towing</h3>
-          <p>Stuck on the road? We offer towing to get your vehicle to our shop safely and quickly.</p>
-        </div>
+          <p>Stuck on the road? We offer towing to get your vehicle to our shop safely.</p>
+          <span class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
 
       </div>
     </div>
@@ -427,6 +200,45 @@
         <img src="photos/shop-sign-roadside-service.jpg" alt="Marie Avenue Service crew servicing a truck tire in the lot below the shop's sign in South St Paul, Minnesota" loading="lazy" width="1024" height="1280">
         <figcaption>Our crew getting a customer back on the road &mdash; even on the coldest days.</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <!-- ================= SEASONAL REMINDERS OPT-IN (recurring-maintenance trade, featured per spec §4c) ================= -->
+  <section class="reminders">
+    <div class="wrap reminders-grid">
+      <div class="reminders-copy">
+        <span class="eyebrow">Never Miss an Oil Change</span>
+        <h2>Get a Text When Your Car's Due for Service</h2>
+        <p>Text START and we'll add you to seasonal reminders &mdash; oil changes, pre-winter checkups, and tune-ups &mdash; so maintenance never sneaks up on you.</p>
+      </div>
+      <div class="reminders-cta">
+        <a class="btn btn-primary" data-phone-sms data-sms-body="START - I'd like seasonal service reminders from Marie Avenue Service." href="sms:+16514510911?&body=START%20-%20I%27d%20like%20seasonal%20service%20reminders%20from%20Marie%20Avenue%20Service." data-cta="reminder-optin" data-cta-location="reminders">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Text START to Sign Up
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= QUOTE / LEAD-CAPTURE MODULE ================= -->
+  <section class="services" style="padding-top:0;">
+    <div class="wrap">
+      <div class="quote-module">
+        <div class="quote-copy">
+          <h3>Get a Free Repair Quote</h3>
+          <p>Tell us what's going on with your vehicle and we'll get you a straight answer &mdash; call or text and we'll follow up fast.</p>
+        </div>
+        <div class="quote-ctas">
+          <a class="btn-sm call" data-phone-tel href="tel:+16514510911" data-cta="quote-call" data-cta-location="quote-module">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call for a Quote
+          </a>
+          <a class="btn-sm text" data-phone-sms data-sms-body="Hi! I'd like a free quote for the following work: " href="sms:+16514510911?&body=Hi!%20I%27d%20like%20a%20free%20quote%20for%20the%20following%20work%3A%20" data-cta="quote-text" data-cta-location="quote-module">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Text for a Quote
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -478,12 +290,37 @@
     </div>
   </section>
 
+  <!-- ================= BOOKING / SCHEDULER SLOT ================= -->
+  <section class="booking" id="booking" data-scheduler-slot>
+    <div class="wrap booking-inner">
+      <div class="booking-copy">
+        <span class="eyebrow">Book an Appointment</span>
+        <h2>Request a Time That Works for You</h2>
+        <p>Text us the service you need and we'll reply with the next open appointment times. Prefer to talk it through? Give us a call and we'll get you on the schedule.</p>
+      </div>
+      <div class="booking-ctas">
+        <a class="btn btn-primary" data-phone-sms data-sms-body="Hi, I'd like to book an appointment at Marie Avenue Service — what times are open?" href="sms:+16514510911?&body=Hi%2C%20I'd%20like%20to%20book%20an%20appointment%20at%20Marie%20Avenue%20Service%20%E2%80%94%20what%20times%20are%20open%3F" data-cta="book-request" data-cta-location="booking-section">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 15h3"/></svg>
+          Request a Time
+        </a>
+        <a class="btn btn-outline" data-phone-tel href="tel:+16514510911" data-cta="call" data-cta-location="booking-section">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call <span data-phone-display>(651) 451-0911</span>
+        </a>
+      </div>
+      <!-- SCHEDULER SWAP: interim state is the prefilled-SMS "Request a Time" CTA above (functional,
+           never a dead button). When the owner provides a live Calendly/Cal.com link, embed its iframe
+           inside this #booking[data-scheduler-slot] container to replace the SMS CTA — no other markup
+           changes needed (upgrade-ready hook per premium-ranking-template.md §4b). -->
+    </div>
+  </section>
+
   <!-- ================= HOURS / CONTACT / MAP ================= -->
   <section class="visit" id="visit">
     <div class="wrap">
       <span class="eyebrow">Visit Us</span>
       <h2>Hours &amp; Location</h2>
-      <p class="section-intro">Come see us at 103 5th Ave N in South St Paul &mdash; call ahead or just pull in.</p>
+      <p class="section-intro">Come see us at 103 5th Ave N in South St Paul &mdash; call ahead or just pull in. We also serve drivers from West St Paul, Inver Grove Heights, and across Dakota County.</p>
       <div class="visit-grid">
 
         <div class="info-card">
@@ -515,19 +352,19 @@
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <a href="tel:+16514510911">(651) 451-0911</a>
+              <a data-phone-tel href="tel:+16514510911"><span data-phone-display>(651) 451-0911</span></a>
             </li>
           </ul>
           <div class="btn-row">
-            <a class="btn-sm call" href="tel:+16514510911">
+            <a class="btn-sm call" data-phone-tel href="tel:+16514510911" data-cta="call" data-cta-location="visit">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               Call
             </a>
-            <a class="btn-sm text" href="sms:+16514510911?&body=Hi!%20I%27d%20like%20to%20book%20a%20service%20appointment.">
+            <a class="btn-sm text" data-phone-sms href="sms:+16514510911?&body=Hi!%20I%27d%20like%20to%20book%20a%20service%20appointment." data-cta="book-text" data-cta-location="visit">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
               Text to Book
             </a>
-            <a class="btn-sm dir" href="https://www.google.com/maps/search/?api=1&query=Marie%20Avenue%20service&query_place_id=ChIJz-Wbi_DV94cRIsYGAGA4478" target="_blank" rel="noopener">
+            <a class="btn-sm dir" href="https://www.google.com/maps/search/?api=1&query=Marie%20Avenue%20service&query_place_id=ChIJz-Wbi_DV94cRIsYGAGA4478" target="_blank" rel="noopener" data-cta="directions" data-cta-location="visit">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l19-9-9 19-2-8z"/></svg>
               Directions
             </a>
@@ -554,6 +391,10 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1861A6"/><text x="12" y="16.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" fill="#fff">BBB</text></svg>
           </a>
         </div>
+        <a class="review-cta" href="https://search.google.com/local/writereview?placeid=ChIJz-Wbi_DV94cRIsYGAGA4478" target="_blank" rel="noopener" data-cta="leave-review" data-cta-location="connect">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          Leave Us a Review
+        </a>
       </div>
       <div class="connect-block">
         <h3>Follow Along</h3>
@@ -593,17 +434,17 @@
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">Do I need an appointment?<span class="plus"></span></button>
-          <div class="faq-a"><p>Appointments are recommended so we can get your vehicle in and worked on promptly. Call or text (651) 451-0911 to set one up, and we'll always do our best for same-day needs.</p></div>
+          <div class="faq-a"><p><a href="#booking">Appointments are recommended</a> so we can get your vehicle in and worked on promptly. Call or text (651) 451-0911 to set one up, and we'll always do our best for same-day needs.</p></div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">What services does Marie Avenue Service offer?<span class="plus"></span></button>
-          <div class="faq-a"><p>We handle general auto repair, brake service, oil changes and routine maintenance, auto glass repair and replacement, body work, and towing &mdash; one shop for nearly everything your vehicle needs.</p></div>
+          <div class="faq-a"><p>We handle general auto repair, brake service, oil changes and routine maintenance, auto glass repair and replacement, body work, and towing &mdash; one shop for nearly everything your vehicle needs. See our <a href="services/index.html">full services list</a> for details on each.</p></div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">What area do you serve?<span class="plus"></span></button>
-          <div class="faq-a"><p>We're based in South St Paul, Minnesota, and welcome drivers from throughout the surrounding area. If you're nearby and need repair, glass, body work, or a tow, give us a call at (651) 451-0911.</p></div>
+          <div class="faq-a"><p>We're based in South St Paul, Minnesota, and welcome drivers from West St Paul, Inver Grove Heights, and across Dakota County. If you're nearby and need repair, glass, body work, or a tow, give us a call at (651) 451-0911.</p></div>
         </div>
 
       </div>
@@ -620,19 +461,40 @@
       </svg>
       <span>Marie Avenue Service</span>
     </div>
+    <ul class="footer-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="services/index.html">Services</a></li>
+      <li><a href="index.html#reviews">Reviews</a></li>
+      <li><a href="index.html#visit">Contact</a></li>
+    </ul>
     <div class="footer-meta">
       103 5th Ave N, South St Paul, MN 55075<br>
-      <a href="tel:+16514510911">(651) 451-0911</a><br>
+      <a data-phone-tel href="tel:+16514510911"><span data-phone-display>(651) 451-0911</span></a><br>
       Mon&ndash;Fri 6:30 AM&ndash;5 PM &middot; Sat&ndash;Sun Closed
     </div>
     <div class="footer-credit wrap" style="max-width:none;">Website demo built by [OWNER PLACEHOLDER]</div>
   </div>
 </footer>
 
-<a class="sticky-call" href="tel:+16514510911">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-  Call (651) 451-0911
+<a class="float-text-btn" data-phone-sms href="sms:+16514510911?&body=Hi!%20I%20have%20a%20question%20for%20Marie%20Avenue%20Service." aria-label="Text Marie Avenue Service" data-cta="float-text" data-cta-location="floating-button">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  Text Us
 </a>
+
+<div class="sticky-actions">
+  <a class="call" data-phone-tel href="tel:+16514510911" data-cta="call" data-cta-location="sticky-bar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call
+  </a>
+  <a class="book" href="#booking" data-cta="book" data-cta-location="sticky-bar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 15h3"/></svg>
+    Book
+  </a>
+  <a class="text" data-phone-sms href="sms:+16514510911?&body=Hi!%20I%20have%20a%20question%20for%20Marie%20Avenue%20Service." data-cta="text" data-cta-location="sticky-bar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    Text
+  </a>
+</div>
 
 <!-- ================= JSON-LD: LocalBusiness (AutoRepair) ================= -->
 <script type="application/ld+json">
@@ -656,7 +518,7 @@
     "longitude": -93.0400994
   },
   "url": "https://grategatsby.github.io/demo-previews/d11/",
-  "image": "photos/shop-sign-roadside-service.jpg",
+  "image": "https://grategatsby.github.io/demo-previews/d11/photos/shop-sign-roadside-service.jpg",
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
@@ -665,12 +527,22 @@
       "closes": "17:00"
     }
   ],
+  "areaServed": [
+    { "@type": "City", "name": "South St Paul, MN" },
+    { "@type": "City", "name": "West St Paul, MN" },
+    { "@type": "City", "name": "Inver Grove Heights, MN" },
+    { "@type": "AdministrativeArea", "name": "Dakota County, MN" }
+  ],
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5.0",
     "reviewCount": "39"
   },
-  "paymentAccepted": "Credit Card, Debit Card, NFC Mobile Payment"
+  "paymentAccepted": "Credit Card, Debit Card, NFC Mobile Payment",
+  "sameAs": [
+    "https://www.facebook.com/MarieAvenueService/",
+    "https://www.bbb.org/us/mn/south-saint-paul/profile/auto-repair/marie-avenue-service-0704-6000302"
+  ]
 }
 </script>
 
@@ -725,16 +597,19 @@
       "name": "What area do you serve?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We're based in South St Paul, Minnesota, and welcome drivers from throughout the surrounding area. If you're nearby and need repair, glass, body work, or a tow, give us a call at (651) 451-0911."
+        "text": "We're based in South St Paul, Minnesota, and welcome drivers from West St Paul, Inver Grove Heights, and across Dakota County. If you're nearby and need repair, glass, body work, or a tow, give us a call at (651) 451-0911."
       }
     }
   ]
 }
 </script>
 
+<script src="phone-config.js"></script>
+<script src="site.js"></script>
+<script src="analytics.js"></script>
 <script>
 (function(){
-  // ---- Open/Closed badge from visitor local time ----
+  // ---- Open/Closed badge from visitor local time (home page only) ----
   var hours = {
     0: null,                 // Sunday closed
     1: [6.5, 17],            // Monday 6:30-5
@@ -761,28 +636,10 @@
       badge.innerHTML = '<span class="status-badge status-closed"><span class="dot"></span>Closed Now</span>';
     }
   }
-  // Highlight today's row in hours table
   var todayName = dayNames[day];
   var rows = document.querySelectorAll('#hours-table tr');
   rows.forEach(function(r){
     if (r.getAttribute('data-day') === todayName) r.classList.add('today');
-  });
-
-  // ---- FAQ accordion ----
-  var items = document.querySelectorAll('.faq-item');
-  items.forEach(function(item){
-    var q = item.querySelector('.faq-q');
-    q.addEventListener('click', function(){
-      var isOpen = item.classList.contains('open');
-      items.forEach(function(i){
-        i.classList.remove('open');
-        i.querySelector('.faq-q').setAttribute('aria-expanded','false');
-      });
-      if (!isOpen) {
-        item.classList.add('open');
-        q.setAttribute('aria-expanded','true');
-      }
-    });
   });
 })();
 </script>
