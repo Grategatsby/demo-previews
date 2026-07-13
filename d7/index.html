@@ -1,0 +1,933 @@
+<!--
+  LaMotte & Son Auto Repair — demo site
+  Palette extracted from photos/sign.jpg, the shop's own painted sign on the building
+  (leads/lamotte-and-son-auto/photos/photo-05.jpg): the brick-red block lettering and
+  red stripe behind the phone number, and the navy-blue script "LaMotte & Son" lettering,
+  on a clean off-white sign panel. Palette:
+    --red        #a8342a  (sign block lettering / phone-number stripe)
+    --red-dark   #7c261e  (darker red for hover/contrast)
+    --navy       #1d4e73  (sign script lettering "LaMotte & Son")
+    --navy-dark  #143a58  (darker navy for header/footer bands)
+    --cream      #faf6ee  (sign panel off-white background)
+  Brand display name "LaMotte & Son Auto Repair" is taken directly from the shop's own
+  sign (photo-05) and matches their verified Facebook handle facebook.com/LaMotteAndSonAutoRepair;
+  business.json's Google listing name "Lamotte And Son Auto" refers to the same verified
+  place ID / address / phone.
+-->
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LaMotte &amp; Son Auto Repair | Auto Repair in Newport, MN</title>
+<meta name="description" content="LaMotte & Son Auto Repair — 4.6 stars, 114 reviews. Family-owned auto repair on 2nd Ave in Newport, MN, fixing foreign and domestic vehicles.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231d4e73'/%3E%3Ctext x='50' y='70' font-family='Arial, Helvetica, sans-serif' font-size='58' font-weight='700' fill='%23faf6ee' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "LaMotte & Son Auto Repair",
+  "description": "Family-owned shop offering general auto repairs and maintenance on foreign and domestic vehicles in Newport, Minnesota.",
+  "telephone": "+16514590847",
+  "url": "https://grategatsby.github.io/demo-previews/d7/",
+  "image": "photos/sign.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2163 2nd Ave",
+    "addressLocality": "Newport",
+    "addressRegion": "MN",
+    "postalCode": "55055",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 44.8808116,
+    "longitude": -93.0063882
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "08:00", "closes": "17:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "08:00", "closes": "17:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "08:00", "closes": "17:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "08:00", "closes": "17:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "08:00", "closes": "17:00" }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.6",
+    "reviewCount": "114"
+  },
+  "paymentAccepted": "Credit Card, Debit Card",
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Wheelchair accessible parking lot", "value": true }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are LaMotte & Son Auto Repair's hours?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LaMotte & Son Auto Repair is open Monday through Friday from 8 AM to 5 PM. The shop is closed Saturday and Sunday. Appointments are recommended, so call or text (651) 459-0847 ahead of time to get your vehicle on the schedule."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is LaMotte & Son Auto Repair located?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LaMotte & Son Auto Repair is located at 2163 2nd Ave in Newport, Minnesota, just south of St. Paul. The shop has a wheelchair accessible parking lot on site, making it easy to drop off or pick up your vehicle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need an appointment at LaMotte & Son Auto Repair?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Appointments are recommended at LaMotte & Son Auto Repair. The shop is a busy, family-run garage, so calling or texting (651) 459-0847 ahead of time helps make sure your vehicle gets seen as soon as possible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What payment methods does LaMotte & Son Auto Repair accept?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LaMotte & Son Auto Repair accepts credit cards and debit cards, giving customers a convenient way to pay when they pick up their vehicle. If you have a question about payment before your appointment, just give the shop a call at (651) 459-0847 and ask."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What services does LaMotte & Son Auto Repair offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LaMotte & Son Auto Repair is a general auto repair shop in Newport, Minnesota, handling brakes, engine repair and diagnostics, transmission work, oil changes, and routine maintenance on both foreign and domestic vehicles. From dash warning lights to full engine and transmission replacements, the shop's mechanics take on the job."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is LaMotte & Son Auto Repair wheelchair accessible?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, LaMotte & Son Auto Repair has a wheelchair accessible parking lot on site. The shop is a small, family-run garage in Newport, so if you need any extra help getting in or out for a drop-off or pick-up, just ask."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --red:#a8342a;
+    --red-dark:#7c261e;
+    --navy:#1d4e73;
+    --navy-dark:#143a58;
+    --cream:#faf6ee;
+    --ink:#232323;
+    --gray:#5b6773;
+    --line:#e6e1d6;
+    --star:#f2b632;
+    --radius:10px;
+    --maxw:1180px;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.brand,.stat-num{
+    font-family:"Oswald",system-ui,sans-serif;
+    letter-spacing:.01em;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+  section{padding:64px 0;}
+  .section-label{
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    font-size:.78rem;
+    font-weight:700;
+    color:var(--red);
+    margin:0 0 10px;
+  }
+  h2{font-size:clamp(1.6rem,4vw,2.3rem);margin:0 0 8px;color:var(--navy);}
+  .section-intro{color:var(--gray);max-width:620px;margin:0 0 34px;font-size:1.02rem;}
+
+  a:focus-visible,button:focus-visible{
+    outline:3px solid var(--navy);
+    outline-offset:2px;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--navy-dark);
+    border-bottom:3px solid var(--red);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px 20px;max-width:var(--maxw);margin:0 auto;
+  }
+  .brand{color:#fff;font-size:1.15rem;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:10px;line-height:1.1;}
+  .logo-mark{flex:0 0 auto;border-radius:8px;}
+  .brand-text{display:flex;flex-direction:column;}
+  .brand-text span{font-size:.6rem;color:#cfe0ee;font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-family:system-ui,sans-serif;}
+  nav.links{display:flex;gap:26px;}
+  nav.links a{
+    color:#eaf1f7;text-decoration:none;font-size:.94rem;font-weight:600;
+    padding:6px 2px;border-bottom:2px solid transparent;
+  }
+  nav.links a:hover{border-bottom-color:var(--red);}
+  .nav-call{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--red);color:#fff;text-decoration:none;
+    padding:9px 16px;border-radius:999px;font-weight:700;font-size:.92rem;
+    white-space:nowrap;
+  }
+  .nav-call:hover{background:var(--red-dark);}
+  .menu-btn{display:none;background:none;border:1px solid #cfe0ee;color:#fff;border-radius:8px;padding:8px 10px;font-size:1.1rem;}
+
+  @media (max-width:820px){
+    nav.links{
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--navy-dark);flex-direction:column;gap:0;
+      max-height:0;overflow:hidden;transition:max-height .25s ease;
+    }
+    nav.links.open{max-height:400px;padding:6px 0;}
+    nav.links a{padding:12px 20px;border-bottom:1px solid #204a6c;}
+    .menu-btn{display:inline-block;}
+    .nav-call{display:none;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{background:var(--cream);padding:56px 0 60px;}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;}
+  @media (max-width:900px){.hero-grid{grid-template-columns:1fr;}}
+  .badge-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-bottom:18px;}
+  .rating-pill{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#fff;border:1px solid var(--line);
+    padding:7px 14px;border-radius:999px;font-size:.92rem;font-weight:600;color:var(--navy);
+  }
+  .stars{color:var(--star);letter-spacing:1px;font-size:1rem;}
+  .hero h1{
+    font-size:clamp(2.1rem,5.4vw,3.3rem);
+    margin:0 0 14px;color:var(--navy);
+    line-height:1.08;
+  }
+  .hero h1 span{color:var(--red);}
+  .hero .tag{
+    font-size:clamp(1rem,2vw,1.15rem);
+    color:var(--gray);
+    max-width:560px;margin:0 0 28px;font-weight:500;
+  }
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:14px 24px;border-radius:8px;font-weight:700;
+    text-decoration:none;font-size:1.02rem;border:2px solid transparent;
+    cursor:pointer;
+  }
+  .btn-primary{background:var(--red);color:#fff;}
+  .btn-primary:hover{background:var(--red-dark);}
+  .btn-outline{background:transparent;color:var(--navy);border-color:var(--navy);}
+  .btn-outline:hover{background:rgba(29,78,115,.08);}
+  .hero-open-badge{
+    margin-top:24px;display:inline-flex;align-items:center;gap:8px;
+    background:#fff;padding:8px 14px;border-radius:8px;
+    font-size:.92rem;border:1px solid var(--line);color:var(--navy);font-weight:600;
+  }
+  .dot{width:9px;height:9px;border-radius:50%;display:inline-block;}
+  .dot.open{background:#2f9e56;box-shadow:0 0 0 3px rgba(47,158,86,.2);}
+  .dot.closed{background:var(--red);box-shadow:0 0 0 3px rgba(168,52,42,.2);}
+
+  .hero-photo-card{
+    background:#fff;border-radius:14px;padding:10px;
+    box-shadow:0 16px 34px rgba(29,78,115,.18);border:1px solid var(--line);
+    max-width:340px;margin:0 auto;
+  }
+  .hero-photo-card .frame{
+    width:100%;height:300px;overflow:hidden;border-radius:9px;
+  }
+  .hero-photo-card img{width:100%;height:100%;object-fit:cover;object-position:top center;}
+  .hero-photo-card .cap{
+    text-align:center;font-size:.82rem;color:var(--gray);padding:10px 6px 4px;font-weight:600;
+  }
+
+  /* ---------- Trust strip ---------- */
+  .trust-strip{
+    background:var(--navy-dark);color:#eaf1f7;
+    padding:16px 0;font-size:.92rem;
+  }
+  .trust-strip .wrap{
+    display:flex;flex-wrap:wrap;gap:10px 30px;align-items:center;justify-content:center;
+    text-align:center;font-weight:600;
+  }
+  .trust-strip span{opacity:.55;}
+
+  /* ---------- Services ---------- */
+  .services-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;
+  }
+  .service-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 20px;
+  }
+  .service-card .icon{
+    width:42px;height:42px;border-radius:9px;background:var(--red);
+    display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:14px;
+  }
+  .service-card h3{margin:0 0 6px;font-size:1.05rem;color:var(--navy);}
+  .service-card p{margin:0;color:var(--gray);font-size:.92rem;}
+
+  /* ---------- About / Why us ---------- */
+  .about{background:#fff;}
+  .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center;}
+  @media (max-width:860px){.about-grid{grid-template-columns:1fr;}}
+  .about-photo img{border-radius:var(--radius);box-shadow:0 12px 30px rgba(29,78,115,.16);}
+  .why-list{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-direction:column;gap:16px;}
+  .why-list li{display:flex;gap:14px;align-items:flex-start;}
+  .why-list .check{
+    flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--navy);
+    color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;
+    margin-top:2px;
+  }
+  .why-list strong{color:var(--navy);display:block;margin-bottom:2px;}
+  .why-list p{margin:0;color:var(--gray);font-size:.94rem;}
+
+  /* ---------- Gallery ---------- */
+  .gallery{background:var(--cream);}
+  .gallery-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:220px;gap:14px;
+  }
+  .gallery-grid a{position:relative;overflow:hidden;border-radius:var(--radius);display:block;}
+  .gallery-grid img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease;}
+  .gallery-grid a:hover img{transform:scale(1.06);}
+  .gallery-grid a.tall img{object-position:top center;}
+  @media (max-width:720px){
+    .gallery-grid{grid-template-columns:repeat(1,1fr);grid-auto-rows:220px;}
+  }
+
+  /* Lightbox */
+  .lightbox{
+    display:none;position:fixed;inset:0;background:rgba(20,30,40,.92);
+    z-index:200;align-items:center;justify-content:center;padding:30px;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:min(900px,92vw);max-height:82vh;border-radius:8px;}
+  .lightbox-close{
+    position:absolute;top:22px;right:26px;background:rgba(255,255,255,.14);
+    color:#fff;border:none;width:42px;height:42px;border-radius:50%;font-size:1.3rem;cursor:pointer;
+  }
+  .lightbox-cap{position:absolute;bottom:26px;left:0;right:0;text-align:center;color:#e7eef4;font-size:.9rem;}
+
+  /* ---------- Testimonials ---------- */
+  .testimonials{background:var(--navy-dark);color:#fff;}
+  .testimonials .section-label{color:#f0b3a9;}
+  .testimonials h2{color:#fff;}
+  .testimonials .section-intro{color:#cfdce6;}
+  .t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+  .t-card{
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+    border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:14px;
+  }
+  .t-card .stars{color:var(--star);}
+  .t-card p{margin:0;color:#eef2f6;font-size:.96rem;flex:1;}
+  .t-card .who{display:flex;align-items:center;gap:10px;font-weight:700;font-size:.9rem;color:#fff;}
+  .t-card .avatar{
+    width:34px;height:34px;border-radius:50%;background:var(--red);
+    display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;
+  }
+  .t-more{text-align:center;margin-top:30px;color:#cfdce6;font-size:.95rem;}
+  .t-more a{color:#f0b3a9;font-weight:700;text-decoration:underline;}
+
+  .review-links{
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;
+    margin-top:22px;
+  }
+  .review-links-label{color:#cfdce6;font-size:.9rem;font-weight:700;}
+  .review-link{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);
+    color:#fff;text-decoration:none;font-weight:700;font-size:.88rem;
+    padding:9px 16px;border-radius:999px;
+  }
+  .review-link:hover{background:rgba(255,255,255,.2);}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:var(--cream);}
+  .faq-list{display:flex;flex-direction:column;gap:12px;max-width:820px;}
+  .faq-item{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:4px 22px;
+  }
+  .faq-item summary{
+    cursor:pointer;list-style:none;padding:18px 30px 18px 0;position:relative;
+    font-weight:700;color:var(--navy);font-size:1.02rem;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{
+    content:'+';position:absolute;right:0;top:16px;font-size:1.4rem;color:var(--red);
+    font-weight:700;line-height:1;
+  }
+  .faq-item[open] summary::after{content:'\2212';}
+  .faq-item p{margin:0 0 20px;color:var(--gray);font-size:.96rem;}
+
+  /* ---------- Hours & contact ---------- */
+  .visit{background:#fff;}
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;}
+  @media (max-width:860px){.visit-grid{grid-template-columns:1fr;}}
+  .card{
+    background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px;
+  }
+  .hours-table{width:100%;border-collapse:collapse;font-size:.96rem;}
+  .hours-table td{padding:9px 0;border-bottom:1px solid var(--line);}
+  .hours-table tr:last-child td{border-bottom:none;}
+  .hours-table td:first-child{color:var(--navy);font-weight:700;}
+  .hours-table td:last-child{text-align:right;color:var(--gray);}
+  .hours-table tr.today td{color:var(--red);font-weight:700;}
+  .status-badge{
+    display:inline-flex;align-items:center;gap:8px;font-weight:700;padding:8px 14px;
+    border-radius:8px;margin-bottom:18px;font-size:.92rem;
+  }
+  .status-badge.open{background:#e4f7ea;color:#1c8a4a;}
+  .status-badge.closed{background:#fbe8e6;color:#c23f2f;}
+
+  .contact-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px;}
+  .contact-list li{display:flex;gap:14px;align-items:flex-start;}
+  .contact-list .ic{
+    flex:0 0 auto;width:38px;height:38px;border-radius:8px;background:var(--navy);
+    color:#fff;display:flex;align-items:center;justify-content:center;font-size:1rem;
+  }
+  .contact-list strong{display:block;color:var(--navy);font-size:.98rem;}
+  .contact-list span,.contact-list a.plain{color:var(--gray);font-size:.94rem;text-decoration:none;}
+  .contact-list a.plain:hover{color:var(--red);}
+  .contact-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px;}
+  .contact-btns .btn{padding:12px 18px;font-size:.94rem;}
+  .btn-navy{background:var(--navy);color:#fff;}
+  .btn-navy:hover{background:var(--navy-dark);}
+  .btn-red{background:var(--red);color:#fff;}
+  .btn-red:hover{background:var(--red-dark);}
+
+  .map-wrap{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);margin-top:22px;}
+  .map-wrap iframe{width:100%;height:280px;border:0;display:block;}
+
+  /* ---------- Social icons ---------- */
+  .social-row{display:flex;align-items:center;gap:10px;margin-top:18px;}
+  .social-row .social-label{font-size:.84rem;color:var(--gray);font-weight:700;margin-right:2px;}
+  .social-icon{
+    width:34px;height:34px;border-radius:8px;flex:0 0 auto;
+    display:flex;align-items:center;justify-content:center;
+    text-decoration:none;transition:background .2s ease;
+  }
+  .card .social-icon{background:var(--navy);color:#fff;}
+  .card .social-icon:hover{background:var(--red);}
+  footer .social-row .social-label{color:#9fb7ca;}
+  footer .social-icon{background:rgba(255,255,255,.14);color:#fff;}
+  footer .social-icon:hover{background:rgba(255,255,255,.28);}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--navy-dark);color:#cfdce6;padding:40px 0 110px;font-size:.9rem;}
+  @media (min-width:721px){footer{padding-bottom:40px;}}
+  .footer-grid{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-start;}
+  .footer-brand{color:#fff;font-weight:700;font-size:1.1rem;font-family:"Oswald",sans-serif;}
+  footer a{color:#a9c6dd;text-decoration:none;}
+  footer a:hover{text-decoration:underline;}
+  .footer-bottom{
+    margin-top:26px;padding-top:20px;border-top:1px solid #204a6c;
+    font-size:.82rem;color:#8fa8bb;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;
+  }
+
+  /* ---------- Sticky mobile call button ---------- */
+  .sticky-call{
+    display:none;position:fixed;bottom:0;left:0;right:0;z-index:80;
+    background:var(--red);padding:12px 16px;
+    box-shadow:0 -4px 14px rgba(0,0,0,.18);
+  }
+  .sticky-call a{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    color:#fff;text-decoration:none;font-weight:700;font-size:1rem;
+  }
+  @media (max-width:720px){.sticky-call{display:block;}}
+</style>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#top">
+      <svg class="logo-mark" width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <rect width="36" height="36" rx="8" fill="#faf6ee" stroke="#a8342a" stroke-width="2"/>
+        <text x="18" y="25" font-family="Oswald, Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4e73" text-anchor="middle">L</text>
+      </svg>
+      <span class="brand-text">LAMOTTE &amp; SON<span>Auto Repair &middot; Newport, MN</span></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">&#9776;</button>
+    <nav class="links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#about">Why Us</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#visit">Hours &amp; Visit</a>
+    </nav>
+    <a class="nav-call" href="tel:+16514590847">&#9742; (651) 459-0847</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="badge-row">
+          <span class="rating-pill"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.6 out of 5 &middot; 114 Google reviews</span>
+        </div>
+        <h1>Honest Auto Repair, No <span>Big Front Office</span> &mdash; Just Good Work</h1>
+        <p class="tag">LaMotte &amp; Son Auto Repair is a family-owned auto repair shop in Newport, Minnesota, fixing foreign and domestic vehicles for drivers across the east metro. We keep things straightforward: honest diagnosis, fair pricing, and real mechanical work.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="tel:+16514590847">&#9742; Call (651) 459-0847</a>
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Lamotte%20And%20Son%20Auto&query_place_id=ChIJ1Zm3Dk7R94cR6HdPAXgzFtw" target="_blank" rel="noopener">Get Directions</a>
+        </div>
+        <div class="hero-open-badge" id="heroStatus">
+          <span class="dot" id="heroDot"></span>
+          <span id="heroStatusText">Checking hours&hellip;</span>
+        </div>
+      </div>
+      <div>
+        <div class="hero-photo-card">
+          <div class="frame">
+            <img src="photos/sign.jpg" alt="LaMotte & Son Auto Repair storefront sign with phone number 651-459-0847 in Newport, MN" loading="lazy">
+          </div>
+          <p class="cap">Our sign on 2nd Ave &mdash; same number, same shop, since you first called.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="wrap">
+      <span>2163 2nd Ave, Newport, MN</span>
+      <span aria-hidden="true">&bull;</span>
+      <span>NAPA AutoCare Center</span>
+      <span aria-hidden="true">&bull;</span>
+      <span>Appointments recommended</span>
+      <span aria-hidden="true">&bull;</span>
+      <span>Wheelchair accessible parking</span>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <p class="section-label">What We Fix</p>
+      <h2>Auto Repair Services in Newport, MN</h2>
+      <p class="section-intro">Foreign or domestic, routine maintenance or a major repair &mdash; here's what our mechanics handle in the shop on 2nd Ave.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.7-.6-.6-2.7 2.4-2.4z"/></svg>
+          </div>
+          <h3>General Auto Repair</h3>
+          <p>From dash warning lights to the repairs other shops shrug at, we track down the problem and fix it.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M21 12h-3M6 12H3M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1M18.4 18.4l-2.1-2.1M7.7 7.7 5.6 5.6"/></svg>
+          </div>
+          <h3>Brake Service</h3>
+          <p>Pads, rotors, and full brake jobs &mdash; we tell you what's actually worn, not just what pads the bill.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="13" height="10" rx="1"/><path d="M16 11h2.5L21 14v4h-5M6.5 8V5.5A1.5 1.5 0 0 1 8 4h3a1.5 1.5 0 0 1 1.5 1.5V8"/><circle cx="8" cy="19.5" r="1.5"/><circle cx="17.5" cy="19.5" r="1.5"/></svg>
+          </div>
+          <h3>Engine Repair &amp; Diagnostics</h3>
+          <p>Full engine swaps to dash-light diagnostics &mdash; the big jobs some shops turn away, done in-house.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="17" r="3"/><path d="M9 3v2M9 13v2M3 9h2M13 9h2M17 11v2M17 21v2M11 17h2M21 17h2"/></svg>
+          </div>
+          <h3>Transmission Service</h3>
+          <p>Transmission repair and replacement handled right in our shop, not shipped out to a specialist.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2c2 3 4 5.7 4 8.5A4 4 0 0 1 8 10.5C8 7.7 10 5 12 2z"/><path d="M5 22h14M9 22v-4h6v4"/></svg>
+          </div>
+          <h3>Maintenance &amp; Oil Changes</h3>
+          <p>Oil changes and regular maintenance to keep small problems from turning into big, expensive ones.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 16.5V13l2-5a2 2 0 0 1 2-1.5h10a2 2 0 0 1 2 1.5l2 5v3.5"/><path d="M3 16.5h18"/><circle cx="7.5" cy="16.5" r="1.7"/><circle cx="16.5" cy="16.5" r="1.7"/></svg>
+          </div>
+          <h3>Foreign &amp; Domestic Vehicles</h3>
+          <p>A Honda Pilot, a Chevy Silverado, or anything in between &mdash; every vehicle gets the same honest work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / WHY US -->
+  <section id="about" class="about">
+    <div class="wrap about-grid">
+      <div class="about-photo">
+        <img src="photos/engine-repair.jpg" alt="Engine repair in progress in the service bay at LaMotte & Son Auto Repair, Newport, MN" loading="lazy">
+      </div>
+      <div>
+        <p class="section-label">Why Newport Trusts Us</p>
+        <h2>A Family Shop, Not a Front Office</h2>
+        <p style="color:var(--gray);margin:0;">LaMotte &amp; Son Auto Repair is a straightforward, no-frills shop &mdash; we put our time into doing quality mechanical work, not running a big waiting room. That's how we keep prices fair without cutting corners.</p>
+        <ul class="why-list">
+          <li>
+            <span class="check">&#10003;</span>
+            <div><strong>Straight, honest answers</strong><p>If a part doesn't need replacing yet, we'll tell you &mdash; even if another shop already quoted you for it.</p></div>
+          </li>
+          <li>
+            <span class="check">&#10003;</span>
+            <div><strong>Fair, competitive pricing</strong><p>Compare our price before you book anywhere else. Customers regularly tell us we came in hundreds less than other shops they called.</p></div>
+          </li>
+          <li>
+            <span class="check">&#10003;</span>
+            <div><strong>Real mechanical work</strong><p>Full engine swaps, transmission replacements, and the bigger repairs some shops won't take on.</p></div>
+          </li>
+          <li>
+            <span class="check">&#10003;</span>
+            <div><strong>A shop locals keep coming back to</strong><p>Some customers have been bringing their vehicles here for years &mdash; and now bring their family's cars too.</p></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="gallery">
+    <div class="wrap">
+      <p class="section-label">Take a Look Inside</p>
+      <h2>The Shop, In Real Life</h2>
+      <p class="section-intro">A real family garage in Newport, on 2nd Ave &mdash; not a corporate chain.</p>
+      <div class="gallery-grid">
+        <a href="photos/sign.jpg" class="tall" data-caption="LaMotte & Son Auto Repair sign on 2nd Ave, Newport, MN">
+          <img src="photos/sign.jpg" alt="LaMotte & Son Auto Repair sign with phone number on the building in Newport, MN" loading="lazy">
+        </a>
+        <a href="photos/exterior.jpg" data-caption="LaMotte & Son Auto Repair shop and lot, Newport, MN">
+          <img src="photos/exterior.jpg" alt="Exterior of LaMotte & Son Auto Repair shop with NAPA AutoCare sign and customer vehicles in the lot, Newport, MN" loading="lazy">
+        </a>
+        <a href="photos/garage-interior.jpg" data-caption="Inside the LaMotte & Son Auto Repair garage">
+          <img src="photos/garage-interior.jpg" alt="Inside the LaMotte & Son Auto Repair garage in Newport, MN, with a customer's vehicle and shop tools" loading="lazy">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="reviews" class="testimonials">
+    <div class="wrap">
+      <p class="section-label">From Our Customers</p>
+      <h2>114 Reviews, 4.6 Stars &mdash; In Our Customers' Words</h2>
+      <p class="section-intro">Real reviews, straight from Google. "Honest" and "fair price" show up again and again.</p>
+      <div class="t-grid">
+        <div class="t-card">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p>"I'm 34 now and been taking all my vehicles here since I was 16. They're very honest folks and always figure out what the problems are for your vehicle. Very fair price compared to other shops as well."</p>
+          <div class="who"><span class="avatar">L</span> La Vang</div>
+        </div>
+        <div class="t-card">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p>"Newport has a lot of golden nuggets for small businesses, this is ONE! Best prices and great service, you will not be disappointed! Had some aftermarket brakes and exhaust done, TOP NOTCH!"</p>
+          <div class="who"><span class="avatar">J</span> Joey Mayo</div>
+        </div>
+        <div class="t-card">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p>"Nothing flashy but honest, reliable, and the prices can't be beat. Straightforward pricing, quick turnaround, great communication. Far more reasonable than six or seven other places I called."</p>
+          <div class="who"><span class="avatar">S</span> Steve Warford</div>
+        </div>
+        <div class="t-card">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p>"Brought in for front and rear brakes/rotors as that's what was quoted from Bloomington Subaru. They took a look and said rear brakes/rotors were just fine. Their price was fantastic."</p>
+          <div class="who"><span class="avatar">B</span> Brad Muckenhirn</div>
+        </div>
+        <div class="t-card">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p>"My 2018 Silverado needed a full engine swap after a cam failure. After getting a few estimates, their price for the engine replacement was extremely fair. The truck runs great now and feels strong again."</p>
+          <div class="who"><span class="avatar">M</span> Mark Vermilyea</div>
+        </div>
+      </div>
+      <p class="t-more">See all 114 reviews on <a href="https://www.google.com/maps/search/?api=1&query=Lamotte%20And%20Son%20Auto&query_place_id=ChIJ1Zm3Dk7R94cR6HdPAXgzFtw" target="_blank" rel="noopener">Google Maps</a>.</p>
+
+      <div class="review-links">
+        <span class="review-links-label">Find us on:</span>
+        <a class="review-link" href="https://www.google.com/maps/search/?api=1&query=Lamotte%20And%20Son%20Auto&query_place_id=ChIJ1Zm3Dk7R94cR6HdPAXgzFtw" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21.35 11.1h-9.17v2.98h5.27c-.23 1.36-1.66 3.98-5.27 3.98-3.17 0-5.76-2.62-5.76-5.86s2.59-5.86 5.76-5.86c1.8 0 3.02.77 3.71 1.43l2.53-2.44C16.83 3.9 14.61 3 12.18 3 6.98 3 2.79 7.19 2.79 12.2s4.19 9.2 9.39 9.2c5.42 0 9.02-3.8 9.02-9.15 0-.62-.07-1.09-.15-1.55z" fill="currentColor"/></svg>
+          Google Reviews
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq">
+    <div class="wrap">
+      <p class="section-label">Common Questions</p>
+      <h2>Auto Repair FAQs for Newport, MN</h2>
+      <p class="section-intro">Straight answers about hours, location, payments, and what our shop can help with.</p>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>What are LaMotte &amp; Son Auto Repair's hours?</summary>
+          <p>LaMotte &amp; Son Auto Repair is open Monday through Friday from 8 AM to 5 PM. The shop is closed Saturday and Sunday. Appointments are recommended, so call or text (651) 459-0847 ahead of time to get your vehicle on the schedule.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Where is LaMotte &amp; Son Auto Repair located?</summary>
+          <p>LaMotte &amp; Son Auto Repair is located at 2163 2nd Ave in Newport, Minnesota, just south of St. Paul. The shop has a wheelchair accessible parking lot on site, making it easy to drop off or pick up your vehicle.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do I need an appointment at LaMotte &amp; Son Auto Repair?</summary>
+          <p>Appointments are recommended at LaMotte &amp; Son Auto Repair. The shop is a busy, family-run garage, so calling or texting (651) 459-0847 ahead of time helps make sure your vehicle gets seen as soon as possible.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What payment methods does LaMotte &amp; Son Auto Repair accept?</summary>
+          <p>LaMotte &amp; Son Auto Repair accepts credit cards and debit cards, giving customers a convenient way to pay when they pick up their vehicle. If you have a question about payment before your appointment, just give the shop a call at (651) 459-0847 and ask.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What services does LaMotte &amp; Son Auto Repair offer?</summary>
+          <p>LaMotte &amp; Son Auto Repair is a general auto repair shop in Newport, Minnesota, handling brakes, engine repair and diagnostics, transmission work, oil changes, and routine maintenance on both foreign and domestic vehicles. From dash warning lights to full engine and transmission replacements, the shop's mechanics take on the job.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is LaMotte &amp; Son Auto Repair wheelchair accessible?</summary>
+          <p>Yes, LaMotte &amp; Son Auto Repair has a wheelchair accessible parking lot on site. The shop is a small, family-run garage in Newport, so if you need any extra help getting in or out for a drop-off or pick-up, just ask.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURS & VISIT -->
+  <section id="visit" class="visit">
+    <div class="wrap">
+      <p class="section-label">Hours &amp; Visit</p>
+      <h2>Stop By or Give Us a Call</h2>
+      <div class="visit-grid">
+        <div class="card">
+          <span class="status-badge" id="statusBadge">
+            <span class="dot" id="statusDot"></span>
+            <span id="statusText">Checking hours&hellip;</span>
+          </span>
+          <table class="hours-table" id="hoursTable">
+            <tr data-day="1"><td>Monday</td><td>8 AM &ndash; 5 PM</td></tr>
+            <tr data-day="2"><td>Tuesday</td><td>8 AM &ndash; 5 PM</td></tr>
+            <tr data-day="3"><td>Wednesday</td><td>8 AM &ndash; 5 PM</td></tr>
+            <tr data-day="4"><td>Thursday</td><td>8 AM &ndash; 5 PM</td></tr>
+            <tr data-day="5"><td>Friday</td><td>8 AM &ndash; 5 PM</td></tr>
+            <tr data-day="6"><td>Saturday</td><td>Closed</td></tr>
+            <tr data-day="0"><td>Sunday</td><td>Closed</td></tr>
+          </table>
+        </div>
+        <div class="card">
+          <ul class="contact-list">
+            <li>
+              <span class="ic">&#128205;</span>
+              <div><strong>Address</strong><span>2163 2nd Ave, Newport, MN 55055</span></div>
+            </li>
+            <li>
+              <span class="ic">&#9742;&#65039;</span>
+              <div><strong>Phone</strong><a class="plain" href="tel:+16514590847">(651) 459-0847</a></div>
+            </li>
+            <li>
+              <span class="ic">&#128172;</span>
+              <div><strong>Text</strong><a class="plain" href="sms:+16514590847">(651) 459-0847</a></div>
+            </li>
+            <li>
+              <span class="ic">&#128197;</span>
+              <div><strong>Scheduling</strong><span>Appointments recommended &mdash; shop stays busy!</span></div>
+            </li>
+          </ul>
+          <div class="contact-btns">
+            <a class="btn btn-navy" href="tel:+16514590847">&#9742; Call Now</a>
+            <a class="btn btn-red" href="sms:+16514590847">&#128172; Text Us</a>
+            <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Lamotte%20And%20Son%20Auto&query_place_id=ChIJ1Zm3Dk7R94cR6HdPAXgzFtw" target="_blank" rel="noopener">Get Directions</a>
+          </div>
+          <div class="social-row">
+            <span class="social-label">Follow:</span>
+            <a class="social-icon" href="https://www.facebook.com/LaMotteAndSonAutoRepair/" target="_blank" rel="noopener" aria-label="LaMotte & Son Auto Repair on Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M14 8.5h2V5.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H6.8v3.2h2.5V21h3.3v-5.7h2.4l.4-3.2h-2.8V9.9c0-.9.3-1.4 1.4-1.4z"/></svg>
+            </a>
+            <a class="social-icon" href="#" aria-label="LaMotte & Son Auto Repair on Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1"/></svg>
+            </a>
+          </div>
+          <div class="map-wrap">
+            <iframe src="https://www.google.com/maps?q=44.8808116,-93.0063882&output=embed" title="Map showing LaMotte & Son Auto Repair location" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">LaMotte &amp; Son Auto Repair</div>
+        <p style="margin:8px 0 0;max-width:320px;">2163 2nd Ave, Newport, MN 55055<br>(651) 459-0847</p>
+      </div>
+      <div>
+        <p style="margin:0 0 8px;color:#fff;font-weight:700;">Quick Links</p>
+        <p style="margin:0;"><a href="#services">Services</a></p>
+        <p style="margin:6px 0 0;"><a href="#reviews">Reviews</a></p>
+        <p style="margin:6px 0 0;"><a href="#visit">Hours &amp; Visit</a></p>
+      </div>
+      <div>
+        <p style="margin:0 0 8px;color:#fff;font-weight:700;">Get In Touch</p>
+        <p style="margin:0;"><a href="tel:+16514590847">Call (651) 459-0847</a></p>
+        <p style="margin:6px 0 0;"><a href="sms:+16514590847">Text Us</a></p>
+        <div class="social-row">
+          <a class="social-icon" href="https://www.facebook.com/LaMotteAndSonAutoRepair/" target="_blank" rel="noopener" aria-label="LaMotte & Son Auto Repair on Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M14 8.5h2V5.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H6.8v3.2h2.5V21h3.3v-5.7h2.4l.4-3.2h-2.8V9.9c0-.9.3-1.4 1.4-1.4z"/></svg>
+          </a>
+          <a class="social-icon" href="#" aria-label="LaMotte & Son Auto Repair on Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> LaMotte &amp; Son Auto Repair, Newport, MN.</span>
+      <span>Website demo built by [OWNER PLACEHOLDER]</span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-call">
+  <a href="tel:+16514590847">&#9742; Call LaMotte &amp; Son Auto Repair &mdash; (651) 459-0847</a>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="lightbox-cap" id="lightboxCap"></div>
+</div>
+
+<script>
+  // Mobile nav toggle
+  (function(){
+    var btn = document.getElementById('menuBtn');
+    var links = document.getElementById('navLinks');
+    btn.addEventListener('click', function(){
+      var isOpen = links.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        links.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+
+  // Open/Closed status computed from visitor's local time
+  (function(){
+    var hours = {
+      0: null,            // Sunday - closed
+      1: [8, 17],
+      2: [8, 17],
+      3: [8, 17],
+      4: [8, 17],
+      5: [8, 17],
+      6: null             // Saturday - closed
+    };
+
+    function fmtHour(h){
+      var period = h >= 12 ? 'PM' : 'AM';
+      var hr = h % 12;
+      if (hr === 0) hr = 12;
+      return hr + ' ' + period;
+    }
+
+    function computeStatus(){
+      var now = new Date();
+      var day = now.getDay();
+      var todays = hours[day];
+      var minutesNow = now.getHours() * 60 + now.getMinutes();
+      var isOpen = false;
+      var message;
+
+      if (todays) {
+        var openMin = todays[0] * 60;
+        var closeMin = todays[1] * 60;
+        if (minutesNow >= openMin && minutesNow < closeMin) {
+          isOpen = true;
+          message = 'Open now &middot; closes ' + fmtHour(todays[1]);
+        } else if (minutesNow < openMin) {
+          message = 'Closed now &middot; opens ' + fmtHour(todays[0]) + ' today';
+        } else {
+          message = 'Closed now &middot; opens Monday 8 AM';
+        }
+      } else {
+        message = 'Closed now &middot; opens Monday 8 AM';
+      }
+      return { isOpen: isOpen, message: message, day: day };
+    }
+
+    var status = computeStatus();
+
+    var heroDot = document.getElementById('heroDot');
+    var heroText = document.getElementById('heroStatusText');
+    var dot = document.getElementById('statusDot');
+    var text = document.getElementById('statusText');
+    var badge = document.getElementById('statusBadge');
+
+    [heroDot, dot].forEach(function(el){
+      el.classList.add(status.isOpen ? 'open' : 'closed');
+    });
+    heroText.innerHTML = status.message;
+    text.innerHTML = status.message;
+    badge.classList.add(status.isOpen ? 'open' : 'closed');
+
+    var row = document.querySelector('.hours-table tr[data-day="' + status.day + '"]');
+    if (row) row.classList.add('today');
+  })();
+
+  // Lightbox gallery
+  (function(){
+    var lightbox = document.getElementById('lightbox');
+    var img = document.getElementById('lightboxImg');
+    var cap = document.getElementById('lightboxCap');
+    var closeBtn = document.getElementById('lightboxClose');
+
+    document.querySelectorAll('.gallery-grid a').forEach(function(a){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        img.src = a.getAttribute('href');
+        img.alt = a.querySelector('img').alt;
+        cap.textContent = a.getAttribute('data-caption') || '';
+        lightbox.classList.add('open');
+      });
+    });
+
+    function close(){ lightbox.classList.remove('open'); img.src=''; }
+    closeBtn.addEventListener('click', close);
+    lightbox.addEventListener('click', function(e){
+      if (e.target === lightbox) close();
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') close();
+    });
+  })();
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
