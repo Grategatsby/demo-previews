@@ -1,6 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <!--
   LaMotte & Son Auto Repair — demo site
-  Palette extracted from photos/sign.jpg, the shop's own painted sign on the building
+  Palette extracted from photos/shop-sign.jpg, the shop's own painted sign on the building
   (leads/lamotte-and-son-auto/photos/photo-05.jpg): the brick-red block lettering and
   red stripe behind the phone number, and the navy-blue script "LaMotte & Son" lettering,
   on a clean off-white sign panel. Palette:
@@ -14,11 +17,11 @@
   business.json's Google listing name "Lamotte And Son Auto" refers to the same verified
   place ID / address / phone.
 -->
-<meta name="robots" content="noindex, nofollow">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LaMotte &amp; Son Auto Repair | Auto Repair in Newport, MN</title>
-<meta name="description" content="LaMotte & Son Auto Repair — 4.6 stars, 114 reviews. Family-owned auto repair on 2nd Ave in Newport, MN, fixing foreign and domestic vehicles.">
+<meta name="robots" content="noindex, nofollow">
+<title>LaMotte &amp; Son Auto Repair | Family Auto Repair in Newport, MN</title>
+<meta name="description" content="LaMotte & Son Auto Repair is a family-owned auto repair shop in Newport, MN, offering honest brake, engine, and transmission repair for foreign and domestic vehicles. 4.6 stars, 114 Google reviews.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231d4e73'/%3E%3Ctext x='50' y='70' font-family='Arial, Helvetica, sans-serif' font-size='58' font-weight='700' fill='%23faf6ee' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,10 +32,11 @@
   "@context": "https://schema.org",
   "@type": "AutoRepair",
   "name": "LaMotte & Son Auto Repair",
-  "description": "Family-owned shop offering general auto repairs and maintenance on foreign and domestic vehicles in Newport, Minnesota.",
+  "description": "LaMotte & Son Auto Repair is a family-owned auto repair shop in Newport, Minnesota, offering brake, engine, and transmission repair on foreign and domestic vehicles.",
   "telephone": "+16514590847",
+  "foundingDate": "1996",
   "url": "https://grategatsby.github.io/demo-previews/d7/",
-  "image": "photos/sign.jpg",
+  "image": "photos/shop-sign.jpg",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "2163 2nd Ave",
@@ -61,6 +65,13 @@
   "paymentAccepted": "Credit Card, Debit Card",
   "amenityFeature": [
     { "@type": "LocationFeatureSpecification", "name": "Wheelchair accessible parking lot", "value": true }
+  ],
+  "areaServed": [
+    { "@type": "City", "name": "Newport, MN" },
+    { "@type": "AdministrativeArea", "name": "Washington County, MN" }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/LaMotteAndSonAutoRepair/"
   ]
 }
 </script>
@@ -182,7 +193,10 @@
     padding:12px 20px;max-width:var(--maxw);margin:0 auto;
   }
   .brand{color:#fff;font-size:1.15rem;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:10px;line-height:1.1;}
-  .logo-mark{flex:0 0 auto;border-radius:8px;}
+  .logo-placeholder{display:inline-flex;align-items:center;justify-content:center;height:38px;padding:0 11px;
+    border:1.5px dashed rgba(250,246,238,.5);border-radius:8px;flex:0 0 auto;text-align:center;
+    font-family:"Oswald",sans-serif;font-size:.6rem;font-weight:600;letter-spacing:.09em;
+    text-transform:uppercase;color:#c9d8e6;line-height:1.05;}
   .brand-text{display:flex;flex-direction:column;}
   .brand-text span{font-size:.6rem;color:#cfe0ee;font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-family:system-ui,sans-serif;}
   nav.links{display:flex;gap:26px;}
@@ -213,7 +227,8 @@
   }
 
   /* ---------- Hero ---------- */
-  .hero{background:var(--cream);padding:56px 0 60px;}
+  .hero{background:var(--cream);padding:40px 0 36px;}
+  @media (max-width:900px){.hero{padding:36px 0 30px;}}
   .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;}
   @media (max-width:900px){.hero-grid{grid-template-columns:1fr;}}
   .badge-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-bottom:18px;}
@@ -224,15 +239,15 @@
   }
   .stars{color:var(--star);letter-spacing:1px;font-size:1rem;}
   .hero h1{
-    font-size:clamp(2.1rem,5.4vw,3.3rem);
-    margin:0 0 14px;color:var(--navy);
-    line-height:1.08;
+    font-size:clamp(1.9rem,4.4vw,2.7rem);
+    margin:0 0 12px;color:var(--navy);
+    line-height:1.12;max-width:26ch;
   }
   .hero h1 span{color:var(--red);}
   .hero .tag{
-    font-size:clamp(1rem,2vw,1.15rem);
+    font-size:clamp(1rem,1.8vw,1.1rem);
     color:var(--gray);
-    max-width:560px;margin:0 0 28px;font-weight:500;
+    max-width:560px;margin:0 0 20px;font-weight:500;
   }
   .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;}
   .btn{
@@ -246,9 +261,16 @@
   .btn-outline{background:transparent;color:var(--navy);border-color:var(--navy);}
   .btn-outline:hover{background:rgba(29,78,115,.08);}
   .hero-open-badge{
-    margin-top:24px;display:inline-flex;align-items:center;gap:8px;
+    margin-top:16px;display:inline-flex;align-items:center;gap:8px;
     background:#fff;padding:8px 14px;border-radius:8px;
     font-size:.92rem;border:1px solid var(--line);color:var(--navy);font-weight:600;
+  }
+  @media (max-width:900px){
+    .hero-photo-card{display:none;}
+  }
+  @media (max-width:420px){
+    .hero-ctas{gap:10px;}
+    .hero-ctas .btn{padding:12px 18px;font-size:.94rem;}
   }
   .dot{width:9px;height:9px;border-radius:50%;display:inline-block;}
   .dot.open{background:#2f9e56;box-shadow:0 0 0 3px rgba(47,158,86,.2);}
@@ -260,7 +282,7 @@
     max-width:340px;margin:0 auto;
   }
   .hero-photo-card .frame{
-    width:100%;height:300px;overflow:hidden;border-radius:9px;
+    width:100%;height:250px;overflow:hidden;border-radius:9px;
   }
   .hero-photo-card img{width:100%;height:100%;object-fit:cover;object-position:top center;}
   .hero-photo-card .cap{
@@ -276,7 +298,7 @@
     display:flex;flex-wrap:wrap;gap:10px 30px;align-items:center;justify-content:center;
     text-align:center;font-weight:600;
   }
-  .trust-strip span{opacity:.55;}
+  .trust-strip span[aria-hidden]{opacity:.5;}
 
   /* ---------- Services ---------- */
   .services-grid{
@@ -430,15 +452,14 @@
   .social-row{display:flex;align-items:center;gap:10px;margin-top:18px;}
   .social-row .social-label{font-size:.84rem;color:var(--gray);font-weight:700;margin-right:2px;}
   .social-icon{
-    width:34px;height:34px;border-radius:8px;flex:0 0 auto;
+    width:34px;height:34px;border-radius:50%;flex:0 0 auto;
     display:flex;align-items:center;justify-content:center;
-    text-decoration:none;transition:background .2s ease;
+    text-decoration:none;transition:transform .15s ease;box-shadow:0 1px 3px rgba(0,0,0,.18);
   }
-  .card .social-icon{background:var(--navy);color:#fff;}
-  .card .social-icon:hover{background:var(--red);}
+  .social-icon:hover{transform:translateY(-2px);}
+  .social-icon.fb{background:#1877F2;color:#fff;}
+  .social-icon.ig{background:radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);color:#fff;}
   footer .social-row .social-label{color:#9fb7ca;}
-  footer .social-icon{background:rgba(255,255,255,.14);color:#fff;}
-  footer .social-icon:hover{background:rgba(255,255,255,.28);}
 
   /* ---------- Footer ---------- */
   footer{background:var(--navy-dark);color:#cfdce6;padding:40px 0 110px;font-size:.9rem;}
@@ -464,14 +485,13 @@
   }
   @media (max-width:720px){.sticky-call{display:block;}}
 </style>
+</head>
+<body>
 
 <header>
   <div class="nav">
     <a class="brand" href="#top">
-      <svg class="logo-mark" width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-        <rect width="36" height="36" rx="8" fill="#faf6ee" stroke="#a8342a" stroke-width="2"/>
-        <text x="18" y="25" font-family="Oswald, Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4e73" text-anchor="middle">L</text>
-      </svg>
+      <span class="logo-placeholder" aria-hidden="true">Your Logo<br>Here</span>
       <span class="brand-text">LAMOTTE &amp; SON<span>Auto Repair &middot; Newport, MN</span></span>
     </a>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">&#9776;</button>
@@ -495,11 +515,11 @@
         <div class="badge-row">
           <span class="rating-pill"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.6 out of 5 &middot; 114 Google reviews</span>
         </div>
-        <h1>Honest Auto Repair, No <span>Big Front Office</span> &mdash; Just Good Work</h1>
-        <p class="tag">LaMotte &amp; Son Auto Repair is a family-owned auto repair shop in Newport, Minnesota, fixing foreign and domestic vehicles for drivers across the east metro. We keep things straightforward: honest diagnosis, fair pricing, and real mechanical work.</p>
+        <h1>Family Auto Repair in <span>Newport, MN</span></h1>
+        <p class="tag">LaMotte &amp; Son Auto Repair is a family-owned auto repair shop fixing brakes, engines, and transmissions on foreign and domestic vehicles &mdash; honest diagnosis and fair pricing since 1996.</p>
         <div class="hero-ctas">
-          <a class="btn btn-primary" href="tel:+16514590847">&#9742; Call (651) 459-0847</a>
-          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Lamotte%20And%20Son%20Auto&query_place_id=ChIJ1Zm3Dk7R94cR6HdPAXgzFtw" target="_blank" rel="noopener">Get Directions</a>
+          <a class="btn btn-primary" href="tel:+16514590847">&#9742; Call Now</a>
+          <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=LaMotte%20%26%20Son%20Auto%2C%202163%202nd%20Ave%2C%20Newport%2C%20MN%2055055&destination_place_id=ChIJ1Zm3Dk7R94cR6HdPAXgzFtw" target="_blank" rel="noopener">Directions</a>
         </div>
         <div class="hero-open-badge" id="heroStatus">
           <span class="dot" id="heroDot"></span>
@@ -509,7 +529,7 @@
       <div>
         <div class="hero-photo-card">
           <div class="frame">
-            <img src="photos/sign.jpg" alt="LaMotte & Son Auto Repair storefront sign with phone number 651-459-0847 in Newport, MN" loading="lazy">
+            <img src="photos/shop-sign.jpg" alt="LaMotte & Son Auto Repair storefront sign with phone number 651-459-0847 in Newport, MN">
           </div>
           <p class="cap">Our sign on 2nd Ave &mdash; same number, same shop, since you first called.</p>
         </div>
@@ -520,13 +540,13 @@
   <!-- TRUST STRIP -->
   <div class="trust-strip">
     <div class="wrap">
-      <span>2163 2nd Ave, Newport, MN</span>
+      <span>Family-Owned Since 1996</span>
+      <span aria-hidden="true">&bull;</span>
+      <span>ASE-Certified Technicians</span>
       <span aria-hidden="true">&bull;</span>
       <span>NAPA AutoCare Center</span>
       <span aria-hidden="true">&bull;</span>
-      <span>Appointments recommended</span>
-      <span aria-hidden="true">&bull;</span>
-      <span>Wheelchair accessible parking</span>
+      <span>Wheelchair Accessible Parking</span>
     </div>
   </div>
 
@@ -535,7 +555,7 @@
     <div class="wrap">
       <p class="section-label">What We Fix</p>
       <h2>Auto Repair Services in Newport, MN</h2>
-      <p class="section-intro">Foreign or domestic, routine maintenance or a major repair &mdash; here's what our mechanics handle in the shop on 2nd Ave.</p>
+      <p class="section-intro">From brake jobs to engine and transmission repair, Newport drivers bring their vehicles to our 2nd Ave shop for honest, dependable work &mdash; foreign or domestic, routine maintenance or a major repair.</p>
       <div class="services-grid">
         <div class="service-card">
           <div class="icon">
@@ -591,8 +611,8 @@
       </div>
       <div>
         <p class="section-label">Why Newport Trusts Us</p>
-        <h2>A Family Shop, Not a Front Office</h2>
-        <p style="color:var(--gray);margin:0;">LaMotte &amp; Son Auto Repair is a straightforward, no-frills shop &mdash; we put our time into doing quality mechanical work, not running a big waiting room. That's how we keep prices fair without cutting corners.</p>
+        <h2>Family Auto Repair in Newport Since 1996</h2>
+        <p style="color:var(--gray);margin:0;">Family-owned in Newport since 1996, LaMotte &amp; Son Auto Repair is a straightforward, no-frills shop &mdash; our ASE-certified technicians put their time into quality mechanical work, not a big waiting room. That's how we keep prices fair without cutting corners.</p>
         <ul class="why-list">
           <li>
             <span class="check">&#10003;</span>
@@ -604,11 +624,11 @@
           </li>
           <li>
             <span class="check">&#10003;</span>
-            <div><strong>Real mechanical work</strong><p>Full engine swaps, transmission replacements, and the bigger repairs some shops won't take on.</p></div>
+            <div><strong>ASE-certified technicians</strong><p>Full engine swaps, transmission replacements, and the bigger repairs some shops won't take on &mdash; done by certified mechanics.</p></div>
           </li>
           <li>
             <span class="check">&#10003;</span>
-            <div><strong>A shop locals keep coming back to</strong><p>Some customers have been bringing their vehicles here for years &mdash; and now bring their family's cars too.</p></div>
+            <div><strong>A family shop locals keep coming back to</strong><p>Some customers have been bringing their vehicles here since they were teenagers &mdash; and now bring their own family's cars too.</p></div>
           </li>
         </ul>
       </div>
@@ -622,11 +642,11 @@
       <h2>The Shop, In Real Life</h2>
       <p class="section-intro">A real family garage in Newport, on 2nd Ave &mdash; not a corporate chain.</p>
       <div class="gallery-grid">
-        <a href="photos/sign.jpg" class="tall" data-caption="LaMotte & Son Auto Repair sign on 2nd Ave, Newport, MN">
-          <img src="photos/sign.jpg" alt="LaMotte & Son Auto Repair sign with phone number on the building in Newport, MN" loading="lazy">
+        <a href="photos/shop-sign.jpg" class="tall" data-caption="LaMotte & Son Auto Repair sign on 2nd Ave, Newport, MN">
+          <img src="photos/shop-sign.jpg" alt="LaMotte & Son Auto Repair sign with phone number on the building in Newport, MN" loading="lazy">
         </a>
-        <a href="photos/exterior.jpg" data-caption="LaMotte & Son Auto Repair shop and lot, Newport, MN">
-          <img src="photos/exterior.jpg" alt="Exterior of LaMotte & Son Auto Repair shop with NAPA AutoCare sign and customer vehicles in the lot, Newport, MN" loading="lazy">
+        <a href="photos/shop-exterior.jpg" data-caption="LaMotte & Son Auto Repair shop and lot, Newport, MN">
+          <img src="photos/shop-exterior.jpg" alt="Exterior of LaMotte & Son Auto Repair shop with NAPA AutoCare sign and customer vehicles in the lot, Newport, MN" loading="lazy">
         </a>
         <a href="photos/garage-interior.jpg" data-caption="Inside the LaMotte & Son Auto Repair garage">
           <img src="photos/garage-interior.jpg" alt="Inside the LaMotte & Son Auto Repair garage in Newport, MN, with a customer's vehicle and shop tools" loading="lazy">
@@ -720,6 +740,7 @@
     <div class="wrap">
       <p class="section-label">Hours &amp; Visit</p>
       <h2>Stop By or Give Us a Call</h2>
+      <p class="section-intro">We're at 2163 2nd Ave in Newport, Minnesota, and happy to help drivers from Newport and the surrounding Washington County area with brake, engine, and transmission repair.</p>
       <div class="visit-grid">
         <div class="card">
           <span class="status-badge" id="statusBadge">
@@ -758,19 +779,19 @@
           <div class="contact-btns">
             <a class="btn btn-navy" href="tel:+16514590847">&#9742; Call Now</a>
             <a class="btn btn-red" href="sms:+16514590847">&#128172; Text Us</a>
-            <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Lamotte%20And%20Son%20Auto&query_place_id=ChIJ1Zm3Dk7R94cR6HdPAXgzFtw" target="_blank" rel="noopener">Get Directions</a>
+            <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=LaMotte%20%26%20Son%20Auto%2C%202163%202nd%20Ave%2C%20Newport%2C%20MN%2055055&destination_place_id=ChIJ1Zm3Dk7R94cR6HdPAXgzFtw" target="_blank" rel="noopener">Get Directions</a>
           </div>
           <div class="social-row">
             <span class="social-label">Follow:</span>
-            <a class="social-icon" href="https://www.facebook.com/LaMotteAndSonAutoRepair/" target="_blank" rel="noopener" aria-label="LaMotte & Son Auto Repair on Facebook">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M14 8.5h2V5.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H6.8v3.2h2.5V21h3.3v-5.7h2.4l.4-3.2h-2.8V9.9c0-.9.3-1.4 1.4-1.4z"/></svg>
+            <a class="social-icon fb" href="https://www.facebook.com/LaMotteAndSonAutoRepair/" target="_blank" rel="noopener" aria-label="LaMotte & Son Auto Repair on Facebook">
+              <svg viewBox="0 0 24 24" fill="#fff" width="18" height="18" aria-hidden="true"><path d="M14 8.5h2V5.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H6.8v3.2h2.5V21h3.3v-5.7h2.4l.4-3.2h-2.8V9.9c0-.9.3-1.4 1.4-1.4z"/></svg>
             </a>
-            <a class="social-icon" href="#" aria-label="LaMotte & Son Auto Repair on Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1"/></svg>
+            <a class="social-icon ig" href="#" aria-label="LaMotte & Son Auto Repair on Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" width="18" height="18" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1"/></svg>
             </a>
           </div>
           <div class="map-wrap">
-            <iframe src="https://www.google.com/maps?q=44.8808116,-93.0063882&output=embed" title="Map showing LaMotte & Son Auto Repair location" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps?q=LaMotte%20%26%20Son%20Auto%2C%202163%202nd%20Ave%2C%20Newport%2C%20MN%2055055&output=embed" title="Map showing LaMotte & Son Auto Repair location" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>
@@ -796,11 +817,11 @@
         <p style="margin:0;"><a href="tel:+16514590847">Call (651) 459-0847</a></p>
         <p style="margin:6px 0 0;"><a href="sms:+16514590847">Text Us</a></p>
         <div class="social-row">
-          <a class="social-icon" href="https://www.facebook.com/LaMotteAndSonAutoRepair/" target="_blank" rel="noopener" aria-label="LaMotte & Son Auto Repair on Facebook">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M14 8.5h2V5.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H6.8v3.2h2.5V21h3.3v-5.7h2.4l.4-3.2h-2.8V9.9c0-.9.3-1.4 1.4-1.4z"/></svg>
+          <a class="social-icon fb" href="https://www.facebook.com/LaMotteAndSonAutoRepair/" target="_blank" rel="noopener" aria-label="LaMotte & Son Auto Repair on Facebook">
+            <svg viewBox="0 0 24 24" fill="#fff" width="18" height="18" aria-hidden="true"><path d="M14 8.5h2V5.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H6.8v3.2h2.5V21h3.3v-5.7h2.4l.4-3.2h-2.8V9.9c0-.9.3-1.4 1.4-1.4z"/></svg>
           </a>
-          <a class="social-icon" href="#" aria-label="LaMotte & Son Auto Repair on Instagram">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1"/></svg>
+          <a class="social-icon ig" href="#" aria-label="LaMotte & Son Auto Repair on Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" width="18" height="18" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1"/></svg>
           </a>
         </div>
       </div>
@@ -931,3 +952,6 @@
 
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+
+</body>
+</html>

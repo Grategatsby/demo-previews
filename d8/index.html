@@ -54,6 +54,7 @@
     "ratingValue": "4.9",
     "reviewCount": "57"
   },
+  "foundingDate": "1976",
   "paymentAccepted": "Credit Card, Debit Card, NFC Mobile Payment",
   "amenityFeature": [
     { "@type": "LocationFeatureSpecification", "name": "Wheelchair accessible entrance", "value": true },
@@ -182,7 +183,13 @@
     padding:12px 20px;max-width:var(--maxw);margin:0 auto;
   }
   .brand{color:#fff;font-size:1.25rem;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:10px;line-height:1.1;}
-  .logo-mark{flex:0 0 auto;border-radius:8px;}
+  .logo-placeholder{
+    flex:0 0 auto;display:flex;align-items:center;justify-content:center;
+    width:82px;height:38px;border:2px dashed var(--gold-light);border-radius:8px;
+    color:var(--gold-light);font-family:system-ui,sans-serif;font-size:.54rem;font-weight:700;
+    letter-spacing:.03em;text-transform:uppercase;text-align:center;line-height:1.15;
+    padding:2px 6px;background:rgba(255,255,255,.05);
+  }
   .brand-text{display:flex;flex-direction:column;}
   .brand-text span{font-size:.62rem;color:var(--gold-light);font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-family:system-ui,sans-serif;}
   nav.links{display:flex;gap:26px;}
@@ -218,9 +225,9 @@
     background:linear-gradient(180deg,rgba(74,22,32,.74),rgba(42,10,16,.88)),
       url('photos/hero.jpg') center/cover no-repeat;
     color:#fff;
-    padding:76px 0 88px;
+    padding:42px 0 40px;
   }
-  .hero-inner{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+  .hero-inner{max-width:940px;margin:0 auto;padding:0 20px;}
   .badge-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-bottom:18px;}
   .rating-pill{
     display:inline-flex;align-items:center;gap:8px;
@@ -229,14 +236,14 @@
   }
   .stars{color:var(--star);letter-spacing:1px;font-size:1rem;}
   .hero h1{
-    font-size:clamp(2.2rem,6vw,3.6rem);
-    margin:0 0 14px;color:#fff;
+    font-size:clamp(1.7rem,3.6vw,2.6rem);
+    margin:0 0 12px;color:#fff;
     text-shadow:0 2px 10px rgba(0,0,0,.3);
   }
   .hero .tag{
-    font-size:clamp(1.05rem,2.4vw,1.3rem);
+    font-size:clamp(1rem,1.6vw,1.15rem);
     color:var(--gold-light);
-    max-width:600px;margin:0 0 30px;font-weight:500;
+    max-width:720px;margin:0 0 24px;font-weight:500;
   }
   .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;}
   .btn{
@@ -461,10 +468,7 @@
 <header>
   <div class="nav">
     <a class="brand" href="#top">
-      <svg class="logo-mark" width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-        <rect width="36" height="36" rx="8" fill="#F7F0E1" stroke="#C9973B" stroke-width="2"/>
-        <text x="18" y="25" font-family="Oswald, Arial, sans-serif" font-size="18" font-weight="700" fill="#7A2430" text-anchor="middle">S</text>
-      </svg>
+      <span class="logo-placeholder" aria-hidden="true">Your Logo Here</span>
       <span class="brand-text">SOUTHVIEW 66<span>Service Center &middot; South St Paul, MN</span></span>
     </a>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">&#9776;</button>
@@ -482,7 +486,7 @@
 
 <main id="top">
   <!-- HERO -->
-  <section class="hero" style="padding-top:0;">
+  <section class="hero">
     <div class="hero-inner">
       <div class="badge-row">
         <span class="rating-pill"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.9 out of 5 &middot; 57 Google reviews</span>
@@ -491,7 +495,7 @@
       <p class="tag">Southview 66 is a family-owned auto repair shop and full-service gas station in South St Paul, Minnesota, keeping neighborhood drivers on the road with honest repairs, routine maintenance, and gas at the pump.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="tel:+16514572774">&#9742; Call (651) 457-2774</a>
-        <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Southview%2066&query_place_id=ChIJ_0jlvHbU94cRKGP-qMIe45A" target="_blank" rel="noopener">Get Directions</a>
+        <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=Southview%2066%2C%20725%20Southview%20Blvd%20%232219%2C%20South%20St%20Paul%2C%20MN%2055075&destination_place_id=ChIJ_0jlvHbU94cRKGP-qMIe45A" target="_blank" rel="noopener">Get Directions</a>
       </div>
       <div class="hero-open-badge" id="heroStatus">
         <span class="dot" id="heroDot"></span>
@@ -518,7 +522,7 @@
     <div class="wrap">
       <p class="section-label">What We Do</p>
       <h2>Auto Repair &amp; Full-Service Gas in South St Paul</h2>
-      <p class="section-intro">One stop for the car and the tank &mdash; general repair, maintenance, and full-serve gas, all under one roof on Southview Blvd.</p>
+      <p class="section-intro">One stop for the car and the tank in South St Paul &mdash; oil changes, brake repair, tune-ups, and full-serve gas, all under one roof on Southview Blvd.</p>
       <div class="services-grid">
         <div class="service-card">
           <div class="icon">&#128295;</div>
@@ -562,8 +566,8 @@
       </div>
       <div>
         <p class="section-label">Why South St Paul Trusts Us</p>
-        <h2>A Family-Run Garage, Done the Old-School Way</h2>
-        <p style="color:var(--gray);margin:0;">Southview 66 is a family-run garage and full-service gas station on Southview Blvd in South St Paul. Steve and Stan run the shop the old-school way &mdash; fair prices, straight answers, and the kind of trust that keeps neighbors coming back for decades. If your car doesn't need the expensive fix, we'll tell you. If it does, we'll explain why before we touch it.</p>
+        <h2>A Family-Run Garage, Serving South St Paul Since 1976</h2>
+        <p style="color:var(--gray);margin:0;">Southview 66 has been a family-run garage and full-service gas station on Southview Blvd since 1976 &mdash; over 45 years serving South St Paul and South Saint Paul drivers the old-school way. Fair prices, straight answers, and the kind of trust that keeps neighbors coming back for decades. If your car doesn't need the expensive fix, we'll tell you. If it does, we'll explain why before we touch it.</p>
         <ul class="why-list">
           <li>
             <span class="check">&#10003;</span>
@@ -618,28 +622,28 @@
       <div class="t-grid">
         <div class="t-card">
           <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <p>"My favorite place for an oil change. Not many places around like Southview 66; friendly service, great gas, quality work&hellip; highly recommend. They are great community supporters."</p>
+          <p>"My favorite place for an oil change. Not many places around like Southview 66; friendly service, great gas, quality work&hellip; in business for as long as I can remember (44 years or more)&hellip; highly recommend. They are great community supporters."</p>
           <div class="who"><span class="avatar">M</span> Mike Weber</div>
         </div>
         <div class="t-card">
           <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <p>"They're responsible price and very honest people. Great trustworthy mechanic. Steve the owner&hellip; I never thought there is human kind like him still exists in this world."</p>
-          <div class="who"><span class="avatar">Y</span> Yasmin Ali</div>
+          <p>"Highly recommend. Family run operations with gas! If they can't fix it they will let you know. Tire repair too."</p>
+          <div class="who"><span class="avatar">J</span> Jimmy Francis</div>
         </div>
         <div class="t-card">
           <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <p>"Incredibly trustworthy. Great pricing. Highly recommend Southview 66 for all types of repairs. Steve can never retire :-)"</p>
-          <div class="who"><span class="avatar">B</span> Bill F.</div>
+          <p>"Amazing mechanics work here. They accurately diagnosed my problem before even looking at my car, and told me exactly what I needed to do to fix it myself. Thank you so much!"</p>
+          <div class="who"><span class="avatar">N</span> Nicki</div>
         </div>
         <div class="t-card">
           <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <p>"Steve and Stan are the best around. I have been going to them for 12 years. They are an old-school shop that you don't see often these days."</p>
-          <div class="who"><span class="avatar">M</span> Matt Geraghty</div>
+          <p>"Best family owned mechanic shop in the twin cities. Super honest folks&hellip; I got an estimate for a transmission replacement and they quoted me $600 less than AAMCO. When I decided not to move forward, they were pleased &mdash; they didn't think the vehicle was worth putting that much money into. They truly look out for your best interest."</p>
+          <div class="who"><span class="avatar">M</span> Mika J.</div>
         </div>
         <div class="t-card">
           <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <p>"Excellent customer service. Full Service Station. This has become my go to station for everything from gas to a complete brake job to overhauling an engine."</p>
-          <div class="who"><span class="avatar">D</span> Deb Felton</div>
+          <p>"I was overdue for an oil change and going to North Dakota that week. My regular station was booked, but Southview 66 fit me in &mdash; and I could fill my tank for the road trip at the same stop. Two birds!"</p>
+          <div class="who"><span class="avatar">C</span> Charlotte B.</div>
         </div>
       </div>
       <p class="t-more">See all 57 reviews on <a href="https://www.google.com/maps/search/?api=1&query=Southview%2066&query_place_id=ChIJ_0jlvHbU94cRKGP-qMIe45A" target="_blank" rel="noopener">Google Maps</a>.</p>
@@ -694,6 +698,7 @@
     <div class="wrap">
       <p class="section-label">Hours &amp; Visit</p>
       <h2>Stop By or Give Us a Call</h2>
+      <p class="section-intro">Proudly serving South St Paul and the surrounding Dakota County community &mdash; stop by for gas, repairs, or both in the same trip.</p>
       <div class="visit-grid">
         <div class="card">
           <span class="status-badge" id="statusBadge">
@@ -732,11 +737,11 @@
           <div class="contact-btns">
             <a class="btn btn-brand" href="tel:+16514572774">&#9742; Call Now</a>
             <a class="btn btn-gold" href="sms:+16514572774?&body=Hi! I'd like to book a service appointment.">&#128172; Text Us</a>
-            <a class="btn btn-outline" style="color:var(--brand);border-color:var(--brand);" href="https://www.google.com/maps/search/?api=1&query=Southview%2066&query_place_id=ChIJ_0jlvHbU94cRKGP-qMIe45A" target="_blank" rel="noopener">Get Directions</a>
+            <a class="btn btn-outline" style="color:var(--brand);border-color:var(--brand);" href="https://www.google.com/maps/dir/?api=1&destination=Southview%2066%2C%20725%20Southview%20Blvd%20%232219%2C%20South%20St%20Paul%2C%20MN%2055075&destination_place_id=ChIJ_0jlvHbU94cRKGP-qMIe45A" target="_blank" rel="noopener">Get Directions</a>
           </div>
           <div class="social-row">
             <span class="social-label">Follow:</span>
-            <a class="social-icon" href="https://www.facebook.com/pages/Southview-66-Service-Center/351755274948582" target="_blank" rel="noopener" aria-label="Southview 66 on Facebook">
+            <a class="social-icon" href="#" aria-label="Southview 66 on Facebook">
               <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M14 8.5h2V5.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H6.8v3.2h2.5V21h3.3v-5.7h2.4l.4-3.2h-2.8V9.9c0-.9.3-1.4 1.4-1.4z"/></svg>
             </a>
             <a class="social-icon" href="#" aria-label="Southview 66 on Instagram">
@@ -744,7 +749,7 @@
             </a>
           </div>
           <div class="map-wrap">
-            <iframe src="https://www.google.com/maps?q=44.8886184,-93.043312&output=embed" title="Map showing Southview 66 location" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps?q=Southview%2066%2C%20725%20Southview%20Blvd%20%232219%2C%20South%20St%20Paul%2C%20MN%2055075&output=embed" title="Map showing Southview 66 location" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>
@@ -770,7 +775,7 @@
         <p style="margin:0;"><a href="tel:+16514572774">Call (651) 457-2774</a></p>
         <p style="margin:6px 0 0;"><a href="sms:+16514572774?&body=Hi! I'd like to book a service appointment.">Text Us</a></p>
         <div class="social-row">
-          <a class="social-icon" href="https://www.facebook.com/pages/Southview-66-Service-Center/351755274948582" target="_blank" rel="noopener" aria-label="Southview 66 on Facebook">
+          <a class="social-icon" href="#" aria-label="Southview 66 on Facebook">
             <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M14 8.5h2V5.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H6.8v3.2h2.5V21h3.3v-5.7h2.4l.4-3.2h-2.8V9.9c0-.9.3-1.4 1.4-1.4z"/></svg>
           </a>
           <a class="social-icon" href="#" aria-label="Southview 66 on Instagram">
