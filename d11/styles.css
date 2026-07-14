@@ -50,10 +50,14 @@ header{
 }
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--cream);flex:0 0 auto;}
 .logo-mark{width:42px;height:42px;flex:0 0 auto;}
+.logo-placeholder{display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 12px;
+  border:1.5px dashed rgba(251,250,247,.5);border-radius:8px;flex:0 0 auto;text-align:center;
+  font-family:'Oswald',sans-serif;font-size:.62rem;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:#c6d0dd;line-height:1.05;}
 .brand-name{font-family:'Oswald',sans-serif;font-weight:600;font-size:1.15rem;color:var(--cream);letter-spacing:.02em;}
 .brand-sub{display:block;font-size:.65rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:#b9c4d4;}
 
-nav.main-nav{display:flex;align-items:center;gap:22px;flex:1 1 auto;}
+nav.main-nav{display:flex;align-items:center;gap:22px;flex:0 0 auto;margin-left:auto;}
 .nav-list{list-style:none;display:flex;align-items:center;gap:22px;margin:0;padding:0;}
 .nav-list > li{position:relative;}
 .nav-list a.nav-link{
