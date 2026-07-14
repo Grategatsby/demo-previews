@@ -5,16 +5,15 @@
   Palette source: leads/auto-body-lopez/photos/photo-07.jpg (the shop's own oval logo —
   golden-yellow speedometer badge, black band, chrome "AUTO BODY LOPEZ" lettering, red
   accent text) plus photo-01.jpg (the roadside pole sign, same yellow/black/red combo) and
-  the tan/brick building color from photo-03.jpg. Built a garage-proud charcoal + amber-gold
-  + red-accent palette from these. photo-07.jpg is a logo graphic, not a shop/work photo, so
-  it was used only for color reference — not copied into photos/ (see report re: rule 13,
-  a real logo exists and should be requested from the owner instead of the placeholder).
+  the tan/brick building color from photo-03.jpg. Garage-proud charcoal + amber-gold +
+  red-accent palette. Design system lives in styles.css and is shared by every page on
+  this site (home + the 5 service pages under services/).
 -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>Auto Body Lopez | Collision Repair &amp; Auto Paint in South St Paul, MN</title>
-<meta name="description" content="Auto Body Lopez is a collision repair and auto paint shop in South St Paul, Minnesota, offering dent repair, color-matched paint, rust repair, and collision work. 4.8 stars from 57 Google reviews.">
+<meta name="description" content="Auto Body Lopez is a collision repair and auto paint shop in South St Paul, Minnesota, offering collision repair, auto paint, dent repair, frame straightening, and bumper repair. 4.8 stars from 57 Google reviews.">
 <link rel="canonical" href="https://grategatsby.github.io/demo-previews/auto-body-lopez/">
 
 <!-- Open Graph / social share -->
@@ -28,259 +27,51 @@
 <meta name="twitter:description" content="Collision repair, dent repair, and color-matched auto paint in South St Paul, MN. 4.8 stars, 57 Google reviews.">
 <meta name="twitter:image" content="https://grategatsby.github.io/demo-previews/auto-body-lopez/photos/hero-storefront-sign.jpg">
 
+<!-- Analytics / Search Console slots — DORMANT, activated at launch tier -->
+<!-- <meta name="google-site-verification" content="REPLACE_AT_LAUNCH"> -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-REPLACE_AT_LAUNCH"></script> -->
+
 <!-- Favicon: monogram "L" mark in shop palette (gold/charcoal/red) -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23201a12'/%3E%3Cpath d='M20 46V18h6v22h14v6z' fill='%23f4b93c'/%3E%3Ccircle cx='32' cy='32' r='30' fill='none' stroke='%23c9332a' stroke-width='2.5'/%3E%3C/svg%3E">
 
-<style>
-:root{
-  --ink:#1c160f;
-  --charcoal:#241d14;
-  --charcoal-2:#332818;
-  --gold:#f0ab2e;
-  --gold-deep:#d68e12;
-  --red:#c9332a;
-  --red-deep:#a72620;
-  --cream:#faf5ea;
-  --paper:#fffaf0;
-  --border:#e7dcc3;
-  --text:#241d14;
-  --text-soft:#5b503f;
-  --shadow:0 12px 30px -14px rgba(28,22,15,.35);
-  --radius:14px;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-}
-*{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{margin:0;background:var(--cream);color:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased;}
-img{max-width:100%;display:block;}
-a{color:inherit;}
-h1,h2,h3{line-height:1.15;margin:0 0 .5em;font-weight:800;letter-spacing:-.01em;}
-p{margin:0 0 1em;}
-.wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
-:focus-visible{outline:3px solid var(--gold-deep);outline-offset:2px;}
-
-/* ---------- Header ---------- */
-header{position:sticky;top:0;z-index:50;background:var(--ink);border-bottom:3px solid var(--gold);}
-.header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 24px;max-width:1180px;margin:0 auto;}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;}
-.logo-placeholder{
-  display:flex;align-items:center;justify-content:center;text-align:center;
-  width:46px;height:46px;border:2px dashed var(--gold);border-radius:10px;
-  font-size:9px;font-weight:700;line-height:1.1;color:var(--gold);letter-spacing:.02em;
-  flex-shrink:0;
-}
-.brand-name{display:block;font-weight:800;font-size:1.08rem;color:#fff;}
-.brand-sub{display:block;font-size:.72rem;color:var(--gold);letter-spacing:.04em;text-transform:uppercase;}
-.header-cta{display:flex;align-items:center;gap:10px;}
-.call-pill{
-  display:flex;align-items:center;gap:8px;background:var(--gold);color:var(--ink);
-  padding:9px 16px;border-radius:999px;font-weight:700;font-size:.88rem;text-decoration:none;
-  white-space:nowrap;
-}
-.call-pill svg{width:16px;height:16px;flex-shrink:0;}
-@media(max-width:520px){.brand-sub{display:none;} .call-pill span{display:none;} .call-pill{padding:10px;}}
-
-/* ---------- Hero ---------- */
-.hero{
-  position:relative;overflow:hidden;
-  background:radial-gradient(120% 140% at 15% -10%, #3a2c17 0%, var(--ink) 55%);
-  color:#fff;padding:40px 0 44px;
-}
-.hero-deco{position:absolute;right:-40px;top:-40px;width:340px;height:340px;opacity:.14;}
-.hero-inner{position:relative;max-width:960px;}
-.rating-badge{
-  display:inline-flex;align-items:center;gap:8px;background:rgba(240,171,46,.14);
-  border:1px solid rgba(240,171,46,.4);color:var(--gold);padding:6px 14px;border-radius:999px;
-  font-weight:700;font-size:.85rem;margin-bottom:16px;
-}
-.stars{color:var(--gold);letter-spacing:1px;}
-.hero h1{font-size:clamp(1.9rem,4.4vw,2.8rem);max-width:22ch;color:#fff;}
-.accent-word{color:var(--gold);}
-.hero-lede{font-size:1.08rem;color:#e7dfce;max-width:64ch;margin-bottom:22px;}
-.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;}
-.btn{
-  display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:10px;
-  font-weight:700;font-size:.95rem;text-decoration:none;border:2px solid transparent;transition:transform .15s ease;
-}
-.btn svg{width:18px;height:18px;flex-shrink:0;}
-.btn:active{transform:scale(.97);}
-.btn-primary{background:var(--red);color:#fff;}
-.btn-primary:hover{background:var(--red-deep);}
-.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4);}
-.btn-ghost:hover{border-color:#fff;}
-.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink);}
-@media(max-width:480px){
-  .hero{padding:32px 0 28px;}
-  .hero h1{font-size:1.6rem;}
-  .hero-lede{font-size:.96rem;margin-bottom:16px;}
-  .rating-badge{margin-bottom:12px;}
-  .hero-ctas{gap:10px;}
-  .btn{padding:11px 18px;font-size:.9rem;}
-}
-
-/* ---------- Sections generic ---------- */
-section{padding:64px 0;}
-.eyebrow{display:block;color:var(--red);font-weight:800;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
-.section-intro{max-width:70ch;color:var(--text-soft);font-size:1.03rem;}
-h2{font-size:clamp(1.5rem,3vw,2rem);}
-
-/* ---------- Services ---------- */
-.services{background:var(--paper);}
-.service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:32px;}
-.service-card{
-  background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;
-  box-shadow:var(--shadow);
-}
-.service-icon{
-  width:52px;height:52px;border-radius:12px;background:var(--charcoal);color:var(--gold);
-  display:flex;align-items:center;justify-content:center;margin-bottom:14px;
-}
-.service-icon svg{width:28px;height:28px;stroke:currentColor;}
-.service-card h3{font-size:1.08rem;margin-bottom:6px;}
-.service-card p{color:var(--text-soft);font-size:.94rem;margin:0;}
-
-/* ---------- Gallery ---------- */
-.gallery{background:var(--ink);color:#fff;}
-.gallery .eyebrow{color:var(--gold);}
-.gallery h2{color:#fff;}
-.gallery .section-intro{color:#cfc3ad;}
-.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:32px;}
-.gallery-item{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;}
-.gallery-item img{width:100%;height:100%;object-fit:cover;}
-.gallery-item figcaption{
-  position:absolute;left:0;right:0;bottom:0;padding:14px 16px 12px;
-  background:linear-gradient(0deg,rgba(0,0,0,.78),transparent);
-  font-size:.86rem;color:#fff;margin:0;
-}
-.gallery-item{margin:0;}
-
-/* ---------- About ---------- */
-.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;}
-@media(max-width:800px){.about-grid{grid-template-columns:1fr;}}
-.why-list{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:14px;}
-.why-list li{display:flex;gap:12px;align-items:flex-start;}
-.why-list svg{width:22px;height:22px;color:var(--red);flex-shrink:0;margin-top:2px;}
-.about-photo{margin:0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
-.about-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;}
-.about-photo figcaption{padding:12px 16px;background:#fff;font-size:.88rem;color:var(--text-soft);border:1px solid var(--border);border-top:none;}
-
-/* ---------- Testimonials ---------- */
-.testimonials{background:var(--paper);}
-.t-intro{color:var(--text-soft);margin-bottom:0;}
-.t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:32px;}
-.t-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);}
-.t-stars{color:var(--gold-deep);letter-spacing:1px;margin-bottom:10px;}
-.t-text{font-size:.95rem;color:var(--text);margin-bottom:12px;}
-.t-name{font-weight:700;font-size:.88rem;color:var(--text-soft);}
-
-/* ---------- Visit ---------- */
-.visit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:32px;}
-.info-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);}
-.info-card h3{display:flex;align-items:center;gap:10px;font-size:1.1rem;margin-bottom:14px;}
-.info-card h3 svg{width:22px;height:22px;color:var(--red);}
-.hours-table{width:100%;border-collapse:collapse;font-size:.92rem;margin-top:8px;}
-.hours-table td{padding:6px 0;border-bottom:1px solid var(--border);}
-.hours-table tr.today td{font-weight:800;color:var(--red);}
-.status-badge{display:inline-flex;align-items:center;gap:7px;padding:5px 12px;border-radius:999px;font-weight:700;font-size:.82rem;margin-bottom:12px;}
-.status-open{background:#e4f4e6;color:#1c7a34;}
-.status-closed{background:#f4e5e2;color:#a3372a;}
-.status-badge .dot{width:8px;height:8px;border-radius:50%;background:currentColor;}
-.contact-list{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:12px;}
-.contact-list li{display:flex;gap:10px;align-items:flex-start;font-size:.95rem;}
-.contact-list svg{width:20px;height:20px;color:var(--red);flex-shrink:0;margin-top:1px;}
-.contact-list a{text-decoration:none;font-weight:700;}
-.btn-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px;}
-.btn-sm{
-  display:inline-flex;align-items:center;gap:7px;padding:10px 16px;border-radius:9px;
-  font-weight:700;font-size:.86rem;text-decoration:none;
-}
-.btn-sm svg{width:16px;height:16px;}
-.btn-sm.call{background:var(--red);color:#fff;}
-.btn-sm.text{background:var(--charcoal);color:var(--gold);}
-.btn-sm.dir{background:var(--paper);color:var(--text);border:1px solid var(--border);}
-.map-wrap{border-radius:10px;overflow:hidden;border:1px solid var(--border);}
-.map-wrap iframe{width:100%;height:240px;border:0;display:block;}
-
-/* ---------- Connect ---------- */
-.connect{background:var(--ink);color:#fff;}
-.connect-inner{display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;}
-.connect-block h3{color:#fff;font-size:1.05rem;margin-bottom:14px;}
-.icon-row{display:flex;gap:12px;margin-bottom:14px;}
-.icon-btn{
-  width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-  text-decoration:none;
-}
-.icon-btn svg{width:22px;height:22px;}
-.review-cta{
-  display:inline-flex;align-items:center;gap:8px;color:var(--gold);text-decoration:none;font-weight:700;font-size:.9rem;
-}
-.review-cta svg{width:18px;height:18px;}
-
-/* ---------- FAQ ---------- */
-.faq-list{margin-top:28px;display:grid;gap:12px;}
-.faq-item{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;}
-.faq-q{
-  width:100%;text-align:left;background:none;border:0;padding:18px 20px;font-weight:700;font-size:1rem;
-  cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--text);
-}
-.plus{width:20px;height:20px;position:relative;flex-shrink:0;}
-.plus::before,.plus::after{content:"";position:absolute;background:var(--red);border-radius:2px;}
-.plus::before{width:14px;height:2.5px;top:9px;left:3px;}
-.plus::after{width:2.5px;height:14px;top:3px;left:9px;transition:transform .2s ease;}
-.faq-item.open .plus::after{transform:rotate(90deg);opacity:0;}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;padding:0 20px;}
-.faq-item.open .faq-a{max-height:260px;padding:0 20px 18px;}
-.faq-a p{color:var(--text-soft);font-size:.94rem;margin:0;}
-
-/* ---------- Footer ---------- */
-footer{background:var(--charcoal);color:#d9cdb4;padding:40px 0 90px;}
-.footer-inner{display:grid;gap:18px;}
-.footer-brand{display:flex;align-items:center;gap:10px;font-weight:800;color:#fff;font-size:1.05rem;}
-.footer-links{list-style:none;display:flex;flex-wrap:wrap;gap:18px;padding:0;margin:0;}
-.footer-links a{text-decoration:none;font-size:.9rem;}
-.footer-meta{font-size:.88rem;}
-.footer-meta a{text-decoration:none;font-weight:700;color:var(--gold);}
-.footer-credit{font-size:.78rem;color:#9c8f76;padding-top:14px;border-top:1px solid #46392320;}
-
-/* ---------- Sticky mobile bar ---------- */
-.sticky-actions{
-  position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;
-  background:var(--ink);border-top:2px solid var(--gold);
-}
-.sticky-actions{display:grid;grid-template-columns:1fr 1fr 1fr;}
-.sticky-actions a{
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
-  padding:10px 6px;color:#fff;text-decoration:none;font-size:.72rem;font-weight:700;
-}
-.sticky-actions svg{width:20px;height:20px;}
-.sticky-actions .call{color:var(--gold);}
-@media(max-width:720px){.sticky-actions{display:grid;} body{padding-bottom:66px;}}
-
-.float-text-btn{
-  position:fixed;right:20px;bottom:96px;z-index:60;display:flex;align-items:center;gap:8px;
-  background:var(--red);color:#fff;padding:12px 18px;border-radius:999px;text-decoration:none;
-  font-weight:700;font-size:.88rem;box-shadow:0 10px 24px -8px rgba(0,0,0,.4);
-}
-.float-text-btn svg{width:18px;height:18px;}
-@media(max-width:720px){.float-text-btn{bottom:80px;right:14px;padding:11px 14px;}.float-text-btn span{display:none;}}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header>
   <div class="header-inner">
-    <a href="#top" class="brand" id="top">
+    <a href="index.html" class="brand" id="top">
       <span class="logo-placeholder" aria-hidden="true">Your Logo Here</span>
       <span>
         <span class="brand-name">Auto Body Lopez</span>
         <span class="brand-sub">South St Paul, MN</span>
       </span>
     </a>
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <ul class="nav-list">
+        <li class="has-dropdown">
+          <a class="nav-link" href="services/index.html" aria-haspopup="true" aria-expanded="false">Services<span class="caret" aria-hidden="true"></span></a>
+          <div class="dropdown">
+            <a href="services/collision-repair/index.html">Collision Repair<small>Front-end &amp; structural damage</small></a>
+            <a href="services/auto-paint/index.html">Auto Paint &amp; Refinishing<small>Color-matched paint</small></a>
+            <a href="services/dent-repair/index.html">Dent &amp; Scratch Repair<small>Dents, dings &amp; rust</small></a>
+            <a href="services/frame-straightening/index.html">Frame &amp; Structural Repair<small>Straightening &amp; welding</small></a>
+            <a href="services/bumper-repair/index.html">Bumper Repair &amp; Replacement<small>Cracked &amp; damaged bumpers</small></a>
+          </div>
+        </li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#reviews">Reviews</a></li>
+        <li><a class="nav-link" href="#visit">Contact</a></li>
+      </ul>
+    </nav>
     <div class="header-cta">
-      <a class="call-pill" href="tel:+16517568621" data-cta="call" data-cta-location="header">
+      <a class="call-pill" data-phone-tel href="tel:+16517568621" data-cta="call" data-cta-location="header">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span>(651) 756-8621</span>
+        <span data-phone-display>(651) 756-8621</span>
       </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
     </div>
   </div>
 </header>
@@ -300,15 +91,15 @@ footer{background:var(--charcoal);color:#d9cdb4;padding:40px 0 90px;}
         4.8 stars &middot; 57 Google reviews
       </div>
       <h1>Collision Repair &amp; Auto Paint That Looks Brand New in <span class="accent-word">South St Paul</span></h1>
-      <p class="hero-lede">Auto Body Lopez is a collision repair and auto paint shop in South St Paul, Minnesota, handling dent repair, color-matched paint, and rust and collision work &mdash; done so well you'd never know anything happened.</p>
+      <p class="hero-lede">Auto Body Lopez is a collision repair and auto paint shop in South St Paul, Minnesota, handling dent repair, frame straightening, bumper repair, and color-matched paint &mdash; done so well you'd never know anything happened.</p>
       <div class="hero-ctas">
-        <a class="btn btn-primary" href="sms:+16517568621?&body=Hi%2C%20I%27d%20like%20a%20quote%20on%20auto%20body%20work%20at%20Auto%20Body%20Lopez." data-cta="text-quote" data-cta-location="hero">
+        <a class="btn btn-primary" data-phone-sms data-sms-body="Hi, I'd like a quote on auto body work at Auto Body Lopez." href="sms:+16517568621?&body=Hi%2C%20I%27d%20like%20a%20quote%20on%20auto%20body%20work%20at%20Auto%20Body%20Lopez." data-cta="text-quote" data-cta-location="hero">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           Text for a Quote
         </a>
-        <a class="btn btn-ghost" href="tel:+16517568621" data-cta="call" data-cta-location="hero">
+        <a class="btn btn-ghost" data-phone-tel href="tel:+16517568621" data-cta="call" data-cta-location="hero">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Call (651) 756-8621
+          Call <span data-phone-display>(651) 756-8621</span>
         </a>
       </div>
     </div>
@@ -319,55 +110,60 @@ footer{background:var(--charcoal);color:#d9cdb4;padding:40px 0 90px;}
     <div class="wrap">
       <span class="eyebrow">What We Do</span>
       <h2>Auto Body &amp; Paint Services in South St Paul</h2>
-      <p class="section-intro">From a parking-lot dent to a full collision, we bring your vehicle's body and paint back to the way it looked before &mdash; plus oil changes to keep it running right.</p>
+      <p class="section-intro">From a parking-lot dent to a full collision, we bring your vehicle's body and paint back to the way it looked before. Tap any service below for the full details.</p>
       <div class="service-grid">
 
-        <div class="service-card">
+        <a class="service-card linked" href="services/collision-repair/index.html">
           <div class="service-icon">
             <svg viewBox="0 0 48 48" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 28l4-9a4 4 0 0 1 3.7-2.4h20.6A4 4 0 0 1 38 19l4 9v6a2 2 0 0 1-2 2h-2a3 3 0 1 1-6 0H16a3 3 0 1 1-6 0H8a2 2 0 0 1-2-2z"/><path d="M6 28h36M14 16.6l-3 8.4M34 16.6l3 8.4"/></svg>
           </div>
           <h3>Collision Repair</h3>
           <p>Front-end damage, welding, and structural work handled start to finish, so your vehicle drives and looks right again.</p>
-        </div>
+          <span class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
 
-        <div class="service-card">
+        <a class="service-card linked" href="services/auto-paint/index.html">
           <div class="service-icon">
             <svg viewBox="0 0 48 48" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="15"/><path d="M24 9a15 15 0 0 1 0 30M17 17l14 14M31 17l-14 14"/></svg>
           </div>
-          <h3>Color-Matched Auto Paint</h3>
+          <h3>Auto Paint &amp; Refinishing</h3>
           <p>Careful, exact color matching &mdash; including metallic and pearl finishes &mdash; so a repaired panel disappears into the rest of the car.</p>
-        </div>
+          <span class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
 
-        <div class="service-card">
+        <a class="service-card linked" href="services/dent-repair/index.html">
           <div class="service-icon">
             <svg viewBox="0 0 48 48" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 30c3-10 8-16 14-16s11 6 14 16"/><circle cx="18" cy="32" r="3"/><circle cx="30" cy="32" r="3"/><path d="M8 30h32v4a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2z"/></svg>
           </div>
-          <h3>Dent &amp; Rust Repair</h3>
+          <h3>Dent &amp; Scratch Repair</h3>
           <p>Dents, dings, and rust spots repaired and refinished so the panel looks smooth and solid again.</p>
-        </div>
+          <span class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
 
-        <div class="service-card">
+        <a class="service-card linked" href="services/frame-straightening/index.html">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 34l4-4h24l4 4M12 30V16a4 4 0 0 1 4-4h16a4 4 0 0 1 4 4v14"/><circle cx="16" cy="34" r="3"/><circle cx="32" cy="34" r="3"/></svg>
+          </div>
+          <h3>Frame &amp; Structural Repair</h3>
+          <p>Frame straightening and welding for vehicles with impact damage that goes deeper than the surface.</p>
+          <span class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+
+        <a class="service-card linked" href="services/bumper-repair/index.html">
           <div class="service-icon">
             <svg viewBox="0 0 48 48" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="14" width="32" height="16" rx="3"/><path d="M8 22h32M16 14v16M32 14v16"/></svg>
           </div>
-          <h3>Grille &amp; Trim Replacement</h3>
-          <p>Cracked grille, emblem, or exterior trim? We source and install replacement parts to match your vehicle.</p>
-        </div>
+          <h3>Bumper Repair &amp; Replacement</h3>
+          <p>Cracked, dented, or torn-up bumper? We repair what can be saved and source replacements when it can't.</p>
+          <span class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
 
         <div class="service-card">
           <div class="service-icon">
             <svg viewBox="0 0 48 48" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8h12l3 8v22a2 2 0 0 1-2 2H17a2 2 0 0 1-2-2V16z"/><path d="M15 16h18M24 22v12M20 26h8"/></svg>
           </div>
-          <h3>Oil Changes</h3>
-          <p>Quick, reliable oil changes while your vehicle is already in good hands.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 48 48" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 34l4-4h24l4 4M12 30V16a4 4 0 0 1 4-4h16a4 4 0 0 1 4 4v14"/><circle cx="16" cy="34" r="3"/><circle cx="32" cy="34" r="3"/></svg>
-          </div>
-          <h3>Vehicle &amp; Fleet Work</h3>
-          <p>We work on personal vehicles as well as rental and fleet cars &mdash; fast turnaround so vehicles get back on the road.</p>
+          <h3>Oil Changes &amp; Fleet Work</h3>
+          <p>Quick oil changes, and we work on personal, rental, and fleet vehicles alike with fast turnaround.</p>
         </div>
 
       </div>
@@ -436,6 +232,28 @@ footer{background:var(--charcoal);color:#d9cdb4;padding:40px 0 90px;}
     </div>
   </section>
 
+  <!-- ================= QUOTE / LEAD-CAPTURE MODULE ================= -->
+  <section class="services" style="padding-top:0;">
+    <div class="wrap">
+      <div class="quote-module">
+        <div class="quote-copy">
+          <h3>Not Sure What Your Vehicle Needs?</h3>
+          <p>Call or text a photo of the damage and we'll help you figure out the right fix.</p>
+        </div>
+        <div class="quote-ctas">
+          <a class="btn-sm call" data-phone-tel href="tel:+16517568621" data-cta="quote-call" data-cta-location="quote-module">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call for a Quote
+          </a>
+          <a class="btn-sm text" data-phone-sms data-sms-body="Hi! I'd like a quote for the following work: " href="sms:+16517568621?&body=Hi!%20I%27d%20like%20a%20quote%20for%20the%20following%20work%3A%20" data-cta="quote-text" data-cta-location="quote-module">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Text for a Quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= TESTIMONIALS ================= -->
   <section class="testimonials" id="reviews">
     <div class="wrap">
@@ -474,6 +292,12 @@ footer{background:var(--charcoal);color:#d9cdb4;padding:40px 0 90px;}
           <div class="t-name">&mdash; Daniela Chavez</div>
         </div>
 
+        <div class="t-card">
+          <div class="t-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="t-text">"Great service and communication. Walked me through what I needed and helped to fix my car at a reasonable price. Don't hesitate to bring your vehicle to Lopez's, I'll be back for sure."</p>
+          <div class="t-name">&mdash; Mickies</div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -483,7 +307,7 @@ footer{background:var(--charcoal);color:#d9cdb4;padding:40px 0 90px;}
     <div class="wrap">
       <span class="eyebrow">Visit Us</span>
       <h2>Hours &amp; Location in South St Paul</h2>
-      <p class="section-intro">Come see us at 1449 Concord St S in South St Paul (also spelled South Saint Paul) &mdash; call or text ahead and we'll get your vehicle in.</p>
+      <p class="section-intro">Come see us at 1449 Concord St S in South St Paul (also spelled South Saint Paul) &mdash; call or text ahead and we'll get your vehicle in. We also welcome drivers from West St Paul, Inver Grove Heights, and across Dakota County.</p>
       <div class="visit-grid">
 
         <div class="info-card">
@@ -515,15 +339,15 @@ footer{background:var(--charcoal);color:#d9cdb4;padding:40px 0 90px;}
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <a href="tel:+16517568621">(651) 756-8621</a>
+              <a data-phone-tel href="tel:+16517568621"><span data-phone-display>(651) 756-8621</span></a>
             </li>
           </ul>
           <div class="btn-row">
-            <a class="btn-sm call" href="tel:+16517568621" data-cta="call" data-cta-location="visit">
+            <a class="btn-sm call" data-phone-tel href="tel:+16517568621" data-cta="call" data-cta-location="visit">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               Call
             </a>
-            <a class="btn-sm text" href="sms:+16517568621?&body=Hi!%20I%27d%20like%20to%20ask%20about%20getting%20my%20vehicle%20repaired." data-cta="book-text" data-cta-location="visit">
+            <a class="btn-sm text" data-phone-sms href="sms:+16517568621?&body=Hi!%20I%27d%20like%20to%20ask%20about%20getting%20my%20vehicle%20repaired." data-cta="book-text" data-cta-location="visit">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
               Text Us
             </a>
@@ -594,7 +418,7 @@ footer{background:var(--charcoal);color:#d9cdb4;padding:40px 0 90px;}
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">What auto body services does Auto Body Lopez offer?<span class="plus"></span></button>
-          <div class="faq-a"><p>We handle collision repair, color-matched auto paint, dent and rust repair, grille and sign or trim replacement, and oil changes &mdash; the kind of body and paint work that gets a damaged vehicle back to looking the way it did before.</p></div>
+          <div class="faq-a"><p>We handle collision repair, auto paint and refinishing, dent and scratch repair, frame and structural repair, bumper repair and replacement, and oil changes &mdash; the kind of body and paint work that gets a damaged vehicle back to looking the way it did before. See our <a href="services/index.html">full services list</a> for details on each.</p></div>
         </div>
 
         <div class="faq-item">
@@ -619,27 +443,27 @@ footer{background:var(--charcoal);color:#d9cdb4;padding:40px 0 90px;}
       <span>Auto Body Lopez</span>
     </div>
     <ul class="footer-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#visit">Contact</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="services/index.html">Services</a></li>
+      <li><a href="index.html#reviews">Reviews</a></li>
+      <li><a href="index.html#visit">Contact</a></li>
     </ul>
     <div class="footer-meta">
       1449 Concord St S, South St Paul, MN 55075<br>
-      <a href="tel:+16517568621">(651) 756-8621</a><br>
+      <a data-phone-tel href="tel:+16517568621"><span data-phone-display>(651) 756-8621</span></a><br>
       Mon&ndash;Fri 8 AM&ndash;12 PM, 1&ndash;5:30 PM &middot; Sat&ndash;Sun Closed
     </div>
     <div class="footer-credit">Website demo built by [OWNER PLACEHOLDER]</div>
   </div>
 </footer>
 
-<a class="float-text-btn" href="sms:+16517568621?&body=Hi!%20I%20have%20a%20question%20for%20Auto%20Body%20Lopez." aria-label="Text Auto Body Lopez" data-cta="float-text" data-cta-location="floating-button">
+<a class="float-text-btn" data-phone-sms href="sms:+16517568621?&body=Hi!%20I%20have%20a%20question%20for%20Auto%20Body%20Lopez." aria-label="Text Auto Body Lopez" data-cta="float-text" data-cta-location="floating-button">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
   <span>Text Us</span>
 </a>
 
 <div class="sticky-actions">
-  <a class="call" href="tel:+16517568621" data-cta="call" data-cta-location="sticky-bar">
+  <a class="call" data-phone-tel href="tel:+16517568621" data-cta="call" data-cta-location="sticky-bar">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
     Call
   </a>
@@ -647,7 +471,7 @@ footer{background:var(--charcoal);color:#d9cdb4;padding:40px 0 90px;}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l19-9-9 19-2-8z"/></svg>
     Directions
   </a>
-  <a class="text" href="sms:+16517568621?&body=Hi!%20I%20have%20a%20question%20for%20Auto%20Body%20Lopez." data-cta="text" data-cta-location="sticky-bar">
+  <a class="text" data-phone-sms href="sms:+16517568621?&body=Hi!%20I%20have%20a%20question%20for%20Auto%20Body%20Lopez." data-cta="text" data-cta-location="sticky-bar">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
     Text
   </a>
@@ -659,7 +483,7 @@ footer{background:var(--charcoal);color:#d9cdb4;padding:40px 0 90px;}
   "@context": "https://schema.org",
   "@type": "AutoBodyShop",
   "name": "Auto Body Lopez",
-  "description": "Auto Body Lopez is a collision repair and auto paint shop in South St Paul, Minnesota, offering collision repair, color-matched auto paint, dent and rust repair, grille and trim replacement, and oil changes.",
+  "description": "Auto Body Lopez is a collision repair and auto paint shop in South St Paul, Minnesota, offering collision repair, auto paint and refinishing, dent and scratch repair, frame and structural repair, bumper repair and replacement, and oil changes.",
   "telephone": "+16517568621",
   "address": {
     "@type": "PostalAddress",
@@ -740,7 +564,7 @@ footer{background:var(--charcoal);color:#d9cdb4;padding:40px 0 90px;}
       "name": "What auto body services does Auto Body Lopez offer?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We handle collision repair, color-matched auto paint, dent and rust repair, grille and sign or trim replacement, and oil changes — the kind of body and paint work that gets a damaged vehicle back to looking the way it did before."
+        "text": "We handle collision repair, auto paint and refinishing, dent and scratch repair, frame and structural repair, bumper repair and replacement, and oil changes — the kind of body and paint work that gets a damaged vehicle back to looking the way it did before."
       }
     },
     {
@@ -763,54 +587,8 @@ footer{background:var(--charcoal);color:#d9cdb4;padding:40px 0 90px;}
 }
 </script>
 
-<script>
-(function(){
-  // ---- FAQ accordion ----
-  document.querySelectorAll('.faq-q').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var item = btn.closest('.faq-item');
-      var isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(function(o){
-        if(o !== item){ o.classList.remove('open'); o.querySelector('.faq-q').setAttribute('aria-expanded','false'); }
-      });
-      item.classList.toggle('open', !isOpen);
-      btn.setAttribute('aria-expanded', String(!isOpen));
-    });
-  });
-
-  // ---- Open/Closed badge from visitor local time (split lunch hours) ----
-  var hours = {
-    0: null,                  // Sunday closed
-    1: [[8,12],[13,17.5]],    // Monday
-    2: [[8,12],[13,17.5]],
-    3: [[8,12],[13,17.5]],
-    4: [[8,12],[13,17.5]],
-    5: [[8,12],[13,17.5]],
-    6: null                   // Saturday closed
-  };
-  var dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-  var now = new Date();
-  var day = now.getDay();
-  var hourDecimal = now.getHours() + now.getMinutes()/60;
-  var todayHours = hours[day];
-  var isOpen = false;
-  if (todayHours) {
-    isOpen = todayHours.some(function(range){ return hourDecimal >= range[0] && hourDecimal < range[1]; });
-  }
-  var badge = document.getElementById('status-badge');
-  if (badge) {
-    if (isOpen) {
-      badge.innerHTML = '<span class="status-badge status-open"><span class="dot"></span>Open Now</span>';
-    } else {
-      badge.innerHTML = '<span class="status-badge status-closed"><span class="dot"></span>Closed Now</span>';
-    }
-  }
-  var todayName = dayNames[day];
-  document.querySelectorAll('#hours-table tr').forEach(function(r){
-    if (r.getAttribute('data-day') === todayName) r.classList.add('today');
-  });
-})();
-</script>
-
+<script src="phone-config.js"></script>
+<script src="site.js"></script>
+<script src="analytics.js"></script>
 </body>
 </html>

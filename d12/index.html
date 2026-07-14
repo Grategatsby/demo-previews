@@ -9,7 +9,8 @@
   accent, built to read as "industrial, dependable garage" rather than a generic corporate
   auto-shop blue. photo-03/05/09/10/11/12 were discarded — they are a customer's personal
   vehicle/dashboard/storm-sky shots with no shop signage or location match, not confirmed
-  to depict this business (see build report).
+  to depict this business (see build report). Design system lives in styles.css and is
+  shared by every page on this site (home + services hub + 5 service spoke pages).
 -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,248 +30,21 @@
 <meta name="twitter:description" content="Brakes, tires, tune-ups, transmission repair &amp; custom exhaust work in Shakopee, MN. 4.8 stars, 140 Google reviews.">
 <meta name="twitter:image" content="https://grategatsby.github.io/demo-previews/auto-repair-shop/photos/bay-lift-truck-service.jpg">
 
+<!-- Analytics / Search Console slots — DORMANT, activated at launch tier (see AI-SEO-SPEC + premium-ranking-template §4b) -->
+<!-- <meta name="google-site-verification" content="REPLACE_AT_LAUNCH"> -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-REPLACE_AT_LAUNCH"></script> -->
+<!-- <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);} gtag('js',new Date()); gtag('config','G-REPLACE_AT_LAUNCH');</script> -->
+
 <!-- Favicon: monogram wrench mark, palette colors -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%2314161a'/%3E%3Cpath d='M42.5 15.8a9 9 0 0 0-12.1 10.6L15 41.8a3.6 3.6 0 0 0 5 5l15.4-15.4a9 9 0 0 0 10.6-12.1l-6.2 6.2-4.6-.9-.9-4.6z' fill='%23f5b400'/%3E%3Ccircle cx='32' cy='32' r='30' fill='none' stroke='%23c1272d' stroke-width='2.5'/%3E%3C/svg%3E">
 
-<style>
-:root{
-  --charcoal:#1e2126;
-  --charcoal-dark:#14161a;
-  --charcoal-mid:#2a2e35;
-  --yellow:#f5b400;
-  --yellow-dark:#c98f00;
-  --red:#c1272d;
-  --red-dark:#9c1e23;
-  --cream:#f8f6f1;
-  --cream-dim:#ece6d8;
-  --text:#1c1f24;
-  --gray:#5b6470;
-  --border:#e2ddd0;
-  --radius:14px;
-  --maxw:1120px;
-  font-size:16px;
-}
-*,*::before,*::after{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  color:var(--text);
-  background:var(--cream);
-  line-height:1.55;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-}
-img{max-width:100%;display:block;}
-a{color:inherit;}
-h1,h2,h3{font-family:'Oswald',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;letter-spacing:.01em;margin:0 0 .5em;line-height:1.15;}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
-section{padding:64px 0;}
-a:focus-visible,button:focus-visible{outline:3px solid var(--yellow);outline-offset:2px;}
-
-/* ---------- Header ---------- */
-header{position:sticky;top:0;z-index:50;background:var(--charcoal-dark);border-bottom:3px solid var(--yellow);}
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;max-width:var(--maxw);margin:0 auto;gap:16px;}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--cream);flex:0 0 auto;min-width:0;}
-.logo-placeholder{display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 12px;
-  border:1.5px dashed rgba(248,246,241,.5);border-radius:8px;flex:0 0 auto;text-align:center;
-  font-family:'Oswald',sans-serif;font-size:.6rem;font-weight:600;letter-spacing:.09em;
-  text-transform:uppercase;color:#cfd3d9;line-height:1.05;}
-.brand-text{min-width:0;}
-.brand-name{font-family:'Oswald',sans-serif;font-weight:600;font-size:1.08rem;color:var(--cream);letter-spacing:.01em;display:block;white-space:nowrap;}
-.brand-sub{display:block;font-size:.63rem;font-weight:400;letter-spacing:.11em;text-transform:uppercase;color:#a9afb8;}
-nav.main-nav{display:flex;align-items:center;gap:20px;flex:0 0 auto;margin-left:auto;}
-.nav-list{list-style:none;display:flex;align-items:center;gap:20px;margin:0;padding:0;}
-.nav-list a.nav-link{color:#d7dbe0;text-decoration:none;font-weight:600;font-size:.92rem;padding:10px 2px;}
-.nav-list a.nav-link:hover,.nav-list a.nav-link:focus-visible{color:#fff;}
-.header-cta{display:flex;align-items:center;gap:14px;flex:0 0 auto;}
-.call-pill{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:var(--charcoal-dark);
-  padding:10px 16px;border-radius:999px;font-weight:700;text-decoration:none;font-size:.9rem;white-space:nowrap;transition:background .15s ease;}
-.call-pill:hover{background:var(--yellow-dark);color:#fff;}
-.call-pill svg{width:16px;height:16px;flex:0 0 auto;}
-.nav-toggle{display:none;background:none;border:0;color:#fff;padding:8px;cursor:pointer;}
-.nav-toggle svg{width:26px;height:26px;}
-@media (max-width:860px){
-  .brand-sub{display:none;}
-  nav.main-nav{position:fixed;inset:0 0 0 auto;top:63px;height:calc(100% - 63px);width:min(300px,86vw);
-    background:var(--charcoal-dark);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s ease;
-    padding:22px;overflow-y:auto;box-shadow:-8px 0 24px rgba(0,0,0,.3);}
-  nav.main-nav.mobile-open{opacity:1;visibility:visible;pointer-events:auto;}
-  .nav-list{flex-direction:column;align-items:stretch;gap:2px;width:100%;}
-  .nav-list a.nav-link{width:100%;padding:14px 6px;border-bottom:1px solid rgba(255,255,255,.08);}
-  .nav-toggle{display:inline-flex;}
-}
-@media (max-width:540px){
-  .brand-name{font-size:.98rem;}
-  .header-cta .call-pill{display:none;}
-}
-
-/* ---------- Hero ---------- */
-.hero{background:radial-gradient(circle at 85% 0%, var(--charcoal-mid) 0%, var(--charcoal) 45%, var(--charcoal-dark) 100%);color:var(--cream);position:relative;overflow:hidden;padding:38px 0 40px;}
-.hero-deco{position:absolute;right:-40px;top:-30px;width:300px;height:300px;max-width:60%;opacity:.12;pointer-events:none;}
-.hero-inner{position:relative;z-index:1;max-width:960px;}
-.rating-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(248,246,241,.1);border:1px solid rgba(248,246,241,.25);padding:7px 14px;border-radius:999px;font-size:.85rem;font-weight:600;margin-bottom:16px;}
-.stars{color:var(--yellow);letter-spacing:1px;font-size:.95rem;}
-.hero h1{font-size:clamp(1.85rem,4.2vw,2.55rem);color:#fff;max-width:30ch;line-height:1.16;margin:0 0 .5em;}
-.hero .accent-word{color:var(--yellow);}
-.hero-lede{font-size:1.06rem;color:#d9dce0;max-width:66ch;margin:0 0 1.3em;}
-.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;}
-.hero-ctas .btn{flex:0 1 auto;}
-@media (max-width:400px){.hero-ctas{gap:10px;}.hero-ctas .btn{flex:1 1 auto;justify-content:center;padding:13px 16px;}}
-@media (max-width:560px){.hero{padding:28px 0 30px;}.hero h1{font-size:1.6rem;}.hero-lede{font-size:1rem;margin-bottom:1.1em;}.rating-badge{margin-bottom:12px;}}
-
-.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 24px;border-radius:10px;font-weight:700;font-size:1rem;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .12s ease,background .15s ease;font-family:inherit;}
-.btn:hover{transform:translateY(-1px);}
-.btn svg{width:19px;height:19px;flex:0 0 auto;}
-.btn-primary{background:var(--yellow);color:var(--charcoal-dark);}
-.btn-primary:hover{background:var(--yellow-dark);color:#fff;}
-.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4);}
-.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff;}
-.btn-outline{background:transparent;color:var(--charcoal);border-color:var(--charcoal);}
-.btn-outline:hover{background:var(--charcoal);color:#fff;}
-
-/* ---------- Section headings ---------- */
-.eyebrow{display:block;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:700;color:var(--red);margin-bottom:.6em;}
-h2{font-size:clamp(1.55rem,3.4vw,2.1rem);color:var(--charcoal);}
-.section-intro{color:var(--gray);max-width:66ch;font-size:1.04rem;margin-bottom:2.2em;}
-
-/* ---------- Services ---------- */
-.services{background:var(--cream);}
-.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-@media (max-width:820px){.service-grid{grid-template-columns:repeat(2,1fr);}}
-@media (max-width:540px){.service-grid{grid-template-columns:1fr;}}
-.service-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:26px 22px;box-shadow:0 1px 3px rgba(20,22,26,.05);display:flex;flex-direction:column;}
-.service-icon{width:56px;height:56px;border-radius:50%;background:var(--cream-dim);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
-.service-icon svg{width:30px;height:30px;stroke:var(--charcoal);}
-.service-card h3{font-size:1.1rem;color:var(--charcoal);margin-bottom:.4em;}
-.service-card p{color:var(--gray);font-size:.95rem;margin:0;flex:1;}
-
-/* ---------- About ---------- */
-.about{background:var(--charcoal);color:var(--cream);}
-.about .eyebrow{color:var(--yellow);}
-.about h2{color:#fff;}
-.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;}
-@media (max-width:820px){.about-grid{grid-template-columns:1fr;}}
-.about-copy p{color:#d3d7dc;font-size:1.02rem;}
-.why-list{list-style:none;margin:1.6em 0 0;padding:0;display:grid;gap:14px;}
-.why-list li{display:flex;gap:12px;align-items:flex-start;color:#e6e9ec;font-size:.98rem;}
-.why-list svg{width:22px;height:22px;flex:0 0 auto;color:var(--yellow);margin-top:2px;}
-.about-photo{position:relative;}
-.about-photo img{border-radius:var(--radius);border:4px solid rgba(255,255,255,.1);width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 35%;}
-.about-photo figcaption{margin-top:10px;font-size:.85rem;color:#9aa0a8;font-style:italic;}
-
-/* ---------- Gallery ---------- */
-.gallery{background:var(--cream-dim);}
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-@media (max-width:820px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
-@media (max-width:640px){.gallery-grid{grid-template-columns:1fr;}}
-.gallery-grid figure{margin:0;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
-.gallery-grid img{width:100%;height:280px;object-fit:cover;}
-.gallery-grid figcaption{padding:14px 16px;font-size:.9rem;color:var(--gray);}
-
-/* ---------- Testimonials ---------- */
-.testimonials{background:var(--cream);}
-.t-intro{font-weight:600;color:var(--charcoal);margin-bottom:1.6em;font-size:1.05rem;}
-.t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-@media (max-width:820px){.t-grid{grid-template-columns:repeat(2,1fr);}}
-@media (max-width:560px){.t-grid{grid-template-columns:1fr;}}
-.t-card{background:#fff;border-radius:var(--radius);padding:22px 20px;border:1px solid var(--border);display:flex;flex-direction:column;gap:10px;}
-.t-stars{color:var(--yellow-dark);font-size:.95rem;letter-spacing:1px;}
-.t-text{font-size:.95rem;color:var(--text);margin:0;flex:1;}
-.t-name{font-weight:700;color:var(--charcoal);font-size:.9rem;}
-
-/* ---------- Hours / Contact ---------- */
-.visit{background:var(--cream-dim);}
-.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;}
-@media (max-width:820px){.visit-grid{grid-template-columns:1fr;}}
-.info-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:26px;}
-.info-card h3{color:var(--charcoal);font-size:1.15rem;margin-bottom:.8em;display:flex;align-items:center;gap:10px;}
-.info-card h3 svg{width:22px;height:22px;color:var(--red);}
-.status-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;font-weight:700;font-size:.85rem;margin-bottom:14px;}
-.status-open{background:#e2f5e6;color:#1c7a34;}
-.status-closed{background:#fbe6e2;color:#a83a20;}
-.status-badge .dot{width:8px;height:8px;border-radius:50%;background:currentColor;}
-.hours-table{width:100%;border-collapse:collapse;font-size:.95rem;}
-.hours-table td{padding:6px 0;border-bottom:1px solid var(--border);}
-.hours-table tr:last-child td{border-bottom:none;}
-.hours-table td:first-child{color:var(--gray);}
-.hours-table td:last-child{text-align:right;font-weight:600;color:var(--charcoal);}
-.hours-table tr.today td{color:var(--red-dark);font-weight:700;}
-.hours-table tr.today td:first-child{color:var(--red-dark);}
-.contact-list{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:12px;}
-.contact-list li{display:flex;align-items:flex-start;gap:12px;font-size:.98rem;}
-.contact-list svg{width:20px;height:20px;flex:0 0 auto;color:var(--red);margin-top:2px;}
-.contact-list a{text-decoration:none;font-weight:600;color:var(--charcoal);}
-.contact-list a:hover{text-decoration:underline;}
-.btn-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;}
-.btn-sm{display:inline-flex;align-items:center;gap:7px;padding:10px 16px;border-radius:8px;font-weight:700;font-size:.88rem;text-decoration:none;border:2px solid transparent;cursor:pointer;font-family:inherit;}
-.btn-sm svg{width:16px;height:16px;}
-.btn-sm.call{background:var(--yellow);color:var(--charcoal-dark);}
-.btn-sm.call:hover{background:var(--yellow-dark);color:#fff;}
-.btn-sm.text{background:var(--charcoal);color:#fff;}
-.btn-sm.text:hover{background:var(--charcoal-dark);}
-.btn-sm.dir{background:transparent;color:var(--charcoal);border-color:var(--charcoal);}
-.btn-sm.dir:hover{background:var(--charcoal);color:#fff;}
-.map-wrap{margin-top:22px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);}
-.map-wrap iframe{width:100%;height:280px;border:0;display:block;}
-
-/* ---------- Connect / social ---------- */
-.connect{background:var(--cream);}
-.connect-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px;align-items:flex-start;}
-.connect-block h3{color:var(--charcoal);font-size:1rem;margin-bottom:.9em;text-transform:uppercase;letter-spacing:.08em;}
-.icon-row{display:flex;gap:12px;flex-wrap:wrap;}
-.icon-btn{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 1px 3px rgba(20,22,26,.12);transition:transform .12s ease;}
-.icon-btn:hover{transform:translateY(-2px);}
-.icon-btn svg{width:24px;height:24px;}
-.review-cta{display:inline-flex;align-items:center;gap:9px;background:#fff;border:2px solid var(--charcoal);color:var(--charcoal);padding:11px 18px;border-radius:10px;font-weight:700;text-decoration:none;font-size:.92rem;margin-top:10px;}
-.review-cta:hover{background:var(--charcoal);color:#fff;}
-.review-cta svg{width:18px;height:18px;}
-
-/* ---------- FAQ ---------- */
-.faq{background:var(--cream-dim);}
-.faq-list{display:grid;gap:12px;max-width:780px;}
-.faq-item{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;}
-.faq-q{width:100%;text-align:left;background:none;border:0;cursor:pointer;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--charcoal);display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:inherit;}
-.faq-q .plus{flex:0 0 auto;width:22px;height:22px;position:relative;}
-.faq-q .plus::before,.faq-q .plus::after{content:"";position:absolute;background:var(--red);border-radius:2px;transition:transform .2s ease;}
-.faq-q .plus::before{left:0;top:50%;width:100%;height:3px;margin-top:-1.5px;}
-.faq-q .plus::after{top:0;left:50%;height:100%;width:3px;margin-left:-1.5px;}
-.faq-item.open .faq-q .plus::after{transform:rotate(90deg);opacity:0;}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;}
-.faq-a p{margin:0;padding:0 20px 20px;color:var(--gray);font-size:.96rem;}
-.faq-item.open .faq-a{max-height:320px;}
-
-/* ---------- Footer ---------- */
-footer{background:var(--charcoal-dark);color:#b7bcc2;padding:44px 0 96px;}
-.footer-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;}
-.footer-brand{display:flex;align-items:center;gap:12px;}
-.footer-brand svg{width:36px;height:36px;}
-.footer-brand span{font-family:'Oswald',sans-serif;font-weight:600;color:#fff;font-size:1.05rem;}
-.footer-meta{font-size:.88rem;line-height:1.8;}
-.footer-links{list-style:none;margin:0;padding:0;font-size:.88rem;line-height:1.9;}
-.footer-links a{color:#b7bcc2;text-decoration:none;}
-.footer-links a:hover{color:#fff;text-decoration:underline;}
-.footer-credit{width:100%;text-align:center;font-size:.78rem;color:#767c85;margin-top:28px;border-top:1px solid rgba(255,255,255,.08);padding-top:18px;}
-
-/* ---------- Sticky mobile actions + floating text button ---------- */
-.sticky-actions{display:none;position:fixed;left:0;right:0;bottom:0;width:auto;max-width:100%;box-sizing:border-box;overflow:hidden;z-index:60;box-shadow:0 -4px 14px rgba(0,0,0,.18);}
-.sticky-actions a{min-width:0;flex:1 1 0;display:flex;align-items:center;justify-content:center;gap:7px;padding:14px 6px;font-weight:700;text-decoration:none;font-size:.96rem;color:#fff;}
-.sticky-actions a.call{background:var(--yellow);color:var(--charcoal-dark);}
-.sticky-actions a.text{background:var(--charcoal);}
-.sticky-actions a.dir{background:var(--red);}
-.sticky-actions svg{width:18px;height:18px;flex:0 0 auto;}
-@media (max-width:720px){.sticky-actions{display:flex;}body{padding-bottom:58px;}}
-.float-text-btn{position:fixed;right:20px;bottom:20px;z-index:60;display:inline-flex;align-items:center;gap:9px;background:var(--charcoal);color:#fff;padding:14px 20px;border-radius:999px;text-decoration:none;font-weight:700;font-size:.94rem;box-shadow:0 6px 18px rgba(20,22,26,.4);transition:transform .12s ease,background .15s ease;}
-.float-text-btn:hover{background:var(--charcoal-dark);transform:translateY(-2px);}
-.float-text-btn svg{width:19px;height:19px;}
-@media (max-width:720px){.float-text-btn{display:none;}}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header>
   <div class="header-inner">
-    <a href="#top" class="brand" id="top">
+    <a href="index.html" class="brand" id="top">
       <span class="logo-placeholder" aria-hidden="true">Your Logo<br>Here</span>
       <span class="brand-text">
         <span class="brand-name">Auto Repair Shop</span>
@@ -279,16 +53,25 @@ footer{background:var(--charcoal-dark);color:#b7bcc2;padding:44px 0 96px;}
     </a>
     <nav class="main-nav" id="main-nav" aria-label="Primary">
       <ul class="nav-list">
-        <li><a class="nav-link" href="#services">Services</a></li>
+        <li class="has-dropdown">
+          <a class="nav-link" href="services/index.html" aria-haspopup="true" aria-expanded="false">Services<span class="caret" aria-hidden="true"></span></a>
+          <div class="dropdown">
+            <a href="services/auto-repair/index.html">Auto Repair<small>Diagnostics &amp; general repair</small></a>
+            <a href="services/brakes/index.html">Brake Repair<small>Inspection &amp; brake service</small></a>
+            <a href="services/tires/index.html">Tire Service<small>New tires, rotation &amp; repair</small></a>
+            <a href="services/transmission/index.html">Transmission Repair<small>Shifting &amp; transmission fluid</small></a>
+            <a href="services/tune-up-oil/index.html">Tune-Ups &amp; Oil Changes<small>Routine maintenance</small></a>
+          </div>
+        </li>
         <li><a class="nav-link" href="#about">About</a></li>
         <li><a class="nav-link" href="#reviews">Reviews</a></li>
         <li><a class="nav-link" href="#visit">Contact</a></li>
       </ul>
     </nav>
     <div class="header-cta">
-      <a class="call-pill" href="tel:+19524453530" data-cta="call" data-cta-location="header">
+      <a class="call-pill" data-phone-tel href="tel:+19524453530" data-cta="call" data-cta-location="header">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span>(952) 445-3530</span>
+        <span data-phone-display>(952) 445-3530</span>
       </a>
       <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -313,13 +96,13 @@ footer{background:var(--charcoal-dark);color:#b7bcc2;padding:44px 0 96px;}
       <h1>Your Shakopee Auto Repair Shop for Brakes, Tires, Tune-Ups <span class="accent-word">&amp; Transmissions</span></h1>
       <p class="hero-lede">Auto Repair Shop is a full-service auto repair shop in Shakopee, Minnesota, handling brake repair, tire service, transmission repair, and tune-ups for drivers across Scott County &mdash; plus the custom exhaust work our customers can't stop talking about.</p>
       <div class="hero-ctas">
-        <a class="btn btn-primary" href="sms:+19524453530?&body=Hi%2C%20I%27d%20like%20to%20book%20a%20service%20appointment%20at%20Auto%20Repair%20Shop%20%E2%80%94%20what%20times%20are%20open%3F" data-cta="book-request" data-cta-location="hero">
+        <a class="btn btn-primary" data-phone-sms data-sms-body="Hi, I'd like to book a service appointment at Auto Repair Shop — what times are open?" href="sms:+19524453530?&body=Hi%2C%20I%27d%20like%20to%20book%20a%20service%20appointment%20at%20Auto%20Repair%20Shop%20%E2%80%94%20what%20times%20are%20open%3F" data-cta="book-request" data-cta-location="hero">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 15h3"/></svg>
           Text to Book
         </a>
-        <a class="btn btn-ghost" href="tel:+19524453530" data-cta="call" data-cta-location="hero">
+        <a class="btn btn-ghost" data-phone-tel href="tel:+19524453530" data-cta="call" data-cta-location="hero">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Call (952) 445-3530
+          Call <span data-phone-display>(952) 445-3530</span>
         </a>
       </div>
     </div>
@@ -330,56 +113,62 @@ footer{background:var(--charcoal-dark);color:#b7bcc2;padding:44px 0 96px;}
     <div class="wrap">
       <span class="eyebrow">What We Do</span>
       <h2>Auto Repair Services in Shakopee, MN</h2>
-      <p class="section-intro">From a warning light on your dash to a full transmission rebuild, we handle it all in one shop &mdash; brakes, tires, tune-ups, transmissions, and the custom exhaust fabrication we're known for.</p>
+      <p class="section-intro">From a warning light on your dash to a full transmission rebuild, we handle it all in one shop &mdash; brakes, tires, tune-ups, transmissions, and the custom exhaust fabrication we're known for. Tap any service below for the full details.</p>
       <div class="service-grid">
 
-        <div class="service-card">
+        <a class="service-card linked" href="services/auto-repair/index.html">
           <div class="service-icon">
             <svg viewBox="0 0 48 48" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M31 10a7 7 0 0 0-9.5 8.2L10 29.7a3.2 3.2 0 0 0 4.5 4.5L26 22.7A7 7 0 0 0 34.2 15l-5 5-3.5-.7-.7-3.5z"/></svg>
           </div>
           <h3>General Auto Repair</h3>
           <p>Dashboard warning light, strange noise, or something just feels off &mdash; we diagnose it and fix it right the first time.</p>
-        </div>
+          <span class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
 
-        <div class="service-card">
+        <a class="service-card linked" href="services/brakes/index.html">
           <div class="service-icon">
             <svg viewBox="0 0 48 48" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="14"/><circle cx="24" cy="24" r="4.5"/><path d="M24 10v6M24 32v6M10 24h6M32 24h6M15 15l4 4M29 29l4 4M15 33l4-4M29 19l4-4"/></svg>
           </div>
           <h3>Brake Repair</h3>
           <p>Grinding, squealing, or a soft pedal &mdash; our Shakopee brake repair service gets you stopping with confidence again.</p>
-        </div>
+          <span class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
 
-        <div class="service-card">
+        <a class="service-card linked" href="services/tires/index.html">
           <div class="service-icon">
             <svg viewBox="0 0 48 48" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="15"/><circle cx="24" cy="24" r="5.5"/><path d="M24 9v5M24 34v5M9 24h5M34 24h5M13.4 13.4l3.6 3.6M31 31l3.6 3.6M13.4 34.6l3.6-3.6M31 17l3.6-3.6"/></svg>
           </div>
           <h3>Tire Shop &amp; Tire Service</h3>
           <p>New tires, rotations, patches, and balancing &mdash; a Shakopee tire shop stop that keeps you road-ready through every season.</p>
-        </div>
+          <span class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
 
-        <div class="service-card">
+        <a class="service-card linked" href="services/transmission/index.html">
           <div class="service-icon">
             <svg viewBox="0 0 48 48" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="10" y="14" width="28" height="20" rx="3"/><path d="M10 22h28M18 14v8M30 14v8M16 28h6M26 28h6"/></svg>
           </div>
           <h3>Transmission Repair</h3>
           <p>Slipping gears or a hard shift? Our transmission repair service gets your vehicle shifting smoothly again.</p>
-        </div>
+          <span class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
 
-        <div class="service-card">
+        <a class="service-card linked" href="services/tune-up-oil/index.html">
           <div class="service-icon">
             <svg viewBox="0 0 48 48" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8h12l3 8v22a2 2 0 0 1-2 2H17a2 2 0 0 1-2-2V16z"/><path d="M15 16h18M24 22v12M20 26h8"/></svg>
           </div>
           <h3>Tune-Ups &amp; Oil Changes</h3>
           <p>Regular tune-ups and oil changes catch small problems before they become expensive ones, season after season.</p>
-        </div>
+          <span class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
 
-        <div class="service-card">
+        <a class="service-card linked" href="services/auto-repair/index.html#custom-exhaust">
           <div class="service-icon">
             <svg viewBox="0 0 48 48" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 20c4 0 6 2 10 2s6-2 10-2 6 2 10 2" /><path d="M8 28c4 0 6 2 10 2s6-2 10-2 6 2 10 2"/><circle cx="10" cy="24" r="2.5" fill="currentColor" stroke="none"/></svg>
           </div>
           <h3>Custom Exhaust &amp; Muffler Work</h3>
           <p>From a simple muffler weld to a full custom dual exhaust build, our fabrication work is what customers rave about most.</p>
-        </div>
+          <span class="learn-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
 
       </div>
     </div>
@@ -438,6 +227,28 @@ footer{background:var(--charcoal-dark);color:#b7bcc2;padding:44px 0 96px;}
     </div>
   </section>
 
+  <!-- ================= QUOTE / LEAD-CAPTURE MODULE ================= -->
+  <section class="services" style="padding-top:0;">
+    <div class="wrap">
+      <div class="quote-module">
+        <div class="quote-copy">
+          <h3>Not Sure Which Service You Need?</h3>
+          <p>Call or text and describe what's going on with your vehicle &mdash; we'll help you figure out the right fix.</p>
+        </div>
+        <div class="quote-ctas">
+          <a class="btn-sm call" data-phone-tel href="tel:+19524453530" data-cta="quote-call" data-cta-location="quote-module">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Us
+          </a>
+          <a class="btn-sm text" data-phone-sms data-sms-body="Hi! I'm not sure which service I need for my vehicle." href="sms:+19524453530?&body=Hi!%20I%27m%20not%20sure%20which%20service%20I%20need%20for%20my%20vehicle." data-cta="quote-text" data-cta-location="quote-module">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Text Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= TESTIMONIALS ================= -->
   <section class="testimonials" id="reviews">
     <div class="wrap">
@@ -486,6 +297,31 @@ footer{background:var(--charcoal-dark);color:#b7bcc2;padding:44px 0 96px;}
     </div>
   </section>
 
+  <!-- ================= BOOKING / SCHEDULER SLOT ================= -->
+  <section class="booking" id="booking" data-scheduler-slot>
+    <div class="wrap booking-inner">
+      <div class="booking-copy">
+        <span class="eyebrow">Book an Appointment</span>
+        <h2>Request a Time That Works for You</h2>
+        <p>Text us the service you need and we'll reply with the next open appointment times. Prefer to talk it through? Give us a call and we'll get you on the schedule.</p>
+      </div>
+      <div class="booking-ctas">
+        <a class="btn btn-primary" data-phone-sms data-sms-body="Hi, I'd like to book a service appointment at Auto Repair Shop — what times are open?" href="sms:+19524453530?&body=Hi%2C%20I%27d%20like%20to%20book%20a%20service%20appointment%20at%20Auto%20Repair%20Shop%20%E2%80%94%20what%20times%20are%20open%3F" data-cta="book-request" data-cta-location="booking-section">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 15h3"/></svg>
+          Request a Time
+        </a>
+        <a class="btn btn-outline" data-phone-tel href="tel:+19524453530" data-cta="call" data-cta-location="booking-section">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call <span data-phone-display>(952) 445-3530</span>
+        </a>
+      </div>
+      <!-- SCHEDULER SWAP: interim state is the prefilled-SMS "Request a Time" CTA above (functional,
+           never a dead button). When the owner provides a live Calendly/Cal.com link, embed its iframe
+           inside this #booking[data-scheduler-slot] container to replace the SMS CTA — no other markup
+           changes needed (upgrade-ready hook per premium-ranking-template.md §4b). -->
+    </div>
+  </section>
+
   <!-- ================= HOURS / CONTACT / MAP ================= -->
   <section class="visit" id="visit">
     <div class="wrap">
@@ -523,15 +359,15 @@ footer{background:var(--charcoal-dark);color:#b7bcc2;padding:44px 0 96px;}
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <a href="tel:+19524453530">(952) 445-3530</a>
+              <a data-phone-tel href="tel:+19524453530"><span data-phone-display>(952) 445-3530</span></a>
             </li>
           </ul>
           <div class="btn-row">
-            <a class="btn-sm call" href="tel:+19524453530" data-cta="call" data-cta-location="visit">
+            <a class="btn-sm call" data-phone-tel href="tel:+19524453530" data-cta="call" data-cta-location="visit">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               Call
             </a>
-            <a class="btn-sm text" href="sms:+19524453530?&body=Hi!%20I%27d%20like%20to%20book%20a%20service%20appointment." data-cta="book-text" data-cta-location="visit">
+            <a class="btn-sm text" data-phone-sms href="sms:+19524453530?&body=Hi!%20I%27d%20like%20to%20book%20a%20service%20appointment." data-cta="book-text" data-cta-location="visit">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
               Text to Book
             </a>
@@ -602,17 +438,17 @@ footer{background:var(--charcoal-dark);color:#b7bcc2;padding:44px 0 96px;}
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">Do I need an appointment?<span class="plus"></span></button>
-          <div class="faq-a"><p>Appointments are recommended so we can get your vehicle in and worked on promptly. Call or text (952) 445-3530 to set one up, and we'll always do our best for same-day needs.</p></div>
+          <div class="faq-a"><p><a href="#booking">Appointments are recommended</a> so we can get your vehicle in and worked on promptly. Call or text (952) 445-3530 to set one up, and we'll always do our best for same-day needs.</p></div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">What auto repair services does Auto Repair Shop offer in Shakopee?<span class="plus"></span></button>
-          <div class="faq-a"><p>We provide auto repair, brake repair, tire shop services, transmission repair, and tune-ups for Shakopee drivers, plus the custom exhaust and muffler fabrication our reviews mention most. Call or text (952) 445-3530 to ask about your vehicle.</p></div>
+          <div class="faq-a"><p>We provide auto repair, brake repair, tire shop services, transmission repair, and tune-ups for Shakopee drivers, plus the custom exhaust and muffler fabrication our reviews mention most. See our <a href="services/index.html">full services list</a> for details on each. Call or text (952) 445-3530 to ask about your vehicle.</p></div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">What area do you serve?<span class="plus"></span></button>
-          <div class="faq-a"><p>We're based in Shakopee, Minnesota, and welcome drivers from throughout Shakopee and Scott County. If you're nearby and need repair, brakes, tires, a transmission check, or exhaust work, give us a call at (952) 445-3530.</p></div>
+          <div class="faq-a"><p>We're based in Shakopee, Minnesota, and welcome drivers from throughout Shakopee, Prior Lake, Savage, Jordan, and the rest of Scott County. If you're nearby and need repair, brakes, tires, a transmission check, or exhaust work, give us a call at (952) 445-3530.</p></div>
         </div>
 
       </div>
@@ -627,37 +463,37 @@ footer{background:var(--charcoal-dark);color:#b7bcc2;padding:44px 0 96px;}
       <span>Auto Repair Shop</span>
     </div>
     <ul class="footer-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#visit">Contact</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="services/index.html">Services</a></li>
+      <li><a href="index.html#reviews">Reviews</a></li>
+      <li><a href="index.html#visit">Contact</a></li>
     </ul>
     <div class="footer-meta">
       100 Scott St N, Shakopee, MN 55379<br>
-      <a href="tel:+19524453530">(952) 445-3530</a><br>
+      <a data-phone-tel href="tel:+19524453530"><span data-phone-display>(952) 445-3530</span></a><br>
       Mon&ndash;Fri 8:30 AM&ndash;5 PM &middot; Sat&ndash;Sun Closed
     </div>
     <div class="footer-credit wrap" style="max-width:none;">Website demo built by [OWNER PLACEHOLDER]</div>
   </div>
 </footer>
 
-<a class="float-text-btn" href="sms:+19524453530?&body=Hi!%20I%20have%20a%20question%20for%20Auto%20Repair%20Shop." aria-label="Text Auto Repair Shop" data-cta="float-text" data-cta-location="floating-button">
+<a class="float-text-btn" data-phone-sms href="sms:+19524453530?&body=Hi!%20I%20have%20a%20question%20for%20Auto%20Repair%20Shop." aria-label="Text Auto Repair Shop" data-cta="float-text" data-cta-location="floating-button">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
   Text Us
 </a>
 
 <div class="sticky-actions">
-  <a class="call" href="tel:+19524453530" data-cta="call" data-cta-location="sticky-bar">
+  <a class="call" data-phone-tel href="tel:+19524453530" data-cta="call" data-cta-location="sticky-bar">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
     Call
   </a>
-  <a class="text" href="sms:+19524453530?&body=Hi!%20I%20have%20a%20question%20for%20Auto%20Repair%20Shop." data-cta="text" data-cta-location="sticky-bar">
+  <a class="book" href="#booking" data-cta="book" data-cta-location="sticky-bar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 15h3"/></svg>
+    Book
+  </a>
+  <a class="text" data-phone-sms href="sms:+19524453530?&body=Hi!%20I%20have%20a%20question%20for%20Auto%20Repair%20Shop." data-cta="text" data-cta-location="sticky-bar">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
     Text
-  </a>
-  <a class="dir" href="https://www.google.com/maps/dir/?api=1&destination=Auto%20Repair%20Shop%2C%20100%20Scott%20St%20N%2C%20Shakopee%2C%20MN%2055379&destination_place_id=ChIJh3YeL3ga9ocRia-QKK0KKpw" target="_blank" rel="noopener" data-cta="directions" data-cta-location="sticky-bar">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l19-9-9 19-2-8z"/></svg>
-    Directions
   </a>
 </div>
 
@@ -694,6 +530,9 @@ footer{background:var(--charcoal-dark);color:#b7bcc2;padding:44px 0 96px;}
   ],
   "areaServed": [
     { "@type": "City", "name": "Shakopee, MN" },
+    { "@type": "City", "name": "Prior Lake, MN" },
+    { "@type": "City", "name": "Savage, MN" },
+    { "@type": "City", "name": "Jordan, MN" },
     { "@type": "AdministrativeArea", "name": "Scott County, MN" }
   ],
   "aggregateRating": {
@@ -756,81 +595,15 @@ footer{background:var(--charcoal-dark);color:#b7bcc2;padding:44px 0 96px;}
       "name": "What area do you serve?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We're based in Shakopee, Minnesota, and welcome drivers from throughout Shakopee and Scott County. If you're nearby and need repair, brakes, tires, a transmission check, or exhaust work, give us a call at (952) 445-3530."
+        "text": "We're based in Shakopee, Minnesota, and welcome drivers from throughout Shakopee, Prior Lake, Savage, Jordan, and the rest of Scott County. If you're nearby and need repair, brakes, tires, a transmission check, or exhaust work, give us a call at (952) 445-3530."
       }
     }
   ]
 }
 </script>
 
-<script>
-(function(){
-  // ---- Mobile nav toggle ----
-  var navToggle = document.getElementById('nav-toggle');
-  var mainNav = document.getElementById('main-nav');
-  if (navToggle && mainNav) {
-    navToggle.addEventListener('click', function(){
-      var open = mainNav.classList.toggle('mobile-open');
-      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    mainNav.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click', function(){
-        mainNav.classList.remove('mobile-open');
-        navToggle.setAttribute('aria-expanded','false');
-      });
-    });
-  }
-
-  // ---- FAQ accordion ----
-  document.querySelectorAll('.faq-q').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var item = btn.closest('.faq-item');
-      var wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(function(i){
-        i.classList.remove('open');
-        i.querySelector('.faq-q').setAttribute('aria-expanded','false');
-      });
-      if (!wasOpen) {
-        item.classList.add('open');
-        btn.setAttribute('aria-expanded','true');
-      }
-    });
-  });
-
-  // ---- Open/Closed badge from visitor local time ----
-  var hours = {
-    0: null,        // Sunday closed
-    1: [8.5, 17],    // Monday 8:30-5
-    2: [8.5, 17],
-    3: [8.5, 17],
-    4: [8.5, 17],
-    5: [8.5, 17],
-    6: null         // Saturday closed
-  };
-  var dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-  var now = new Date();
-  var day = now.getDay();
-  var hourDecimal = now.getHours() + now.getMinutes()/60;
-  var todayHours = hours[day];
-  var isOpen = false;
-  if (todayHours) {
-    isOpen = hourDecimal >= todayHours[0] && hourDecimal < todayHours[1];
-  }
-  var badge = document.getElementById('status-badge');
-  if (badge) {
-    if (isOpen) {
-      badge.innerHTML = '<span class="status-badge status-open"><span class="dot"></span>Open Now</span>';
-    } else {
-      badge.innerHTML = '<span class="status-badge status-closed"><span class="dot"></span>Closed Now</span>';
-    }
-  }
-  var todayName = dayNames[day];
-  var rows = document.querySelectorAll('#hours-table tr');
-  rows.forEach(function(r){
-    if (r.getAttribute('data-day') === todayName) r.classList.add('today');
-  });
-})();
-</script>
-
+<script src="phone-config.js"></script>
+<script src="site.js"></script>
+<script src="analytics.js"></script>
 </body>
 </html>
