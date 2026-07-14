@@ -1,0 +1,310 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<title>How customers find Mike's Auto Repair on Google</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='13' fill='%23e39a2e'/></svg>">
+<style>
+  :root{
+    --ink:#14222f; --ink-soft:#3f5364; --paper:#eef1f4; --card:#ffffff;
+    --line:#d8dfe6; --amber:#e39a2e; --amber-deep:#c47f1c;
+    --teal:#2b9c8a; --slate1:#5b7fa6; --slate2:#3a5468; --slate3:#8098ab; --slate4:#b2c2cf;
+    --good:#2b9c8a; --warn:#d98a2b; --bad:#c9534a;
+    --shadow:0 18px 44px -22px rgba(20,34,47,.4);
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --ink:#eaf1f6; --ink-soft:#9fb2c0; --paper:#0e1720; --card:#16232f;
+      --line:#263745; --amber:#f0ab43; --amber-deep:#f0ab43; --shadow:0 18px 44px -20px rgba(0,0,0,.6);}
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 24px;}
+  h1,h2,h3{line-height:1.12;text-wrap:balance;margin:0;}
+  .eyebrow{font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--amber-deep);}
+  .num{font-variant-numeric:tabular-nums;}
+
+  header{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--paper) 90%, transparent);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;max-width:1020px;margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;}
+  .pin{width:24px;height:24px;border-radius:50% 50% 50% 2px;background:var(--amber);transform:rotate(45deg);
+    box-shadow:inset 0 0 0 5px var(--card);}
+  .prepared{font-size:.8rem;color:var(--ink-soft);}
+
+  .hero{padding:56px 0 30px;}
+  .hero h1{font-size:clamp(1.9rem,5vw,3rem);font-weight:800;letter-spacing:-.02em;max-width:22ch;}
+  .hero .lead{font-size:1.12rem;color:var(--ink-soft);max-width:56ch;margin:16px 0 0;}
+  .big19{color:var(--amber-deep);font-weight:800;}
+
+  /* ---------- scrollytelling ---------- */
+  .scrolly{display:grid;grid-template-columns:minmax(280px,370px) 1fr;gap:56px;align-items:start;padding:20px 0 30px;}
+  .stick{position:sticky;top:70px;}
+  .donut-svg{width:100%;max-width:340px;display:block;margin:0 auto;filter:drop-shadow(0 18px 30px rgba(20,34,47,.2));}
+  .seg{fill:none;stroke-width:38;transition:opacity .45s, stroke-width .3s;cursor:default;}
+  .seg.dim{opacity:.18;}
+  .seg.lit{opacity:1;stroke-width:44;}
+  .dc-k{font-size:11px;letter-spacing:.1em;text-transform:uppercase;fill:var(--ink-soft);}
+  .dc-pct{font-size:40px;font-weight:800;fill:var(--ink);}
+  .dc-name{font-size:13px;font-weight:600;fill:var(--ink-soft);}
+  .keyrow{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:14px;}
+  .key{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:600;color:var(--ink-soft);
+    background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 10px;transition:opacity .4s;}
+  .key .sw{width:10px;height:10px;border-radius:3px;}
+  .key.dim{opacity:.35;}
+
+  .steps{min-width:0;}
+  .stepblock{padding:9vh 0;border-bottom:1px dashed var(--line);}
+  .stepblock:last-child{border-bottom:none;}
+  .stepblock h2{font-size:1.55rem;font-weight:800;max-width:24ch;margin-bottom:10px;}
+  .stepblock p{color:var(--ink-soft);max-width:54ch;margin:.4em 0;}
+  .stepblock p b, .stepblock p strong{color:var(--ink);}
+
+  .status{display:grid;gap:9px;margin-top:18px;}
+  .srow{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;background:var(--card);
+    border:1px solid var(--line);border-radius:12px;padding:12px 16px;}
+  .srow .n{font-weight:600;font-size:.95rem;}
+  .srow .n small{display:block;color:var(--ink-soft);font-weight:400;font-size:.8rem;}
+  .chip{font-size:.72rem;font-weight:700;padding:5px 11px;border-radius:999px;white-space:nowrap;}
+  .c-have{background:color-mix(in srgb,var(--good) 18%,transparent);color:var(--good);}
+  .c-part{background:color-mix(in srgb,var(--warn) 20%,transparent);color:var(--warn);}
+  .c-miss{background:color-mix(in srgb,var(--bad) 16%,transparent);color:var(--bad);}
+
+  /* tiers */
+  .tiers{display:grid;gap:12px;margin-top:20px;}
+  .tier{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:18px 20px;cursor:pointer;
+    transition:border-color .2s, box-shadow .2s;text-align:left;width:100%;font:inherit;color:inherit;}
+  .tier:hover{border-color:var(--amber);}
+  .tier.sel{border-color:var(--amber);box-shadow:0 0 0 3px color-mix(in srgb,var(--amber) 30%,transparent);}
+  .tier .trow{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}
+  .tier .price{font-size:1.55rem;font-weight:800;letter-spacing:-.02em;}
+  .tier .price small{font-size:.85rem;font-weight:600;color:var(--ink-soft);}
+  .tier .tname{font-weight:700;}
+  .tier .cover{margin-left:auto;font-weight:800;color:var(--amber-deep);font-size:1rem;}
+  .tier ul{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:5px;font-size:.88rem;color:var(--ink-soft);}
+  .tier li::before{content:"&#10003;  ";color:var(--teal);font-weight:800;}
+  .tier .tapnote{font-size:.74rem;color:var(--ink-soft);margin-top:8px;font-style:italic;}
+  .pop{font-size:.66rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:color-mix(in srgb,var(--amber) 22%,transparent);
+    color:var(--amber-deep);border-radius:999px;padding:2px 8px;}
+
+  .ai{background:var(--ink);color:#eef1f4;border-radius:20px;padding:38px;box-shadow:var(--shadow);margin:40px 0;}
+  @media (prefers-color-scheme:dark){ .ai{background:#0a1118;} }
+  .ai h2{color:#fff;font-size:clamp(1.5rem,4vw,2.1rem);font-weight:800;max-width:22ch;}
+  .ai p{color:#c6d4de;max-width:60ch;}
+  .ai b{color:var(--amber);}
+
+  .cta{text-align:center;padding:40px 0 30px;}
+  .cta h2{font-size:clamp(1.7rem,4.5vw,2.4rem);font-weight:800;max-width:22ch;margin:0 auto;}
+  .btn{display:inline-block;margin-top:22px;background:var(--amber);color:#1a1205;font-weight:800;
+    text-decoration:none;padding:16px 30px;border-radius:12px;box-shadow:var(--shadow);}
+  .cta .sub{color:var(--ink-soft);margin-top:16px;font-size:.9rem;}
+  .foot{color:var(--ink-soft);font-size:.92rem;text-align:center;padding:26px 0 60px;border-top:1px solid var(--line);}
+  .foot b{color:var(--ink);}
+  .foot a{color:var(--amber-deep);text-decoration:none;font-weight:700;}
+
+  @media (max-width:760px){
+    .scrolly{display:block;}
+    .stick{position:sticky;top:52px;z-index:20;background:color-mix(in srgb,var(--paper) 94%,transparent);
+      backdrop-filter:blur(6px);padding:10px 0 6px;margin:0 -24px;border-bottom:1px solid var(--line);}
+    .donut-svg{max-width:190px;}
+    .dc-pct{font-size:46px;}
+    .keyrow{display:none;}
+    .stepblock{padding:7vh 0;}
+  }
+  @media (prefers-reduced-motion:reduce){ .seg{transition:none;} }
+</style></head><body>
+
+<header>
+  <div class="nav">
+    <div class="brand"><span class="pin" aria-hidden="true"></span> Adam &middot; Local Websites</div>
+    <div class="prepared">Prepared for <strong>Mike's Auto Repair</strong></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">Mike's Auto Repair &middot; getting found in your town</p>
+    <h1>A website is where customers start — and it&rsquo;s only <span class="big19">19%</span> of getting found.</h1>
+    <p class="lead">4.9 stars across 414 reviews — the best-rated shop around, and almost invisible online. Below is exactly how people find a local shop on Google in 2026 — the chart follows along as you scroll.</p>
+  </section>
+
+  <div class="scrolly">
+    <div class="stick">
+      <svg class="donut-svg" id="donut" viewBox="0 0 240 240" role="img"
+           aria-label="Ranking factors: Google Business Profile 32%, Website 19%, Reviews 16%, Links 15%, Customer behavior 11%, Citations 7%">
+        <g id="segs"></g>
+        <text class="dc-k" id="dcK" x="120" y="100" text-anchor="middle">Getting found</text>
+        <text class="dc-pct" id="dcPct" x="120" y="136" text-anchor="middle">100%</text>
+        <text class="dc-name" id="dcName" x="120" y="156" text-anchor="middle">the whole system</text>
+      </svg>
+      <div class="keyrow" id="keyrow"></div>
+    </div>
+
+    <div class="steps">
+
+      <div class="stepblock" data-mode="all">
+        <p class="eyebrow">The whole picture</p>
+        <h2>Google weighs six things when someone searches for a shop.</h2>
+        <p>Most owners obsess over one of them. The chart on the left is the real weighting — every slice is a reason a customer finds you <b>or finds your competitor.</b></p>
+        <p>Keep scrolling — the chart follows the story.</p>
+      </div>
+
+      <div class="stepblock" data-mode="site">
+        <p class="eyebrow">The foundation — 19%</p>
+        <h2>The website is the piece that&rsquo;s already done.</h2>
+        <p>That amber slice is the site — pages built for every service you offer, structured the way Google reads. <b>I already built yours.</b> It&rsquo;s the foundation everything else stands on, and where every customer lands to decide.</p>
+        <p>But notice what&rsquo;s dimmed: on its own, a website leaves <b>four-fifths of the pie on the table.</b></p>
+      </div>
+
+      <div class="stepblock" data-mode="gaps">
+        <p class="eyebrow">Where Mike's Auto Repair stands today</p>
+        <h2>You&rsquo;ve got a head start — and real gaps.</h2>
+        <div class="status">
+          <div class="srow"><div class="n">Website <small>The 19% foundation — every service gets its own page</small></div><span class="chip c-have">I built yours &#10003;</span></div>
+          <div class="srow"><div class="n">Google Business Profile <small>The single biggest factor — 32%</small></div><span class="chip c-part">There, not managed</span></div>
+          <div class="srow"><div class="n">Reviews <small>4.9&#9733; &times; 414 reviews — phenomenal. But nothing is asking every happy customer for the next one.</small></div><span class="chip c-part">No engine</span></div>
+          <div class="srow"><div class="n">Local links <small>Other local sites vouching for you — 15%</small></div><span class="chip c-miss">Missing</span></div>
+          <div class="srow"><div class="n">Citations <small>Your info identical everywhere online — 7%</small></div><span class="chip c-miss">Inconsistent</span></div>
+        </div>
+        <p style="margin-top:16px;">Every lit slice on the chart is open ground — a customer searching <b>right now</b> who finds someone else.</p>
+      </div>
+
+      <div class="stepblock" data-mode="tiers">
+        <p class="eyebrow">The plans — tap one</p>
+        <h2>Tap a plan and watch the chart: that&rsquo;s what it covers.</h2>
+        <div class="tiers" id="tiers">
+          <button type="button" class="tier" data-tier="foundation">
+            <div class="trow"><span class="price">$99<small>/mo</small></span><span class="tname">Foundation</span><span class="cover num">covers ~20%</span></div>
+            <ul><li>Your website, hosted, secured &amp; maintained</li><li>Unlimited edits — text me, done same-day</li><li>Call tracking + monthly proof report</li></ul>
+            <div class="tapnote">The zero-hassle floor. Site stays perfect; the rest of the pie stays open.</div>
+          </button>
+          <button type="button" class="tier sel" data-tier="getahead">
+            <div class="trow"><span class="price">$299<small>/mo</small></span><span class="tname">Get Ahead</span><span class="pop">Most popular</span><span class="cover num">covers ~85%</span></div>
+            <ul><li>Everything in Foundation</li><li><b>Google Business Profile fully managed — the 32%</b></li><li>Review engine — steady new reviews monthly</li><li>Missed-call text-back + directory sync</li></ul>
+            <div class="tapnote">One step lights up most of the chart — this is the tier that gets you found.</div>
+          </button>
+          <button type="button" class="tier" data-tier="nevermiss">
+            <div class="trow"><span class="price">$499<small>/mo</small></span><span class="tname">Never Miss a Job</span><span class="cover num">covers 100%</span></div>
+            <ul><li>Everything in Get Ahead</li><li>AI receptionist — answers &amp; books 24/7</li><li>Local link building — the last slice</li><li>Online booking + automated quote follow-up</li></ul>
+            <div class="tapnote">The whole pie — plus every call answered and every quote chased.</div>
+          </button>
+        </div>
+        <p style="font-size:.85rem;margin-top:14px;">$0 setup &middot; first month free &middot; no contract &middot; you own your web address &middot; a zero-call month on the report = a free month. Percentages are approximate, from 2026 local-search ranking studies.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <section class="ai">
+    <p class="eyebrow" style="color:var(--amber)">The next wave</p>
+    <h2>While competitors wait, you can own the AI answer.</h2>
+    <p>People now ask ChatGPT, Google&rsquo;s AI, and Siri &ldquo;who&rsquo;s the best shop near me?&rdquo; — and get <b>one recommendation</b>, not ten links. Your site is already structured the way AI engines read (most local shops aren&rsquo;t). Move now and you&rsquo;re the established answer before anyone else knows the game changed.</p>
+  </section>
+
+  <section class="cta">
+    <p class="eyebrow">The easy part</p>
+    <h2>Your website is already built. Go look at it.</h2>
+    <a class="btn" href="https://grategatsby.github.io/demo-previews/d1/">See your site &amp; talk it through &rarr;</a>
+    <p class="sub">No contract. First month free. You own your web address, always.</p>
+  </section>
+
+</main>
+
+<p class="foot"><b>Adam</b> &middot; Local websites &amp; marketing that get you found<br>
+&#128222; <a href="tel:+16122721649">(612) 272-1649</a> &nbsp;&middot;&nbsp; &#9993; <a href="mailto:adam.weisenburger@gmail.com">adam.weisenburger@gmail.com</a></p>
+
+<script>
+(function () {
+  var F = [
+    { id:'website',  name:'Your website',            pct:19, color:'#e39a2e' },
+    { id:'gbp',      name:'Google Business Profile', pct:32, color:'#2b9c8a' },
+    { id:'reviews',  name:'Reviews',                 pct:16, color:'#5b7fa6' },
+    { id:'links',    name:'Links',                   pct:15, color:'#3a5468' },
+    { id:'behavior', name:'Customer behavior',       pct:11, color:'#8098ab' },
+    { id:'citations',name:'Citations',               pct:7,  color:'#b2c2cf' }
+  ];
+  var TIERS = {
+    foundation: { ids:['website'], pct:'~20%', label:'Foundation — $99/mo' },
+    getahead:   { ids:['website','gbp','reviews','behavior','citations'], pct:'~85%', label:'Get Ahead — $299/mo' },
+    nevermiss:  { ids:['website','gbp','reviews','links','behavior','citations'], pct:'100%', label:'Never Miss a Job — $499/mo' }
+  };
+  var MODES = {
+    all:  { ids:F.map(function(f){return f.id;}), pct:'100%', k:'Getting found', name:'the whole system' },
+    site: { ids:['website'], pct:'19%', k:'Already built', name:'your website' },
+    gaps: { ids:['gbp','reviews','links','behavior','citations'], pct:'81%', k:'On the table', name:'the open ground' }
+  };
+
+  var C = 2 * Math.PI * 90, cum = 0;
+  var segG = document.getElementById('segs'), svgNS = 'http://www.w3.org/2000/svg';
+  var segs = {};
+  F.forEach(function (f) {
+    var len = f.pct / 100 * C;
+    var c = document.createElementNS(svgNS, 'circle');
+    c.setAttribute('class', 'seg'); c.setAttribute('cx', 120); c.setAttribute('cy', 120);
+    c.setAttribute('r', 90); c.setAttribute('stroke', f.color);
+    c.setAttribute('stroke-dasharray', len.toFixed(2) + ' ' + (C - len).toFixed(2));
+    c.setAttribute('stroke-dashoffset', (-cum).toFixed(2));
+    c.setAttribute('transform', 'rotate(-90 120 120)');
+    segG.appendChild(c); segs[f.id] = c; cum += len;
+  });
+  var keyrow = document.getElementById('keyrow'), keys = {};
+  F.forEach(function (f) {
+    var k = document.createElement('span'); k.className = 'key';
+    k.innerHTML = '<span class="sw" style="background:' + f.color + '"></span>' + f.name + ' ' + f.pct + '%';
+    keyrow.appendChild(k); keys[f.id] = k;
+  });
+
+  var dcK = document.getElementById('dcK'), dcPct = document.getElementById('dcPct'), dcName = document.getElementById('dcName');
+  function light(ids, pct, k, name) {
+    F.forEach(function (f) {
+      var on = ids.indexOf(f.id) !== -1;
+      segs[f.id].setAttribute('class', 'seg ' + (on ? 'lit' : 'dim'));
+      if (keys[f.id]) keys[f.id].className = 'key' + (on ? '' : ' dim');
+    });
+    dcPct.textContent = pct; dcK.textContent = k; dcName.textContent = name;
+  }
+
+  var curTier = 'getahead', inTiers = false;
+  var tierBtns = [].slice.call(document.querySelectorAll('.tier'));
+  function applyTier() {
+    var t = TIERS[curTier];
+    light(t.ids, t.pct, 'This plan covers', t.label);
+    tierBtns.forEach(function (b) { b.classList.toggle('sel', b.dataset.tier === curTier); });
+  }
+  tierBtns.forEach(function (b) {
+    b.addEventListener('click', function () { curTier = b.dataset.tier; inTiers = true; applyTier(); });
+  });
+
+  var blocks = [].slice.call(document.querySelectorAll('.stepblock'));
+  var curMode = 'all';
+  function apply(mode) {
+    if (mode === curMode) return;
+    curMode = mode;
+    if (mode === 'tiers') { inTiers = true; applyTier(); return; }
+    inTiers = false;
+    var m = MODES[mode]; if (m) light(m.ids, m.pct, m.k, m.name);
+  }
+  // scroll-position driver (more robust than IntersectionObserver across in-app browsers):
+  // the active step is the one whose band contains the viewport's upper-middle line.
+  function nearestMode() {
+    var mid = (window.innerHeight || 640) * 0.45, best = null, bestD = Infinity;
+    blocks.forEach(function (b) {
+      var r = b.getBoundingClientRect(), c = r.top + r.height / 2, d = Math.abs(c - mid);
+      if (d < bestD) { bestD = d; best = b; }
+    });
+    if (best) apply(best.dataset.mode);
+  }
+  var ticking = false;
+  function onScroll() {
+    if (ticking) return; ticking = true;
+    (window.requestAnimationFrame || setTimeout)(function () { nearestMode(); ticking = false; });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  light(MODES.all.ids, MODES.all.pct, MODES.all.k, MODES.all.name);
+  nearestMode();
+})();
+</script>
+</body></html>
