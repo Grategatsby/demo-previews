@@ -10,7 +10,7 @@
     --ink:#14222f; --ink-soft:#3f5364; --paper:#eef1f4; --card:#ffffff;
     --line:#d8dfe6; --track:#dde3e9; --amber:#e39a2e; --amber-deep:#c47f1c;
     --teal:#18a186; --blue:#4c7fd0; --navy:#2f4f6f; --sky:#4fb3d9; --violet:#9a6cc4;
-    --good:#2b9c8a; --warn:#d98a2b; --bad:#c9534a;
+    --good:#1f9a52; --warn:#d98a2b; --bad:#d1453a;
     --shadow:0 18px 44px -22px rgba(20,34,47,.4);
   }
   @media (prefers-color-scheme:dark){
@@ -46,25 +46,29 @@
   .scrolly{display:grid;grid-template-columns:minmax(280px,370px) 1fr;gap:56px;align-items:start;padding:20px 0 30px;}
   .stick{position:sticky;top:70px;}
   .donut-svg{width:100%;max-width:340px;display:block;margin:0 auto;filter:drop-shadow(0 18px 30px rgba(20,34,47,.2));}
-  .track{fill:none;stroke:var(--track);stroke-width:38;}
-  .seg{fill:none;stroke-width:38;transition:opacity .45s, stroke-width .3s;cursor:default;}
+  .track{fill:none;stroke:var(--track);stroke-width:34;}
+  .seg{fill:none;stroke-width:34;transition:opacity .45s, stroke-width .3s;cursor:default;}
   .seg.dim{opacity:.07;}
-  .seg.lit{opacity:1;stroke-width:44;}
+  .seg.lit{opacity:1;stroke-width:42;}
+  #halo{fill:none;stroke:var(--amber);stroke-width:3;stroke-dasharray:6 7;opacity:0;transition:opacity .45s;}
+  .donut-svg.haloed #halo{opacity:1;}
   .dc-k{font-size:11px;letter-spacing:.1em;text-transform:uppercase;fill:var(--ink-soft);}
-  .dc-pct{font-size:40px;font-weight:800;fill:var(--ink);}
-  .dc-name{font-size:13px;font-weight:600;fill:var(--ink-soft);}
+  .dc-pct{font-size:38px;font-weight:800;fill:var(--ink);}
+  .dc-name{font-size:12px;font-weight:600;fill:var(--ink-soft);}
   .keyrow{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:14px;}
   .key{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:600;color:var(--ink-soft);
     background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 10px;transition:opacity .4s;}
   .key .sw{width:10px;height:10px;border-radius:3px;}
   .key.dim{opacity:.35;}
-  .chartnote{font-size:.72rem;color:var(--ink-soft);text-align:center;margin-top:10px;max-width:300px;margin-left:auto;margin-right:auto;}
+  .chartnote{font-size:.72rem;color:var(--ink-soft);text-align:center;margin:10px auto 0;max-width:300px;}
+  .convnote{display:none;font-size:.8rem;font-weight:600;color:var(--amber-deep);text-align:center;margin:10px auto 0;max-width:300px;}
+  .convnote.on{display:block;}
 
   .steps{min-width:0;}
   .stepblock{padding:9vh 0;border-bottom:1px dashed var(--line);}
   .stepblock:last-child{border-bottom:none;}
-  .stepblock h2{font-size:1.55rem;font-weight:800;max-width:24ch;margin-bottom:10px;}
-  .stepblock p{color:var(--ink-soft);max-width:54ch;margin:.4em 0;}
+  .stepblock h2{font-size:1.55rem;font-weight:800;max-width:24ch;margin-bottom:8px;}
+  .stepblock p{color:var(--ink-soft);max-width:54ch;margin:.35em 0;}
   .stepblock p b, .stepblock p strong{color:var(--ink);}
 
   .status{display:grid;gap:9px;margin-top:18px;}
@@ -81,35 +85,42 @@
   .c-part{background:color-mix(in srgb,var(--warn) 20%,transparent);color:var(--warn);}
   .c-miss{background:color-mix(in srgb,var(--bad) 16%,transparent);color:var(--bad);}
 
-  .tiers{display:grid;gap:12px;margin-top:20px;}
+  .promise{margin-top:20px;background:var(--card);border:2px solid var(--amber);border-radius:14px;padding:16px 20px;}
+  .promise h3{font-size:1.02rem;margin-bottom:10px;}
+  .promise .prow{display:flex;flex-wrap:wrap;gap:8px;}
+  .promise .p{font-size:.86rem;font-weight:700;background:color-mix(in srgb,var(--amber) 14%,transparent);
+    color:var(--ink);border-radius:999px;padding:7px 13px;}
+
+  .tiers{display:grid;gap:12px;margin-top:16px;}
   .tier{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:18px 20px;cursor:pointer;
     transition:border-color .2s, box-shadow .2s;text-align:left;width:100%;font:inherit;color:inherit;}
   .tier:hover{border-color:var(--amber);}
   .tier.sel{border-color:var(--amber);box-shadow:0 0 0 3px color-mix(in srgb,var(--amber) 30%,transparent);}
   .tier .trow{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;}
   .tier .tname{font-size:1.55rem;font-weight:800;letter-spacing:-.02em;}
-  .tier .price{font-size:1.55rem;font-weight:800;letter-spacing:-.02em;color:var(--amber-deep);margin-left:auto;}
-  .tier .price small{font-size:.85rem;font-weight:600;color:var(--ink-soft);}
-  .tier ul{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:5px;font-size:.88rem;color:var(--ink-soft);}
+  .tier .price{font-size:1.9rem;font-weight:800;letter-spacing:-.02em;color:var(--amber-deep);margin-left:auto;}
+  .tier .price small{font-size:.9rem;font-weight:600;color:var(--ink-soft);}
+  .tier .tapnote{font-size:.86rem;color:var(--ink-soft);margin:2px 0 10px;}
+  .tier ul{list-style:none;margin:0;padding:0;display:grid;gap:5px;font-size:.88rem;color:var(--ink-soft);}
   .tier li{padding-left:22px;position:relative;}
   .tier li::before{content:"\2713";position:absolute;left:0;color:var(--teal);font-weight:800;}
-  .tier .tapnote{font-size:.74rem;color:var(--ink-soft);margin-top:8px;font-style:italic;}
   .pop{font-size:.66rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:color-mix(in srgb,var(--amber) 22%,transparent);
     color:var(--amber-deep);border-radius:999px;padding:3px 9px;align-self:center;}
 
-  .promise{margin-top:22px;background:var(--card);border:2px solid var(--amber);border-radius:14px;padding:18px 20px;}
-  .promise h3{font-size:1.05rem;margin-bottom:10px;}
-  .promise .prow{display:flex;flex-wrap:wrap;gap:8px;}
-  .promise .p{font-size:.86rem;font-weight:700;background:color-mix(in srgb,var(--amber) 14%,transparent);
-    color:var(--ink);border-radius:999px;padding:7px 13px;}
-
-  .ai{background:var(--ink);color:#eef1f4;border-radius:20px;padding:38px;box-shadow:var(--shadow);margin:40px 0;}
+  /* fixed dark navy in BOTH themes (was flipping light in dark mode and washing out) */
+  .ai{background:#101c28;color:#eef1f4;border:1px solid rgba(255,255,255,.09);
+    border-radius:20px;padding:38px;box-shadow:var(--shadow);margin:40px 0;}
   .ai h2{color:#fff;font-size:clamp(1.5rem,4vw,2.1rem);font-weight:800;max-width:24ch;}
-  .ai .sub{color:#c6d4de;max-width:60ch;margin:10px 0 0;}
+  .ai .sub{color:#c6d4de;max-width:60ch;margin:8px 0 0;}
   .ai .row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px;}
   @media (max-width:640px){ .ai .row{grid-template-columns:1fr;} }
-  .ai .box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:18px 20px;}
-  .ai .box .bt{font-weight:800;color:var(--amber);font-size:1.02rem;margin-bottom:4px;}
+  .ai .box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;
+    padding:18px 20px;display:grid;grid-template-columns:46px 1fr;gap:14px;align-items:start;}
+  .ai .icn{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:26px;font-weight:800;color:#fff;line-height:1;}
+  .ai .icn.yes{background:#1f9a52;box-shadow:0 0 0 3px rgba(31,154,82,.3);}
+  .ai .icn.no{background:#d1453a;box-shadow:0 0 0 3px rgba(209,69,58,.3);}
+  .ai .box .bt{font-weight:800;color:#fff;font-size:1.02rem;margin-bottom:4px;}
   .ai .box p{color:#c6d4de;margin:0;font-size:.95rem;}
 
   .cta{text-align:center;padding:40px 0 30px;}
@@ -126,13 +137,14 @@
     .stick{position:sticky;top:52px;z-index:20;background:color-mix(in srgb,var(--paper) 94%,transparent);
       backdrop-filter:blur(6px);padding:10px 0 6px;margin:0 -24px;border-bottom:1px solid var(--line);}
     .donut-svg{max-width:190px;}
-    .dc-pct{font-size:46px;}
+    .dc-pct{font-size:44px;}
     .keyrow,.chartnote{display:none;}
+    .convnote{max-width:230px;font-size:.72rem;}
     .stepblock{padding:7vh 0;}
     .tier .tname{font-size:1.25rem;}
-    .tier .price{font-size:1.25rem;}
+    .tier .price{font-size:1.5rem;}
   }
-  @media (prefers-reduced-motion:reduce){ .seg{transition:none;} }
+  @media (prefers-reduced-motion:reduce){ .seg,#halo{transition:none;} }
 </style>
 
 <div class="topbar">
@@ -147,7 +159,7 @@
   <section class="hero">
     <p class="eyebrow">Auto Body Lopez &middot; getting found in your town</p>
     <h1>A <span class="hl">website</span> is where customers start. And it&rsquo;s only <span class="hl">19%</span> of getting found.</h1>
-    <p class="lead">4.8 stars for collision work that comes back looking new. None of it is visible online. Here is exactly how people find a local shop on Google in 2026. The chart follows along as you scroll, and everything is tappable.</p>
+    <p class="lead">4.8 stars for collision work that comes back looking new. None of it is visible online. Here is exactly how people find a local shop on Google in 2026.</p>
   </section>
 
   <div class="scrolly">
@@ -156,10 +168,12 @@
            aria-label="Ranking factors: Google Business Profile 32%, Website 19%, Reviews 16%, Links 15%, Customer behavior 11%, Citations 7%">
         <circle class="track" cx="120" cy="120" r="90"></circle>
         <g id="segs"></g>
-        <text class="dc-k" id="dcK" x="120" y="100" text-anchor="middle">Getting found</text>
-        <text class="dc-pct" id="dcPct" x="120" y="136" text-anchor="middle">100%</text>
-        <text class="dc-name" id="dcName" x="120" y="156" text-anchor="middle">the whole system</text>
+        <circle id="halo" cx="120" cy="120" r="114"></circle>
+        <text class="dc-k" id="dcK" x="120" y="98" text-anchor="middle">Getting found</text>
+        <text class="dc-pct" id="dcPct" x="120" y="134" text-anchor="middle">100%</text>
+        <text class="dc-name" id="dcName" x="120" y="152" text-anchor="middle"></text>
       </svg>
+      <p class="convnote" id="convnote">The pie gets the phone ringing. This plan answers every ring and books the job.</p>
       <div class="keyrow" id="keyrow"></div>
       <p class="chartnote">Weights are approximate, from 2026 local-search ranking studies.</p>
     </div>
@@ -169,15 +183,14 @@
       <div class="stepblock" data-mode="all">
         <p class="eyebrow">The whole picture</p>
         <h2>Google weighs six things when someone searches for a shop.</h2>
-        <p>Most owners obsess over one of them. The chart is the real weighting. Every slice is a reason a customer finds you, or finds your competitor.</p>
-        <p>Keep scrolling. The chart follows the story.</p>
+        <p>Most owners pour everything into one of them. Together, these six slices decide who shows up first when someone in town needs what you do, and who gets the call.</p>
       </div>
 
       <div class="stepblock" data-mode="site">
         <p class="eyebrow">The foundation. 19%</p>
         <h2>The website is the piece that&rsquo;s already done.</h2>
         <p>That amber slice is the site. Pages built for every service you offer, structured the way Google reads them. <b>I already built yours.</b> It&rsquo;s the foundation everything else stands on, and where every customer lands to decide.</p>
-        <p>But notice what went quiet: on its own, a website leaves <b>81% of the pie</b> on the table.</p>
+        <p>On its own, though, a website leaves <b>81% of the pie</b> on the table.</p>
       </div>
 
       <div class="stepblock" data-mode="gaps">
@@ -192,12 +205,12 @@
           </button>
           <button type="button" class="srow" data-slice="gbp" data-pct="32%">
             <span class="dotc" style="background:var(--teal)"></span>
-            <span class="n">Google Business Profile <small>The single biggest factor. You have the listing. Is someone posting to it weekly and answering questions?</small></span>
-            <span class="chip c-part">Managed weekly?</span>
+            <span class="n">Google Business Profile <small>The single biggest factor. You have the listing. Is someone keeping it current with posts, photos, and answers?</small></span>
+            <span class="chip c-part">Kept current?</span>
           </button>
           <button type="button" class="srow" data-slice="reviews" data-pct="16%">
             <span class="dotc" style="background:var(--blue)"></span>
-            <span class="n">Reviews <small>57 reviews at 4.8&#9733;. Great work, quietly told. Is something asking every happy customer for the next one, automatically?</small></span>
+            <span class="n">Reviews <small>4.8 stars across 57 reviews. Now imagine if every happy customer got asked.</small></span>
             <span class="chip c-part">On autopilot?</span>
           </button>
           <button type="button" class="srow" data-slice="links" data-pct="15%">
@@ -216,43 +229,12 @@
             <span class="chip c-miss">Consistent?</span>
           </button>
         </div>
-        <p style="margin-top:16px;">Every question mark up there is open ground. A customer searching <b>right now</b> who finds someone else.</p>
+        <p style="margin-top:16px;">Every question mark up there is open ground. A customer searching <b>right now</b> who finds your competitor instead.</p>
       </div>
 
       <div class="stepblock" data-mode="tiers">
         <p class="eyebrow">The plans. Tap one</p>
         <h2>Tap a plan and watch the chart. That&rsquo;s what it covers.</h2>
-        <div class="tiers" id="tiers">
-          <button type="button" class="tier" data-tier="foundation">
-            <div class="trow"><span class="tname">Foundation</span><span class="price">$99<small>/mo</small></span></div>
-            <ul>
-              <li>Your website, hosted, secured, and maintained</li>
-              <li>Unlimited edits. Text me the change, done same-day</li>
-              <li>Call tracking plus a monthly proof report</li>
-            </ul>
-            <div class="tapnote">The zero-hassle floor. Your site stays perfect. The rest of the pie stays open.</div>
-          </button>
-          <button type="button" class="tier sel" data-tier="getahead">
-            <div class="trow"><span class="tname">Get Ahead</span><span class="pop">Best value</span><span class="price">$299<small>/mo</small></span></div>
-            <ul>
-              <li>Everything in Foundation</li>
-              <li><b>Google Business Profile fully managed. The 32%</b></li>
-              <li>Review engine. Steady new reviews, every month</li>
-              <li>Missed-call text-back plus directory sync</li>
-            </ul>
-            <div class="tapnote">One tap lights up most of the chart. This is the tier that gets you found.</div>
-          </button>
-          <button type="button" class="tier" data-tier="nevermiss">
-            <div class="trow"><span class="tname">Never Miss a Job</span><span class="price">$499<small>/mo</small></span></div>
-            <ul>
-              <li>Everything in Get Ahead</li>
-              <li>24/7 call answering and booking. Even under a car, the job gets booked</li>
-              <li>Local link building. The last slice</li>
-              <li>Online booking built into your site</li>
-            </ul>
-            <div class="tapnote">The whole pie. Every call answered.</div>
-          </button>
-        </div>
         <div class="promise">
           <h3>Every plan. No fine print.</h3>
           <div class="prow">
@@ -260,8 +242,38 @@
             <span class="p">First month free</span>
             <span class="p">No contract. Cancel anytime</span>
             <span class="p">You own your web address, always</span>
-            <span class="p">Zero calls on the report = that month free</span>
           </div>
+        </div>
+        <div class="tiers" id="tiers">
+          <button type="button" class="tier" data-tier="foundation">
+            <div class="trow"><span class="tname">Foundation</span><span class="price">$99<small>/mo</small></span></div>
+            <div class="tapnote">The zero-hassle floor. Your site stays perfect and provable.</div>
+            <ul>
+              <li>Your website, hosted, secured, and maintained</li>
+              <li>Unlimited edits. Text me the change, done same-day</li>
+              <li>Call tracking plus a monthly proof report</li>
+            </ul>
+          </button>
+          <button type="button" class="tier sel" data-tier="getahead">
+            <div class="trow"><span class="tname">Get Ahead</span><span class="pop">Best value</span><span class="price">$299<small>/mo</small></span></div>
+            <div class="tapnote">Supercharges your whole online presence. The biggest slices, handled for you.</div>
+            <ul>
+              <li>Everything in Foundation</li>
+              <li><b>Google Business Profile fully managed. The 32%</b></li>
+              <li>Review engine. Steady new reviews, every month</li>
+              <li>Missed-call text-back plus directory sync</li>
+            </ul>
+          </button>
+          <button type="button" class="tier" data-tier="nevermiss">
+            <div class="trow"><span class="tname">Never Miss a Job</span><span class="price">$499<small>/mo</small></span></div>
+            <div class="tapnote">The whole pie, plus conversion: someone always answers, and the job gets booked.</div>
+            <ul>
+              <li>Everything in Get Ahead</li>
+              <li>24/7 call answering and booking. Even under a car, the job gets booked</li>
+              <li>Local link building. The last slice</li>
+              <li>Online booking built into your site</li>
+            </ul>
+          </button>
         </div>
       </div>
 
@@ -273,8 +285,8 @@
     <h2>When someone asks AI for a shop, the answer should be you.</h2>
     <p class="sub">People now ask ChatGPT, Google&rsquo;s AI, and Siri for one recommendation. Not ten links. One name.</p>
     <div class="row">
-      <div class="box"><div class="bt">Your site is already built for it &#10003;</div><p>Structured the way AI engines read. That work is done, today.</p></div>
-      <div class="box"><div class="bt">Your competitors aren&rsquo;t.</div><p>Almost no local shop has this yet. The first one that does becomes the name AI recommends.</p></div>
+      <div class="box"><span class="icn yes">&#10003;</span><span><span class="bt">Your site is already built for it.</span><p>Structured the way AI engines read. That work is done, today.</p></span></div>
+      <div class="box"><span class="icn no">&#10005;</span><span><span class="bt">Your competitors aren&rsquo;t.</span><p>Almost no local shop has this yet. The first one that does becomes the name AI recommends.</p></span></div>
     </div>
   </section>
 
@@ -301,9 +313,9 @@
     { id:'citations',name:'Citations',               pct:7,  color:'#9a6cc4' }
   ];
   var TIERS = {
-    foundation: { ids:['website'], pct:'~20%', label:'Foundation · $99/mo' },
-    getahead:   { ids:['website','gbp','reviews','behavior','citations'], pct:'~85%', label:'Get Ahead · $299/mo' },
-    nevermiss:  { ids:['website','gbp','reviews','links','behavior','citations'], pct:'100%', label:'Never Miss a Job · $499/mo' }
+    foundation: { ids:['website'], pct:'~20%', label:'Foundation · $99/mo', halo:false },
+    getahead:   { ids:['website','gbp','reviews','behavior','citations'], pct:'~85%', label:'Get Ahead · $299/mo', halo:false },
+    nevermiss:  { ids:['website','gbp','reviews','links','behavior','citations'], pct:'100%', label:'found, plus every call answered', halo:true }
   };
   var MODES = {
     all:  { ids:F.map(function(f){return f.id;}), pct:'100%', k:'Getting found', name:'the whole system' },
@@ -331,35 +343,52 @@
     keyrow.appendChild(k); keys[f.id] = k;
   });
 
+  var donut = document.getElementById('donut'), convnote = document.getElementById('convnote');
   var dcK = document.getElementById('dcK'), dcPct = document.getElementById('dcPct'), dcName = document.getElementById('dcName');
-  function light(ids, pct, k, name) {
+  // wrap the center name onto up to two lines so text never overlaps the ring
+  function setName(name) {
+    while (dcName.firstChild) dcName.removeChild(dcName.firstChild);
+    var lines = [name];
+    if (name.length > 16) {
+      var mid = Math.floor(name.length / 2), best = -1;
+      for (var i = 0; i < name.length; i++) if (name[i] === ' ' && Math.abs(i - mid) < Math.abs(best - mid)) best = i;
+      if (best > 0) lines = [name.slice(0, best), name.slice(best + 1)];
+    }
+    lines.forEach(function (ln, i) {
+      var t = document.createElementNS(svgNS, 'tspan');
+      t.setAttribute('x', 120); t.setAttribute('dy', i === 0 ? 0 : 14);
+      t.textContent = ln; dcName.appendChild(t);
+    });
+  }
+  function light(ids, pct, k, name, halo) {
     F.forEach(function (f) {
       var on = ids.indexOf(f.id) !== -1;
       segs[f.id].setAttribute('class', 'seg ' + (on ? 'lit' : 'dim'));
       if (keys[f.id]) keys[f.id].className = 'key' + (on ? '' : ' dim');
     });
-    dcPct.textContent = pct; dcK.textContent = k; dcName.textContent = name;
+    dcPct.textContent = pct; dcK.textContent = k; setName(name);
+    donut.classList.toggle('haloed', !!halo);
+    convnote.classList.toggle('on', !!halo);
   }
 
   var curTier = 'getahead';
   var tierBtns = [].slice.call(document.querySelectorAll('.tier'));
   function applyTier() {
     var t = TIERS[curTier];
-    light(t.ids, t.pct, 'This plan covers', t.label);
+    light(t.ids, t.pct, 'This plan covers', t.label, t.halo);
     tierBtns.forEach(function (b) { b.classList.toggle('sel', b.dataset.tier === curTier); });
   }
   tierBtns.forEach(function (b) {
     b.addEventListener('click', function () { curTier = b.dataset.tier; applyTier(); });
   });
 
-  // tappable status rows: light that one slice
   var srows = [].slice.call(document.querySelectorAll('.srow'));
   srows.forEach(function (r) {
     r.addEventListener('click', function () {
       var id = r.dataset.slice, f = null;
       F.forEach(function (x) { if (x.id === id) f = x; });
       if (!f) return;
-      light([id], r.dataset.pct, 'One factor', f.name);
+      light([id], r.dataset.pct, 'One factor', f.name, false);
       srows.forEach(function (x) { x.classList.toggle('sel', x === r); });
     });
   });
@@ -372,7 +401,7 @@
     curMode = mode;
     clearRowSel();
     if (mode === 'tiers') { applyTier(); return; }
-    var m = MODES[mode]; if (m) light(m.ids, m.pct, m.k, m.name);
+    var m = MODES[mode]; if (m) light(m.ids, m.pct, m.k, m.name, false);
   }
   function nearestMode() {
     var mid = (window.innerHeight || 640) * 0.45, best = null, bestD = Infinity;
@@ -389,7 +418,7 @@
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll, { passive: true });
-  light(MODES.all.ids, MODES.all.pct, MODES.all.k, MODES.all.name);
+  light(MODES.all.ids, MODES.all.pct, MODES.all.k, MODES.all.name, false);
   nearestMode();
 })();
 </script>
